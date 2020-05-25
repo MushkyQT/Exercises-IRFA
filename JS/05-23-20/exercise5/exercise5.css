@@ -1,9 +1,6 @@
-a {
-}
-
 #menu {
-	width: 50%;
-	margin: auto;
+  width: 50%;
+  margin: auto;
 }
 
 #menu ul {
@@ -13,7 +10,7 @@ a {
 }
 
 li {
-  display: inline-block;
+  display: inline;
   margin: 0;
   background-color: #90bade;
   padding: 5px 10px 1px 10px;
@@ -27,7 +24,7 @@ li {
 }
 
 li:hover {
-	background-image: url("fond.gif");
+  background-image: url("fond.gif");
 }
 
 a:hover {
@@ -35,6 +32,5 @@ a:hover {
 }
 
 a:hover span.lien {
-	background-image: url("fond2.gif");
-	
+  background-image: url("fond2.gif");
 }
