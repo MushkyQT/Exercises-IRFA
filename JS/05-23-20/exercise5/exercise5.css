@@ -1,0 +1,40 @@
+a {
+}
+
+#menu {
+	width: 50%;
+	margin: auto;
+}
+
+#menu ul {
+  list-style-type: none;
+  padding-bottom: 1px;
+  border-bottom: 1px solid blue;
+}
+
+li {
+  display: inline-block;
+  margin: 0;
+  background-color: #90bade;
+  padding: 5px 10px 1px 10px;
+}
+
+#here {
+  background-color: #2586d7;
+  border-bottom: 1px solid #2586d7;
+  padding: 5px 10px 1px 10px;
+  margin-right: 1px;
+}
+
+li:hover {
+	background-image: url("fond.gif");
+}
+
+a:hover {
+  color: white;
+}
+
+a:hover span.lien {
+	background-image: url("fond2.gif");
+	
+}
