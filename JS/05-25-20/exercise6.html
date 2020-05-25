@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <title>Exo DOM 6 05/25</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <h1 title="Quand on clique, modif du paragraphe" onclick="modif_paragraphe()">Grand titre</h1>
+    <p id="premier" title="Quand on clique, centrage du titre" onclick="centrage_h1()">Premier paragraphe original.</p>
+
+    <script type="text/javascript">
+      function modif_paragraphe() {
+        document.getElementById("premier").innerHTML = "Premier paragraphe <i>corrige</i>.";
+      }
+
+      function centrage_h1() {
+        let titles = document.getElementsByTagName("h1");
+        titles[0].setAttribute('align', 'center');
+      }
+    </script>
+  </body>
+</html>

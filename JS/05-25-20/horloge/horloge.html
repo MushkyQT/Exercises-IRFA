@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Exo DOM 7 05/25</title>
+    <style type="text/css">
+      /* Positions des chiffres sur le cadran*/
+      #chiffre12 {
+        position: absolute;
+        top: 100px;
+        left: 200px;
+      }
+      #chiffre11 {
+        position: absolute;
+        top: 113px;
+        left: 150px;
+      }
+      #chiffre10 {
+        position: absolute;
+        top: 150px;
+        left: 113px;
+      }
+      #chiffre9 {
+        position: absolute;
+        top: 200px;
+        left: 100px;
+      }
+      #chiffre8 {
+        position: absolute;
+        top: 250px;
+        left: 113px;
+      }
+      #chiffre7 {
+        position: absolute;
+        top: 287px;
+        left: 150px;
+      }
+      #chiffre6 {
+        position: absolute;
+        top: 300px;
+        left: 200px;
+      }
+      #chiffre5 {
+        position: absolute;
+        top: 287px;
+        left: 250px;
+      }
+      #chiffre4 {
+        position: absolute;
+        top: 250px;
+        left: 287px;
+      }
+      #chiffre3 {
+        position: absolute;
+        top: 200px;
+        left: 300px;
+      }
+      #chiffre2 {
+        position: absolute;
+        top: 150px;
+        left: 287px;
+      }
+      #chiffre1 {
+        position: absolute;
+        top: 113px;
+        left: 250px;
+      }
+      /* Position du rond central*/
+      #centre {
+        position: absolute;
+        top: 200px;
+        left: 200px;
+        font-family: arial;
+      }
+
+      /* Positions initiales des aiguilles */
+      #aiguilleheure {
+        position: absolute;
+        top: 110px;
+        left: 200px;
+      }
+      #aiguilleminute {
+        position: absolute;
+        top: 110px;
+        left: 200px;
+      }
+    </style>
+
+    <script type="text/javascript">
+      let compteur_minutes = 0,
+        compteur_heures = 0,
+        active = true;
+
+      function tourne() {
+        if (active == false) {
+          return;
+        }
+        let aiguilles = document.querySelectorAll("img");
+        switch (compteur_minutes) {
+          case 0:
+            aiguilles[1].setAttribute("id", "chiffre1");
+            compteur_minutes++;
+            break;
+          case 1:
+            aiguilles[1].setAttribute("id", "chiffre2");
+            compteur_minutes++;
+            break;
+          case 2:
+            aiguilles[1].setAttribute("id", "chiffre3");
+            compteur_minutes++;
+            break;
+          case 3:
+            aiguilles[1].setAttribute("id", "chiffre4");
+            compteur_minutes++;
+            break;
+          case 4:
+            aiguilles[1].setAttribute("id", "chiffre5");
+            compteur_minutes++;
+            break;
+          case 5:
+            aiguilles[1].setAttribute("id", "chiffre6");
+            compteur_minutes++;
+            break;
+          case 6:
+            aiguilles[1].setAttribute("id", "chiffre7");
+            compteur_minutes++;
+            break;
+          case 7:
+            aiguilles[1].setAttribute("id", "chiffre8");
+            compteur_minutes++;
+            break;
+          case 8:
+            aiguilles[1].setAttribute("id", "chiffre9");
+            compteur_minutes++;
+            break;
+          case 9:
+            aiguilles[1].setAttribute("id", "chiffre10");
+            compteur_minutes++;
+            break;
+          case 10:
+            aiguilles[1].setAttribute("id", "chiffre11");
+            compteur_minutes++;
+            break;
+          case 11:
+            aiguilles[1].setAttribute("id", "chiffre12");
+            compteur_minutes++;
+            break;
+        }
+
+        if (compteur_minutes == 12) {
+          compteur_minutes = 0;
+          switch (compteur_heures) {
+            case 0:
+              aiguilles[0].setAttribute("id", "chiffre1");
+              compteur_heures++;
+              break;
+            case 1:
+              aiguilles[0].setAttribute("id", "chiffre2");
+              compteur_heures++;
+              break;
+            case 2:
+              aiguilles[0].setAttribute("id", "chiffre3");
+              compteur_heures++;
+              break;
+            case 3:
+              aiguilles[0].setAttribute("id", "chiffre4");
+              compteur_heures++;
+              break;
+            case 4:
+              aiguilles[0].setAttribute("id", "chiffre5");
+              compteur_heures++;
+              break;
+            case 5:
+              aiguilles[0].setAttribute("id", "chiffre6");
+              compteur_heures++;
+              break;
+            case 6:
+              aiguilles[0].setAttribute("id", "chiffre7");
+              compteur_heures++;
+              break;
+            case 7:
+              aiguilles[0].setAttribute("id", "chiffre8");
+              compteur_heures++;
+              break;
+            case 8:
+              aiguilles[0].setAttribute("id", "chiffre9");
+              compteur_heures++;
+              break;
+            case 9:
+              aiguilles[0].setAttribute("id", "chiffre10");
+              compteur_heures++;
+              break;
+            case 10:
+              aiguilles[0].setAttribute("id", "chiffre11");
+              compteur_heures++;
+              break;
+            case 11:
+              aiguilles[0].setAttribute("id", "chiffre12");
+              compteur_heures = 0;
+              break;
+          }
+        }
+
+        window.setTimeout(tourne, 1000);
+      }
+    </script>
+  </head>
+  <body>
+    <p>Une petite horloge...</p>
+    <button onclick="active=true, tourne()">GO!</button>
+    <button onclick="active=false">Stop</button>
+    <div id="chiffre1"><p>1</p></div>
+    <div id="chiffre2"><p>2</p></div>
+    <div id="chiffre3"><p>3</p></div>
+    <div id="chiffre4"><p>4</p></div>
+    <div id="chiffre5"><p>5</p></div>
+    <div id="chiffre6"><p>6</p></div>
+    <div id="chiffre7"><p>7</p></div>
+    <div id="chiffre8"><p>8</p></div>
+    <div id="chiffre9"><p>9</p></div>
+    <div id="chiffre10"><p>10</p></div>
+    <div id="chiffre11"><p>11</p></div>
+    <div id="chiffre12"><p>12</p></div>
+    <div id="centre"><p>o</p></div>
+
+    <div>
+      <img
+        alt="heures"
+        src="rondbleu.gif"
+        height="21"
+        id="aiguilleheure"
+        width="21"
+      />
+    </div>
+    <div>
+      <img
+        alt="minutes"
+        src="rondrouge.gif"
+        height="21"
+        id="aiguilleminute"
+        width="21"
+      />
+    </div>
+  </body>
+</html>
