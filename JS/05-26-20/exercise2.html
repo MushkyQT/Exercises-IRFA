@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Exo 2 05/26</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <script type="text/javascript">
+      let elements;
+      function Init() {
+        elements = document.getElementsByTagName("Input");
+        elements[1].setAttribute("onclick", "soumission();");
+        elements[2].setAttribute("onclick", "remise_a_zero();");
+      }
+
+      function soumission() {
+        alert(elements[0].value);
+      }
+      function remise_a_zero() {
+        alert("Remise a zero du champ de saisie.");
+        elements[0].value = "Mot quelconque";
+      }
+    </script>
+  </head>
+  <body onload="Init()">
+    <form action="" id="formulaire">
+      <input type="text" value="Mot quelconque" id="champsaisie" />
+      <input type="button" id="soumet" value="Soumettre" />
+      <input type="button" id="raz" value="Remise a zero" />
+    </form>
+  </body>
+</html>
