@@ -5,9 +5,9 @@
   Sont les:
   */
 
-  $mvar;
-  $var8;
-  $_mvar;
-  $_6var;
+  echo ("\$mvar ");
+  echo ("\$var8 ");
+  echo ("\$_mvar ");
+  echo ("\$_6var");
 
 ?>
