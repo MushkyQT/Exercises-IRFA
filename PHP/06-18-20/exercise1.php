@@ -27,7 +27,7 @@
   }
 
   function checkTime(input, name) {
-    let re = /^\d{1,2}:\d{2}$/;
+    let re = /^([0-1]?[0-9]|2[0-3]):[0-5]|[0-9]$/;
     if (input != '' && !input.match(re)) {
       alert("Invalid time format: " + input);
       return false;
@@ -100,10 +100,22 @@ if (isset($_COOKIE['date'])) {
   }
 }
 
+echo "<br>";
+
 if (isset($_COOKIE['time'])) {
   $time = $_COOKIE['time'];
-  $timeFormat = strtotime($time);
-  if (preg_match("/^(?:2[0-3]|[01][0-9]):[0-5][0-9]$/", $time)) {
+  $continue = false;
+  if (strlen($time) < 2) {
+    $time = 0 . $time;
+  }
+  if (strpos($time, ":") === false) {
+    $time = $time . ":00";
+  }
+  if (strtotime($time) == true) {
+    $timeFormat = strtotime($time);
+    $continue = true;
+  }
+  if (preg_match("/^([0-1]?[0-9]|2[0-3]):[0-5]|[0-9]$/", $time) && $continue == true) {
     echo date("G:i", $timeFormat) . " is valid ";
   } else {
     echo $time . " is invalid ";
@@ -111,8 +123,4 @@ if (isset($_COOKIE['time'])) {
 }
 
 echo "</p>";
-
-// Erreur potentielle non-resolu: Entrez une heure dans le format 00:00 marche comme prevu, mais 0:00 ne marche pas, ni 00: ou 0:
-// A reparer!
-
 ?>
