@@ -6,8 +6,9 @@
   */
 
   echo ("\$mvar ");
-  echo ("\$var8 ");
+  echo ("\$var7 ");
   echo ("\$_mvar ");
   echo ("\$_6var");
+  echo ("\$__élément1");
 
 ?>
