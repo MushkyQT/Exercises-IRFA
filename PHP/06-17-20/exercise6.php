@@ -13,7 +13,5 @@ Di Dimanche
 $dates = array("Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche");
 
 foreach ($dates as &$val) {
-  echo (substr($val, 0, 2) . " " . $val . "<br>");
+    echo (substr($val, 0, 2) . " " . $val . "<br>");
 }
-
-?>

@@ -1,17 +1,17 @@
-<?php 
+<?php
 $gender = "";
 if (isset($_GET["gender"]) && $_GET["gender"] == "male") {
-  $gender = "Monsieur";
+    $gender = "Monsieur";
 } else if (isset($_GET["gender"])) {
-  $gender = "Madame";
+    $gender = "Madame";
 }
 
 $winesQuant = 3;
 $wines = [];
 for ($i = 1; $i <= $winesQuant; $i++) {
-  if (isset($_GET["wine$i"])) {
-    array_push($wines, ucfirst($_GET["wine$i"]));
-  }
+    if (isset($_GET["wine$i"])) {
+        array_push($wines, ucfirst($_GET["wine$i"]));
+    }
 }
 
 $winesStr = implode(", ", $wines);

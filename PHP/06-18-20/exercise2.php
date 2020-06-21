@@ -8,4 +8,3 @@ for ($i = 1; $i <= 20; $i++) {
     echo "<li>$i<sup>2</sup> = $squares[$i]</li>";
 }
 echo "</ul>";
-?>

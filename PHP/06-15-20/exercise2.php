@@ -12,15 +12,15 @@
 <html>
 
 <head>
-  <?php
-  echo "Bonjour depuis php";
-  ?>
+    <?php
+    echo "Bonjour depuis php";
+    ?>
 </head>
 
 <body>
-  <?php
-  echo "bonjour généré dynamiquement en php";
-  ?>
+    <?php
+    echo "bonjour généré dynamiquement en php";
+    ?>
 </body>
 
 </html>

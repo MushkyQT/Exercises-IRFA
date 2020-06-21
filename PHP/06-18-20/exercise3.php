@@ -4,10 +4,9 @@
 
 $string = "ShRiNkRaY dO bE dO";
 
-echo strtoupper(substr($string, 0, 1)).strtolower(substr($string, 1));
+echo strtoupper(substr($string, 0, 1)) . strtolower(substr($string, 1));
 
 // OR
 
 echo "<br>Autre maniere:<br>";
 echo ucfirst(strtolower($string));
-?>

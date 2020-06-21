@@ -6,8 +6,7 @@ $time = date("H");
 $date = date("m/d/y");
 
 if ($time < 12) {
-  echo $date . " Bon matin";
+    echo $date . " Bon matin";
 } else {
-  echo $date . " Bonne apres midi";
+    echo $date . " Bonne apres midi";
 }
-?>
