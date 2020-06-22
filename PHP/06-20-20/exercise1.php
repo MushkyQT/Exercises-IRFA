@@ -69,8 +69,8 @@ foreach ($_POST as $key => $val) {
 
         <?= @$gender ?>
         <input type="hidden" name="gender" value="false" />
-        <input type="radio" name="gender" value="male" />Male<br />
-        <input type="radio" name="gender" value="female" />Female<br /><br />
+        <input type="radio" name="gender" value="male" <?php if ($_POST['gender'] == "male") echo "checked" ?> />Male<br />
+        <input type="radio" name="gender" value="female" <?php if ($_POST['gender'] == "female") echo "checked" ?> />Female<br /><br />
 
         <?= @$lName ?>
         <input type="text" name="lName" placeholder="Last Name" value="<?= isset($_POST['lName']) ? $_POST['lName'] : '' ?>" /><br />
