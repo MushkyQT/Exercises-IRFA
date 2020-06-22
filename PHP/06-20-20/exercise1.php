@@ -66,18 +66,24 @@ foreach ($_POST as $key => $val) {
 
 <body>
     <form action="../06-20-20/exercise1.php" method="POST">
+
         <?= @$gender ?>
         <input type="hidden" name="gender" value="false" />
         <input type="radio" name="gender" value="male" />Male<br />
         <input type="radio" name="gender" value="female" />Female<br /><br />
+
         <?= @$lName ?>
         <input type="text" name="lName" placeholder="Last Name" value="<?= isset($_POST['lName']) ? $_POST['lName'] : '' ?>" /><br />
+
         <?= @$fName ?>
         <input type="text" name="fName" placeholder="First Name" value="<?= isset($_POST['fName']) ? $_POST['fName'] : '' ?>" /><br />
+
         <?= @$email ?>
         <input type="email" name="email" placeholder="email@host.com" value="<?= isset($_POST['email']) ? $_POST['email'] : '' ?>" /><br /><br />
+
         <?= @$password1 ?>
         <input type="password" name="password1" placeholder="Password" value="<?= isset($_POST['password1']) ? $_POST['password1'] : '' ?>" /><br />
+
         <?= @$password2 ?>
         <?= @$noMatch ?>
         <input type="password" name="password2" placeholder="Confirm password" value="<?= isset($_POST['password2']) ? $_POST['password2'] : '' ?>" /><br /><br />
