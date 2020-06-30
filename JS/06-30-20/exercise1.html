@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercise 1 | 06-30-2020</title>
+        <!-- Hide images on load -->
+        <style>
+            img {
+                display: none;
+                float: left;
+                padding: 10px;
+            }
+        </style>
+        <!-- Include jquery -->
+        <script
+            type="text/javascript"
+            src="jquery-3.5.1.min.js"
+        ></script>
+        <!-- JS -->
+        <script type="text/javascript">
+            let actOn = "";
+            let actOff = "";
+            let cnt = 0;
+
+            function action() {
+                if (actOn == "bird") {
+                    actOff = "scooter";
+                } else if (actOn == "scooter") {
+                    actOff = "bird";
+                }
+
+                $("."+actOff).first().hide("slow", function hideNext() {
+                    $(this).next("."+actOff).hide("slow", hideNext);
+                    cnt++;
+                    if (cnt >= 5) {
+                        cnt = 0;
+                        $("."+actOn).first().show("slow", function showNext() {
+                            $(this).next("."+actOn).show("slow", showNext);
+                        });
+                    }
+                });
+            }
+        </script>
+    </head>
+
+    <body>
+        <!-- Show birds btn -->
+        <button type="button" id="showBirds" onclick="actOn='bird'; action()">
+            Click to show birds
+        </button>
+        <!-- Show scooters btn -->
+        <button type="button" id="showScooters" onclick="actOn='scooter'; action()">
+            Click to show scooters</button
+        ><br />
+        <!-- Bird imgs -->
+        <img src="img/bird1.jpg" class="bird" />
+        <img src="img/bird2.jpg" class="bird" />
+        <img src="img/bird3.jpg" class="bird" />
+        <img src="img/bird4.jpg" class="bird" />
+        <img src="img/bird5.jpg" class="bird" />
+        <!-- Skkrrrt bird imgs -->
+        <img src="img/scooter1.jpg" class="scooter" />
+        <img src="img/scooter2.jpg" class="scooter" />
+        <img src="img/scooter3.jpg" class="scooter" />
+        <img src="img/scooter4.jpg" class="scooter" />
+        <img src="img/scooter5.jpg" class="scooter" />
+    </body>
+</html>
