@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercise 2 | 07-01-20</title>
+        <style>
+            .zoom {
+                width: 100px;
+                height: 100px;
+                margin-top: 80px;
+                margin-left: 40px;
+            }
+        </style>
+    </head>
+    <body>
+        <img src="../06-30-20/img/bird1.jpg" class="zoom" />
+        <img src="../06-30-20/img/bird2.jpg" class="zoom" />
+        <img src="../06-30-20/img/bird3.jpg" class="zoom" />
+        <img src="../06-30-20/img/bird4.jpg" class="zoom" />
+        <script type="text/javascript" src="../script/jquery.min.js"></script>
+        <script type="text/javascript">
+            $("img").hover(
+                function () {
+                    $(this).animate({ zoom: "200%" }, "slow");
+                },
+                function () {
+                    $(this).animate({ zoom: "100%" }, "slow");
+                }
+            );
+        </script>
+    </body>
+</html>

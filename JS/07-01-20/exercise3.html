@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercise 3 | 07-01-20</title>
+        <style>
+            img {
+                float: left;
+            }
+        </style>
+    </head>
+    <body>
+        <label for="images">Pick an image to display:</label>
+        <select name="images" id="images">
+            <option disabled selected value> -- select an image -- </option>
+            <option value="bird1">Bird1</option>
+            <option value="bird2">Bird2</option>
+            <option value="bird3">Bird3</option>
+            <option value="bird4">Bird4</option>
+        </select>
+        <br /><br />
+
+        <img src="../06-30-20/img/bird1.jpg" id="bird1" class="imgs" hidden />
+        <img src="../06-30-20/img/bird2.jpg" id="bird2" class="imgs" hidden />
+        <img src="../06-30-20/img/bird3.jpg" id="bird3" class="imgs" hidden />
+        <img src="../06-30-20/img/bird4.jpg" id="bird4" class="imgs" hidden />
+
+        <script type="text/javascript" src="../script/jquery.min.js"></script>
+        <script type="text/javascript">
+            $("#images").change(function () {
+                $(".imgs").hide();
+                let img = $("#images").val();
+                $("#" + img).toggle();
+            });
+        </script>
+    </body>
+</html>
