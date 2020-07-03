@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercise 1 | 07-02-20</title>
+    </head>
+    <body>
+        <div id="fillMe"></div>
+        <script type="text/javascript" src="../script/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("#fillMe").load("maj1.html", function () {
+                    console.log("Page dynamically updated.");
+                });
+            });
+        </script>
+    </body>
+</html>
