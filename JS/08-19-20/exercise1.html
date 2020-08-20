@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercice 1 - 08/19/20</title>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td colspan="2"><h2>Table de multiplication</h2></td>
+            </tr>
+            <tr>
+                <td>Entrez un nombre :</td>
+                <td><input type="number" onchange="printTable(this)" /></td>
+            </tr>
+            <tr>
+                <td colspan="2"><span id="multi"></span></td>
+            </tr>
+        </table>
+
+        <script type="text/javascript">
+            function printTable(num) {
+                let input = num.value;
+                if (!isNaN(input)) {
+                    let table = "";
+                    let number = "";
+                    for (i = 1; i <= 10; i++) {
+                        number = input * i;
+                        table += input + " * " + i + " = " + number + "<br/>";
+                    }
+                    document.getElementById("multi").innerHTML = table;
+                } else {
+                    document.getElementById("multi").innerHTML =
+                        "Nombre invalide!";
+                }
+            }
+        </script>
+    </body>
+</html>
