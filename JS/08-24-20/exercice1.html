@@ -19,8 +19,7 @@
     <script type="text/javascript">
         let textField = document.getElementById("textField");
         document.getElementById("btn").onclick = function () {
-            let nmbr = parseInt(document.getElementById("nombres").value);
-            switch (nmbr) {
+            switch (parseInt(document.getElementById("nombres").value)) {
                 case 1:
                     textField.innerHTML = "Tu a choisi 1.";
                     break;
