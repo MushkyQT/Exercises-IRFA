@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercice 1 - 08/24/20</title>
+    </head>
+    <body>
+        <label for="nombres">Choisir un nombre:</label>
+        <select name="nombres" id="nombres">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+        <br />
+        <button id="btn">Submit</button>
+        <br />
+        <span id="textField"></span>
+    </body>
+    <script type="text/javascript">
+        let textField = document.getElementById("textField");
+        document.getElementById("btn").onclick = function () {
+            let nmbr = parseInt(document.getElementById("nombres").value);
+            switch (nmbr) {
+                case 1:
+                    textField.innerHTML = "Tu a choisi 1.";
+                    break;
+                case 2:
+                    textField.innerHTML = "Tu a choisi 2.";
+                    break;
+                case 3:
+                    textField.innerHTML = "Tu a choisi 3.";
+                    break;
+                case 4:
+                    textField.innerHTML = "Tu a choisi 4.";
+                    break;
+                default:
+                    alert("error");
+                    break;
+            }
+        };
+    </script>
+</html>
