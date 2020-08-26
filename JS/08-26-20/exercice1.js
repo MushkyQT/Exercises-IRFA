@@ -20,7 +20,7 @@ function acheterSW() {
         if (cost <= vBudget) {
             vBudget -= cost;
             vRepas++;
-            document.getElementById("hTicket").innerHTML += "Apres jour " + day + " , il te reste " + Math.round(10*vBudget)/10 + " euros. Les sandwiches t'ont pris " + price + " euros.<br />";
+            document.getElementById("hTicket").innerHTML += "Apres jour " + day + " , il te reste " + Math.round(10*vBudget)/10 + " euros. Les sandwiches t'ont pris " + Math.round(10*cost)/10 + " euros.<br />";
             if (day == 5) {
                 document.getElementById("hTicket").innerHTML += "Tu a tenu cinque jours. Bravo! <br />";
             }
