@@ -1,22 +1,48 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700,800");
 #fullscreen {
-    height: 100vh;
     font-family: "Open Sans", sans-serif;
 }
 
 #serverBar {
-    height: 100vh;
     background-color: #261c25;
-    max-width: 80px;
 }
+
 #chanBar {
-    height: 100vh;
     background-color: #4b3949;
-    max-width: 193px;
 }
+
 #chat {
-    height: 100vh;
     background-color: #ffffff;
+}
+
+@media only screen and (min-width: 768px) {
+    #serverBar {
+        height: 100vh;
+        max-width: 80px;
+    }
+
+    #chanBar {
+        height: 100vh;
+        max-width: 193px;
+    }
+
+    #chat {
+        height: 100vh;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #chanBar {
+        padding-bottom: 15px;
+    }
+
+    #chat {
+        padding-right: 0;
+    }
+
+    .fa-plus {
+        margin-left: 25px;
+    }
 }
 
 .slackGray {
