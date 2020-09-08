@@ -1,0 +1,11 @@
+.formBorder {
+    margin: 10px;
+    border: 1px solid black;
+}
+
+.custom-select.is-valid,
+.form-control.is-valid,
+.was-validated .custom-select:valid,
+.was-validated .form-control:valid {
+    border-color: #ced4da;
+}

@@ -1,0 +1,39 @@
+.pad {
+    padding: 50px;
+}
+
+.center {
+    justify-content: center;
+}
+
+.shadow {
+    height: 119px;
+    border-radius: 15px;
+}
+
+.margin {
+    margin-left: 40%;
+}
+
+.black {
+    background-color: black;
+    color: lightgreen;
+}
+
+.phpBlue {
+    background: rgb(204, 204, 204);
+    background: linear-gradient(
+        0deg,
+        rgba(204, 204, 204, 1) 26%,
+        rgba(255, 255, 255, 1) 92%
+    );
+    color: #235a81;
+}
+
+.php {
+    font-family: "Courier New", Courier;
+}
+
+.right {
+    text-align: right;
+}

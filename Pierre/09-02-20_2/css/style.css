@@ -1,0 +1,14 @@
+.bg-primary p {
+    background-color: orange;
+    border-radius: 5px;
+}
+
+.col {
+    border-radius: 5px;
+}
+
+#footer {
+    height: 40px;
+    background-color: pink;
+    text-align: center;
+}

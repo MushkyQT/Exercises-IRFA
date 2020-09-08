@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body>
+        <form action="" method="">
+            <label for="michel">Pseudo *</label>
+            <input type="password" name="pseudo" />
+            <br />
+
+            <label for="motdepasse">Mot de Passe</label>
+            <input type="password" name="motdepasse" />
+            <br />
+
+            <label for="prenom">Prenom</label>
+            <input type="text" name="prenom" placeholder="Votre prenom" />
+            <br />
+
+            <label for="mail">Email</label>
+            <input type="email" name="mail" />
+            <br />
+
+            <label for="avatar">Avatar</label>
+            <input type="file" name="avatar" />
+            <br />
+
+            <label for="pays">Pays</label>
+            <select name="pays">
+                <optgroup label="Europe">
+                    <option value="france">France</option>
+                    <option value="italie">Italie</option>
+                    <option value="espagne">Espagne</option>
+                </optgroup>
+                <optgroup label="Autre">
+                    <option value="usa">Etats-Unis</option>
+                    <option value="liban">Liban</option>
+                </optgroup>
+            </select>
+            <br />
+
+            <span>Quels sont vos fruits preferes?</span>
+            <br />
+            <input type="checkbox" name="orange" />
+            <label for="orange">Orange</label>
+            <input type="checkbox" name="fraise" />
+            <label for="fraise">Fraise</label>
+            <input type="checkbox" name="poire" />
+            <label for="poire">Poire</label>
+            <br />
+
+            <span>Civilite</span>
+            <br />
+            <input type="radio" id="homme" name="gendre" />
+            <label for="homme">Homme</label>
+            <input type="radio" id="femme" name="gendre" />
+            <label for="femme">Femme</label>
+            <br />
+
+            <label for="ville">Ville</label>
+            <input type="text" name="ville" />
+            <br />
+
+            <label for="postal">Code Postal</label>
+            <input type="number" name="postal" />
+            <br />
+
+            <label for="adresse">Adresse</label>
+            <textarea name="adresse" cols="20" rows="5"></textarea>
+            <br />
+
+            <label for="naissance">Date de Naissance</label>
+            <input type="date" name="naissance" />
+            <br />
+
+            <label for="range">Jauge</label>
+            <input type="range" name="jauge" />
+            <br />
+
+            <label for="telephone">Telephone</label>
+            <input type="tel" name="telephone" pattern="[0-9]{10}" />
+            <br />
+
+            <label for="recherche">Recherche</label>
+            <input type="search" name="recherche" />
+            <br />
+
+            <label for="couleur">Couleur</label>
+            <input type="color" name="couleur" />
+            <br />
+
+            <label for="nom">Nom</label>
+            <input type="text" name="nom" placeholder="test" disabled />
+
+            <br />
+            <input type="submit" name="register" value="s'inscrire" />
+            <input type="reset" name="erase" value="recommencer" />
+        </form>
+    </body>
+</html>

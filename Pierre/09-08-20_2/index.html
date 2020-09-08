@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+            integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>Title</title>
+    </head>
+    <body>
+        <div class="container-fluid" id="fullscreen">
+            <div class="row h-100">
+                <div class="col-1" id="serverBar">
+                    <div class="row justify-content-center">
+                        <div class="btn-group-vertical mt-3" role="group">
+                            <button
+                                type="button"
+                                class="btn btn-secondary mb-2 selected rounded px-0"
+                            >
+                                <strong>5G</strong>
+                            </button>
+                            <button
+                                type="button"
+                                class="btn notSelected rounded"
+                            >
+                                <strong class="text-secondary">4G</strong>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2" id="chanBar">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12 mt-3 px-0">
+                                <h1 class="serverName font-weight-bold">
+                                    Le Slack
+                                </h1>
+                            </div>
+                        </div>
+                        <div class="row align-items-center mb-4">
+                            <div class="online"></div>
+                            <div class="slackGray pl-2">Luc</div>
+                        </div>
+                        <div
+                            class="row justify-content-between align-items-center"
+                        >
+                            <span class="chanList">Channels</span>
+                            <i class="fas fa-plus text-white"></i>
+                        </div>
+                        <div class="row flex-column">
+                            <div class="slackGray">
+                                <p class="m-0">
+                                    <i class="fab fa-slack-hash mr-1"></i>
+                                    general
+                                </p>
+                            </div>
+                            <div class="slackGray">
+                                <p class="m-0">
+                                    <i class="fab fa-slack-hash mr-1"></i> help
+                                </p>
+                            </div>
+                            <div class="current">
+                                <p class="m-0">
+                                    <i class="fab fa-slack-hash mr-1"></i> IRFA
+                                </p>
+                            </div>
+                            <div class="slackGray">
+                                <p class="m-0">
+                                    <i class="fas fa-lock mr-1"></i> Questions
+                                    debiles
+                                </p>
+                            </div>
+                            <div class="slackGray">
+                                <p class="m-0">
+                                    <i class="fas fa-lock mr-1"></i> Memes
+                                </p>
+                            </div>
+                            <div class="slackGray">
+                                <p class="m-0">
+                                    <i class="fas fa-lock mr-1"></i> Concours :
+                                    gagnez 23423 masques FFP2!
+                                </p>
+                            </div>
+                        </div>
+                        <div
+                            class="row justify-content-between align-items-center mt-4"
+                        >
+                            <span class="chanList text-nowrap"
+                                >Direct Messages</span
+                            >
+                            <i class="fas fa-plus text-white"></i>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="online"></div>
+                            <div class="slackGray pl-2">Marc</div>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="online"></div>
+                            <div class="slackGray pl-2">Alain</div>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="online offline"></div>
+                            <div class="slackGray pl-2">Stephanie</div>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="online offline"></div>
+                            <div class="slackGray pl-2">Un autre gars</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col" id="chat">
+                    <div class="container-fluid">
+                        <div class="row align-items-center mt-3 border-bottom">
+                            <i
+                                class="fab fa-slack-hash chanTitle mr-2 mb-1"
+                            ></i>
+                            <h4><strong>general</strong></h4>
+                        </div>
+                        <div class="chatZone pt-3 flex-column">
+                            <div class="message d-flex">
+                                <div>
+                                    <img
+                                        class="pp"
+                                        src="https://picsum.photos/40"
+                                    />
+                                </div>
+                                <div class="ml-3">
+                                    <h3 class="usrname">Marcm</h3>
+                                    <p>
+                                        Hey salut 👋 On vient juste de se creer un <strong>Slack de l'IRFA</strong> 🚀👉 <a href="#">https://slack.com/irfa</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="message d-flex">
+                                <div>
+                                    <img
+                                        class="pp"
+                                        src="https://picsum.photos/40"
+                                    />
+                                </div>
+                                <div class="ml-3">
+                                    <h3 class="usrname">bichette21</h3>
+                                    <p>
+                                        yay! 🤘
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="message d-flex">
+                                <div>
+                                    <img
+                                        class="pp"
+                                        src="https://picsum.photos/40"
+                                    />
+                                </div>
+                                <div class="ml-3">
+                                    <h3 class="usrname">jeanclaude</h3>
+                                    <p>
+                                        Pas mal ! Et pourquoi pas un <span class="text-danger">.jumbotron</span> avec un article sur le Pesto ? 😎
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="message d-flex">
+                                <div>
+                                    <img
+                                        class="pp"
+                                        src="https://picsum.photos/40"
+                                    />
+                                </div>
+                                <div class="ml-3">
+                                    <h3 class="usrname">benjamin</h3>
+                                    <p>
+                                        Heu parce qu'on est pas sur Instagram? 🤓
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="message d-flex">
+                                <div>
+                                    <img
+                                        class="pp"
+                                        src="https://picsum.photos/40"
+                                    />
+                                </div>
+                                <div class="ml-3">
+                                    <h3 class="usrname">Spammeurdu93</h3>
+                                    <p>
+                                        Salut les dev ! Suivez mon Instagram
+                                        <br><br>
+                                        - Plein de photos de pates a la carbonara
+                                        <br><br>
+                                        - Je fais un risotto pas mal aussi 
+                                        <br><br>
+                                        👉 <a href="#">https://instagram.com/risottodu02</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="message d-flex">
+                                <div>
+                                    <img
+                                        class="pp"
+                                        src="https://picsum.photos/40"
+                                    />
+                                </div>
+                                <div class="ml-3">
+                                    <h3 class="usrname">benjamin</h3>
+                                    <p>
+                                        Et voila ca commence....
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="message d-flex">
+                                <div>
+                                    <img
+                                        class="pp"
+                                        src="https://picsum.photos/40"
+                                    />
+                                </div>
+                                <div class="ml-3">
+                                    <h3 class="usrname">jeanclaude</h3>
+                                    <p>
+                                        🤓🤓🤓🤓🤓
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="message d-flex">
+                                <div>
+                                    <img
+                                        class="pp"
+                                        src="https://picsum.photos/40"
+                                    />
+                                </div>
+                                <div class="ml-3">
+                                    <h3 class="usrname">jeanclaude</h3>
+                                    <p>
+                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam enim corporis magnam saepe non provident harum fugiat! Nihil corrupti perferendis veritatis dicta! Nobis alias dolorum nemo mollitia dolorem neque eveniet.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="message d-flex">
+                                <div>
+                                    <img
+                                        class="pp"
+                                        src="https://picsum.photos/40"
+                                    />
+                                </div>
+                                <div class="ml-3">
+                                    <h3 class="usrname">jeanclaude</h3>
+                                    <p>
+                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam enim corporis magnam saepe non provident harum fugiat! Nihil corrupti perferendis veritatis dicta! Nobis alias dolorum nemo mollitia dolorem neque eveniet.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="message d-flex">
+                                <div>
+                                    <img
+                                        class="pp"
+                                        src="https://picsum.photos/40"
+                                    />
+                                </div>
+                                <div class="ml-3">
+                                    <h3 class="usrname">jeanclaude</h3>
+                                    <p>
+                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam enim corporis magnam saepe non provident harum fugiat! Nihil corrupti perferendis veritatis dicta! Nobis alias dolorum nemo mollitia dolorem neque eveniet.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="message d-flex">
+                                <div>
+                                    <img
+                                        class="pp"
+                                        src="https://picsum.photos/40"
+                                    />
+                                </div>
+                                <div class="ml-3">
+                                    <h3 class="usrname">jeanclaude</h3>
+                                    <p>
+                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam enim corporis magnam saepe non provident harum fugiat! Nihil corrupti perferendis veritatis dicta! Nobis alias dolorum nemo mollitia dolorem neque eveniet.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="message d-flex">
+                                <div>
+                                    <img
+                                        class="pp"
+                                        src="https://picsum.photos/40"
+                                    />
+                                </div>
+                                <div class="ml-3">
+                                    <h3 class="usrname">jeanclaude</h3>
+                                    <p>
+                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam enim corporis magnam saepe non provident harum fugiat! Nihil corrupti perferendis veritatis dicta! Nobis alias dolorum nemo mollitia dolorem neque eveniet.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="message d-flex">
+                                <div>
+                                    <img
+                                        class="pp"
+                                        src="https://picsum.photos/40"
+                                    />
+                                </div>
+                                <div class="ml-3">
+                                    <h3 class="usrname">jeanclaude</h3>
+                                    <p>
+                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam enim corporis magnam saepe non provident harum fugiat! Nihil corrupti perferendis veritatis dicta! Nobis alias dolorum nemo mollitia dolorem neque eveniet.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="message d-flex">
+                                <div>
+                                    <img
+                                        class="pp"
+                                        src="https://picsum.photos/40"
+                                    />
+                                </div>
+                                <div class="ml-3">
+                                    <h3 class="usrname">jeanclaude</h3>
+                                    <p>
+                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam enim corporis magnam saepe non provident harum fugiat! Nihil corrupti perferendis veritatis dicta! Nobis alias dolorum nemo mollitia dolorem neque eveniet.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <input
+                                type="text"
+                                class="form-control"
+                                placeholder="Type your message..."
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    </body>
+</html>

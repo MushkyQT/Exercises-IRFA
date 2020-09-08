@@ -1,0 +1,127 @@
+.titre {
+    font-weight: lighter;
+    font-size: 32px;
+}
+
+.card-header {
+    font-size: 21px;
+    background-color: #f4faff;
+    color: #47525d;
+    border-bottom: none;
+}
+
+.card-title {
+    font-size: 47px;
+    font-weight: lighter;
+}
+
+.contact-us {
+    font-size: 34px;
+}
+
+.card-subtitle {
+    font-size: 14px;
+    font-weight: 400;
+    color: #47525d;
+    opacity: 90%;
+}
+
+.faq {
+    font-size: 36px;
+    font-weight: lighter;
+}
+
+.faq-head {
+    font-size: 16px;
+    font-weight: 500;
+    color: #47525d;
+}
+
+.faq-text {
+    font-size: 16px;
+    color: #47525d;
+}
+
+.group {
+    background-color: #f6f9fc;
+    color: #47525d;
+}
+
+.quote {
+    font-size: 21px;
+    color: #3d464d;
+    font-weight: lighter;
+}
+
+.try-last {
+    font-size: 31px;
+    font-weight: lighter;
+}
+
+.source {
+    color: #3d464d;
+    font-size: 16px;
+    font-weight: lighter;
+}
+
+.bv {
+    text-align: center;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    width: 100%;
+    position: absolute;
+    background-color: #99c6f3;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 11px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    margin-top: -31px;
+}
+
+.fa-check {
+    color: #1d81e2;
+    padding-right: 10px;
+    margin-top: 7px;
+    margin-left: 10px;
+}
+
+.bv-head {
+    background-color: #0071e0;
+    color: #ffffff;
+}
+
+.bv-body {
+    background-color: #f4faff;
+}
+
+.btn-in-card {
+    width: 93%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.footerTitle {
+    font-size: 20px;
+    color: #637282;
+    font-weight: 400;
+}
+
+.footer-links > p {
+    font-size: 14px;
+    color: #637282;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 3px;
+}
+
+.social-img {
+    height: 20px;
+    width: 20px;
+}
+
+ul > li {
+    font-size: 14px;
+    color: #47525d;
+    opacity: 90%;
+}

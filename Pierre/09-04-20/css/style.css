@@ -1,0 +1,42 @@
+.monTitre {
+    font-size: 2.5em;
+    font-weight: lighter;
+}
+
+.gras {
+    font-weight: bold;
+}
+
+.monCarre {
+    background-color: #f4f4f4;
+    padding: 45px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.prix {
+    font-size: 1.2em;
+}
+
+.espace {
+    font-weight: lighter;
+    font-size: 0.8em;
+}
+
+.maRow {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.mois {
+    font-weight: normal;
+    font-size: 0.75em;
+}
+
+body {
+    font-family: "open sans", arial, sans-serif;
+}

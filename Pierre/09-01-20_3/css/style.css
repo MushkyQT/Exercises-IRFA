@@ -1,0 +1,45 @@
+#bg-img {
+    height: 190px;
+    width: 191px;
+    background-image: url("../img/img.png");
+    background-repeat: no-repeat;
+    transition: border-radius 1s, filter 0.7s;
+    transition-timing-function: ease;
+}
+
+#bg-img:hover {
+    filter: grayscale();
+    border-radius: 90px;
+}
+
+#pog {
+    height: 191px;
+    transition: transform 0.8s ease-in-out;
+    transform-origin: center -50px;
+}
+
+#pog:hover {
+    transform: rotate(180deg);
+}
+
+#car {
+    height: 250px;
+    transition: 2s;
+    transition-timing-function: ease-out;
+}
+
+#car:hover {
+    transform: translateX(calc(100vw - 900px));
+}
+
+#vroom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+#svg {
+    margin: auto;
+    width: 50%;
+    max-width: 700px;
+}

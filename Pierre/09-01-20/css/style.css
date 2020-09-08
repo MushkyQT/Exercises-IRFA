@@ -1,0 +1,70 @@
+.square {
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.square:hover {
+    box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.3);
+    animation-name: cuteify;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes cuteify {
+    from {
+        border-radius: 0px;
+        font-size: 1em;
+    }
+    to {
+        border-radius: 10px;
+        font-size: 1.3em;
+    }
+}
+
+.blue {
+    background-color: blue;
+    top: 400px;
+}
+
+.red {
+    background-color: red;
+    top: 450px;
+}
+.green {
+    background-color: green;
+    top: 500px;
+}
+.violet {
+    background-color: blueviolet;
+    bottom: 200px;
+}
+.black {
+    background-color: black;
+    left: 100px;
+    bottom: 300px;
+}
+.maroon {
+    background-color: maroon;
+    left: 200px;
+    bottom: 400px;
+}
+.yellow {
+    background-color: yellow;
+    bottom: 400px;
+}
+.pink {
+    background-color: pink;
+    left: 100px;
+    bottom: 500px;
+}
+.orange {
+    background-color: orange;
+    left: 200px;
+    bottom: 600px;
+}

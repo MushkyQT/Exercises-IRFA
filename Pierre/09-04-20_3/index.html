@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>Title</title>
+    </head>
+    <body>
+        <div class="container pt-5">
+            <form action="">
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group mb-0">
+                            <label for="nom">Nom</label>
+                            <input
+                                type="text"
+                                name="nom"
+                                placeholder="Entrer votre nom"
+                                class="form-control"
+                            />
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group mb-0">
+                            <label for="prenom">Prenom</label>
+                            <input
+                                type="text"
+                                name="prenom"
+                                placeholder="Entrer votre prenom"
+                                class="form-control"
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group mb-0">
+                    <label for="mail">Mail</label>
+                    <input
+                        type="email"
+                        name="mail"
+                        placeholder="Entrer votre Mail"
+                        class="form-control"
+                    />
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea
+                        name="message"
+                        class="form-control"
+                        placeholder="Message default lignes"
+                        rows="3"
+                    ></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                    Submit form
+                </button>
+            </form>
+
+            <hr />
+            <hr />
+            <hr />
+            <hr />
+
+            <form action="">
+                <div class="form-group row">
+                    <label for="nom" class="col-2 col-form-label">Nom</label>
+                    <div class="col-10">
+                        <input
+                            type="text"
+                            name="nom"
+                            placeholder="Entrer votre nom"
+                            class="form-control"
+                        />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="prenom" class="col-2 col-form-label"
+                        >Prenom</label
+                    >
+                    <div class="col-10">
+                        <input
+                            type="text"
+                            name="prenom"
+                            placeholder="Entrer votre prenom"
+                            class="form-control"
+                        />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="specialisation" class="col-2 col-form-label"
+                        >Specialisation</label
+                    >
+                    <div class="col-10">
+                        <select name="specialisation" class="form-control">
+                            <option value="html">HTML</option>
+                            <option value="js">JS</option>
+                            <option value="css">CSS</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="mail" class="col-2 col-form-label">Mail</label>
+                    <div class="col-10">
+                        <input
+                            type="email"
+                            name="mail"
+                            placeholder="Entrer votre Mail"
+                            class="form-control"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea
+                        name="message"
+                        placeholder="Message 10 lignes"
+                        class="form-control"
+                        rows="10"
+                    ></textarea>
+                </div>
+                <div class="text-right">
+                    <button type="submit" class="btn btn-primary">
+                        Submit form
+                    </button>
+                </div>
+            </form>
+
+            <hr />
+            <hr />
+            <hr />
+            <hr />
+
+            <form class="needs-validation" novalidate>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="nom">Nom</label>
+                            <input
+                                type="text"
+                                name="nom"
+                                placeholder="Entrer votre nom"
+                                class="form-control"
+                            />
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="prenom">Prenom</label>
+                            <input
+                                type="text"
+                                name="prenom"
+                                placeholder="Entrer votre prenom"
+                                class="form-control"
+                            />
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">@</span>
+                                </div>
+                                <input
+                                    type="text"
+                                    name="username"
+                                    placeholder="Username"
+                                    class="form-control"
+                                    required
+                                />
+                                <div class="invalid-feedback">
+                                    Please choose a username.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="mail">Mail</label>
+                    <input
+                        type="email"
+                        name="mail"
+                        placeholder="Entrer votre Mail"
+                        class="form-control"
+                    />
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea
+                        name="message"
+                        placeholder="Message 10 lignes"
+                        class="form-control"
+                        rows="10"
+                    ></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary mb-3">
+                    Submit form
+                </button>
+            </form>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+        <script>
+            // Example starter JavaScript for disabling form submissions if there are invalid fields
+            (function () {
+                "use strict";
+                window.addEventListener(
+                    "load",
+                    function () {
+                        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                        var forms = document.getElementsByClassName(
+                            "needs-validation"
+                        );
+                        // Loop over them and prevent submission
+                        var validation = Array.prototype.filter.call(
+                            forms,
+                            function (form) {
+                                form.addEventListener(
+                                    "submit",
+                                    function (event) {
+                                        if (form.checkValidity() === false) {
+                                            event.preventDefault();
+                                            event.stopPropagation();
+                                        }
+                                        form.classList.add("was-validated");
+                                    },
+                                    false
+                                );
+                            }
+                        );
+                    },
+                    false
+                );
+            })();
+        </script>
+    </body>
+</html>
