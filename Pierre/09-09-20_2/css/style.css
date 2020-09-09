@@ -1,0 +1,37 @@
+.resume {
+    width: 25vw;
+    height: 35vh;
+    border: solid grey 1px;
+    border-radius: 5px;
+    background-color: aqua;
+    position: absolute;
+    right: -134%;
+    top: -21%;
+    visibility: hidden;
+    z-index: 20;
+}
+
+.maCard {
+    position: relative;
+}
+
+.col-3 {
+    padding: 5px;
+}
+
+.maCard:hover .resume {
+    visibility: visible;
+}
+
+.filtre {
+    height: 100vh;
+    widows: 100vw;
+    background-color: rgba(0, 0, 0, 0.575);
+    position: absolute;
+    z-index: 15;
+    visibility: hidden;
+}
+
+.maCard:hover .filtre {
+    visibility: hidden;
+}
