@@ -225,6 +225,7 @@ iframe {
     right: 0%;
     top: 25%;
 }
+
 .whoIs {
     color: white;
     position: relative;
@@ -305,4 +306,76 @@ iframe {
     position: absolute;
     right: 0%;
     top: 25%;
+}
+
+.contact {
+    color: white;
+    position: relative;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.contactImg {
+    filter: sepia(100%) hue-rotate(180deg) saturate(60%) brightness(60%);
+    background-image: url("../img/contact.jpg");
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -4;
+}
+
+.contact h1 {
+    font-size: 1.9em;
+    font-weight: lighter;
+}
+.contact h1 span {
+    border-bottom: 2px solid white;
+}
+
+.contact p {
+    font-size: 14px;
+}
+
+label {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.form-control {
+    border: 2px solid white;
+    border-radius: initial;
+    background-color: transparent;
+    height: 3.5em;
+}
+
+.contact textarea {
+    resize: none;
+}
+
+.contact button {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 14px;
+    border: none;
+    border-radius: initial;
+    background-color: #4bcaff;
+}
+
+.footer {
+    background-color: #353f47;
+    color: #515f67;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.footer .nav li {
+}
+
+.footer .nav li:not(:first-child):before {
+    padding-left: 10px;
+    padding-right: 10px;
+    content: " | ";
 }
