@@ -38,6 +38,14 @@
     border: 2px solid #4bcaff;
 }
 
+.navbarGroup .hover:hover {
+    color: #4bcaff;
+    padding: 5px 18px 5px 18px;
+    margin: -7px -20px -7px -20px;
+    border: 2px solid #4bcaff;
+    cursor: pointer;
+}
+
 .headline {
     height: 85vh;
 }
@@ -55,12 +63,11 @@
 
 .services {
     background-color: #4bcaff;
-    height: 40vh;
     color: white;
 }
 
 .services h1 {
-    font-size: 30px;
+    font-size: 1.9em;
     font-weight: lighter;
 }
 
@@ -80,10 +87,222 @@
 }
 
 .portfolio h1 {
-    font-size: 30px;
+    font-size: 1.9em;
     font-weight: lighter;
+    color: #515f67;
 }
 
 .portfolio h1 span {
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid #515f67;
+}
+
+.portfolio .navbarGroup {
+    color: #69747b;
+}
+
+.portfolio .current {
+    padding: 2px 14px 2px 14px;
+}
+
+.portfolio .hover:hover {
+    color: #4bcaff;
+    padding: 2px 14px 2px 14px;
+    margin: -4px -16px -4px -16px;
+    border: 2px solid #4bcaff;
+    cursor: pointer;
+}
+
+.bgSquare {
+    height: 255px;
+}
+
+.one {
+    background-image: url("../img/1.png");
+    background-size: cover;
+    background-position: center;
+}
+.two {
+    background-image: url("../img/2.png");
+    background-position: bottom left;
+}
+.thr {
+    background-image: url("../img/3.png");
+    background-position: right;
+}
+.fou {
+    background-image: url("../img/4.jpg");
+    background-size: cover;
+}
+.fiv {
+    background-image: url("../img/5.jpg");
+    background-size: cover;
+    background-position: right;
+}
+.six {
+    background-image: url("../img/6.jpg");
+    background-size: cover;
+    background-position: center;
+}
+.sev {
+    background-image: url("../img/7.jpg");
+    background-position: left;
+}
+.eig {
+    background-image: url("../img/8.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.padTop {
+    padding-top: 30px;
+}
+
+.defaultSection {
+    background-color: #515f67;
+    color: white;
+}
+
+.defaultSection h1 {
+    font-size: 1.9em;
+    font-weight: lighter;
+}
+
+.defaultSection h1 span {
+    border-bottom: 2px solid white;
+}
+
+.defaultSection p {
+    font-size: 14px;
+}
+
+.defaultSection button {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #353f46;
+    border: 2px solid #353f46;
+    padding: 10px 40px 10px 40px;
+}
+
+iframe {
+    filter: grayscale(100%);
+}
+
+.twitter {
+    background-color: #4bcaff;
+    color: white;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.twitter .container {
+    position: relative;
+}
+
+.twitter h1 {
+    font-size: 1.9em;
+    font-weight: lighter;
+}
+
+.twitter h1 span {
+    border-bottom: 2px solid white;
+}
+
+.twitter p {
+    font-size: 1.8em;
+    font-weight: lighter;
+}
+
+.twitter p span {
+    font-weight: 400;
+}
+
+.twitterIcon {
+    background-image: url("../img/twitter.png");
+    background-size: cover;
+    height: 22px;
+    width: 28px;
+    position: absolute;
+    right: 0%;
+    top: 25%;
+}
+.whoIs {
+    color: white;
+    position: relative;
+    padding-bottom: 5%;
+}
+
+.whoIsImg {
+    filter: sepia(100%) hue-rotate(180deg) saturate(60%) brightness(50%);
+    background-image: url("../img/whois.jpg");
+    background-size: cover;
+    background-position-y: 43%;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -4;
+}
+
+.whoIs h1 {
+    font-size: 1.9em;
+    font-weight: lighter;
+}
+.whoIs h1 span {
+    border-bottom: 2px solid white;
+}
+
+.whoIs p {
+    font-size: 14px;
+}
+
+.socials {
+    color: white;
+    font-size: 2em;
+    border: 2px solid white;
+    padding: 15px;
+    margin-right: 18px;
+    opacity: 90%;
+}
+
+.socials:hover {
+    background-color: gray;
+    cursor: pointer;
+}
+
+.testimonials {
+    color: #515f67;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.testimonials .container {
+    position: relative;
+}
+
+.testimonials h1 {
+    font-size: 1.9em;
+    font-weight: lighter;
+}
+
+.testimonials h1 span {
+    border-bottom: 2px solid #515f67;
+}
+
+.testimonials p:first-of-type {
+    font-size: 1.8em;
+    font-weight: lighter;
+}
+
+.walter {
+    color: #4bcaff;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.quoteIcon {
+    background-image: url("../img/quote.png");
+    background-size: cover;
+    height: 22px;
+    width: 28px;
+    position: absolute;
+    right: 0%;
+    top: 25%;
 }
