@@ -371,7 +371,9 @@ label {
     font-weight: 700;
 }
 
-.footer .nav li {
+.footer .nav li:hover {
+    cursor: pointer;
+    color: white;
 }
 
 .footer .nav li:not(:first-child):before {
