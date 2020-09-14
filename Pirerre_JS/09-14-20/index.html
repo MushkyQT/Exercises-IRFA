@@ -7,8 +7,7 @@
         <!-- <button onclick="alert('On est la');">
             Allez viens !
         </button> -->
-
-        <p class="rouge">
+        <!-- <p class="rouge">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
             impedit aliquid, aperiam laborum consequuntur et nostrum maiores
             laudantium consequatur voluptatum est asperiores soluta maxime quia
@@ -16,14 +15,46 @@
             error sit. Corrupti ab dolorem deserunt molestias sint iusto
             reiciendis placeat quis a! Enim, fugiat eos.
         </p>
-
         <button id="btn">Clic clic!</button>
-
         <script type="text/javascript">
             document.getElementById("btn").onclick = function () {
                 document.getElementsByClassName("rouge")[0].innerHTML =
                     "Modified text";
             };
+        </script> -->
+
+        <p id="salut">Salut tout le monde</p>
+
+        <button id="bouton1">Fait quelque chose</button>
+
+        <p id="prenom">Jean-Michel</p>
+
+        <button id="bouton2">Fait autre chose</button>
+
+        <p id="paragrapheVide"></p>
+
+        <button id="bouton3">Magie</button>
+
+        <script>
+            // le bouton 1 change le texte du premier paragraphe
+
+            document.getElementById("bouton1").onclick = function () {
+                document.getElementById("salut").innerHTML =
+                    "Au-revoir a paul et laura uniquement";
+            };
+
+            // le bouton 2 il prend le prenom et il cree la phrase "Salut je m'appelle PRENOM et je n'aime pas mon prenom"
+
+            document.getElementById("bouton2").onclick = function() {
+                document.getElementById("prenom").prepend("Salut je m'appelle ");
+                document.getElementById("prenom").append(" et je n'aime pas mon prenom");
+            }
+
+            // le bouton 3 fasse apparaitre le titre "Magie ! Voila du texte en plus"
+
+            document.getElementById("bouton3").onclick = function() {
+                document.getElementById("paragrapheVide").innerHTML = "Magie ! Voila du texte en plus";
+            }
         </script>
     </body>
 </html>
