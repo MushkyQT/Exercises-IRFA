@@ -24,5 +24,5 @@ document.getElementById("bouton2").onclick = function () {
 
 document.getElementById("bouton3").onclick = function () {
     document.getElementById("paragrapheVide").innerHTML =
-        "<h1>Magie ! Voila du texte en plus</h1>";
+        "<h1 class='rouge'>Magie ! Voila du texte en plus</h1>";
 };
