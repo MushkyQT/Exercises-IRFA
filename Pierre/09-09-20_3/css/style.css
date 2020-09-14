@@ -1,6 +1,7 @@
 .bgImg {
     filter: sepia(100%) hue-rotate(180deg) saturate(60%) brightness(75%);
     background-image: url("../img/wheat.jpg");
+    background-size: cover;
     position: absolute;
     height: 100vh;
     width: 100%;
@@ -350,6 +351,13 @@ label {
     height: 3.5em;
 }
 
+.form-control:focus {
+    border: 2px solid #4bcaff;
+    border-radius: initial;
+    background-color: transparent;
+    box-shadow: none;
+}
+
 .contact textarea {
     resize: none;
 }
@@ -363,6 +371,12 @@ label {
     background-color: #4bcaff;
 }
 
+.contact button:hover {
+    background-color: transparent;
+    border: 2px solid #4bcaff;
+    margin: -2px;
+}
+
 .footer {
     background-color: #353f47;
     color: #515f67;
@@ -371,13 +385,13 @@ label {
     font-weight: 700;
 }
 
-.footer .nav li:hover {
-    cursor: pointer;
-    color: white;
-}
-
 .footer .nav li:not(:first-child):before {
     padding-left: 10px;
     padding-right: 10px;
     content: " | ";
+}
+
+.footer .nav li:hover {
+    cursor: pointer;
+    color: white;
 }
