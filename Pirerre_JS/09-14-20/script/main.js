@@ -26,3 +26,9 @@ document.getElementById("bouton3").onclick = function () {
     document.getElementById("paragrapheVide").innerHTML =
         "<h1 class='rouge'>Magie ! Voila du texte en plus</h1>";
 };
+
+// 4
+
+document.getElementById("bouton4").onclick = function () {
+    document.getElementById("pleinDeTexte").style.display = "none";
+};
