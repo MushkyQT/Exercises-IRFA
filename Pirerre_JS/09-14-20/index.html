@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body>
+        <!-- <button onclick="alert('On est la');">
+            Allez viens !
+        </button> -->
+
+        <p class="rouge">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
+            impedit aliquid, aperiam laborum consequuntur et nostrum maiores
+            laudantium consequatur voluptatum est asperiores soluta maxime quia
+            earum ullam placeat dignissimos adipisci sapiente modi ad corrupti
+            error sit. Corrupti ab dolorem deserunt molestias sint iusto
+            reiciendis placeat quis a! Enim, fugiat eos.
+        </p>
+
+        <button id="btn">Clic clic!</button>
+
+        <script type="text/javascript">
+            document.getElementById("btn").onclick = function () {
+                document.getElementsByClassName("rouge")[0].innerHTML =
+                    "Modified text";
+            };
+        </script>
+    </body>
+</html>
