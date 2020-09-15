@@ -1,20 +1,94 @@
-var buttons = document.getElementsByTagName("button");
-var champ = document.getElementById("champ");
+document.getElementById("egal").onclick = function () {
+    resultat();
+};
 
-for (var i = 0; i < buttons.length; i++) {
-    var problem = "";
-    buttons[i].onclick = function () {
-        if (this.textContent == "C") {
-            champ.value = "";
-            problem = "";
-        } else if (this.textContent == "." || problem.slice(-1) == ".") {
-            champ.value += this.textContent;
-            problem += this.textContent;
-        } else if (this.textContent == "=") {
-            champ.value = eval(problem);
-        } else {
-            champ.value = this.textContent;
-            problem += this.textContent;
-        }
-    };
+document.getElementById("0").onclick = function () {
+    remplirChamp(0);
+};
+
+document.getElementById("1").onclick = function () {
+    remplirChamp(1);
+};
+
+document.getElementById("2").onclick = function () {
+    remplirChamp(2);
+};
+
+document.getElementById("3").onclick = function () {
+    remplirChamp(3);
+};
+
+document.getElementById("4").onclick = function () {
+    remplirChamp(4);
+};
+
+document.getElementById("5").onclick = function () {
+    remplirChamp(5);
+};
+
+document.getElementById("6").onclick = function () {
+    remplirChamp(6);
+};
+
+document.getElementById("7").onclick = function () {
+    remplirChamp(7);
+};
+
+document.getElementById("8").onclick = function () {
+    remplirChamp(8);
+};
+
+document.getElementById("9").onclick = function () {
+    remplirChamp(9);
+};
+
+document.getElementById("e").onclick = function () {
+    effacerTout();
+};
+
+document.getElementById("+").onclick = function () {
+    remplirChamp("+");
+};
+
+document.getElementById("*").onclick = function () {
+    remplirChamp("*");
+};
+
+document.getElementById("-").onclick = function () {
+    remplirChamp("-");
+};
+
+document.getElementById("/").onclick = function () {
+    remplirChamp("/");
+};
+
+document.getElementById(".").onclick = function () {
+    remplirChamp(".");
+};
+
+////////////////////////////////////////////////////
+
+function remplirChamp(touche) {
+    if (egalAppuye == "appuyee") {
+        document.getElementById("champ").value = touche;
+        egalAppuye = "pas appuyee";
+    } else {
+        document.getElementById("champ").value += touche;
+    }
 }
+
+function effacerTout() {
+    document.getElementById("champ").value = "";
+}
+
+var egalAppuye = "pas appuyee";
+
+function resultat() {
+    document.getElementById("champ").value = eval(
+        document.getElementById("champ").value
+    );
+
+    egalAppuye = "appuyee";
+}
+
+////////////////////////////////////////////////////////
