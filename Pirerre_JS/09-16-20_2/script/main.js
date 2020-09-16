@@ -20,16 +20,10 @@
 var lesGens = [
     ["Luc", "34 ans", "comptable"],
     ["Marla", "28 ans", "Professeure"],
-    ["Marc", "52 ans", "Chirurgien obstétriste du bulbe rachidien"],
+    ["Marc", "52 ans", "Chirurgien obstétriste du bulbe rachidien"]
+
 ];
 
 for (var i = 0; i < lesGens.length; i++) {
-    document.getElementById("monBody").innerHTML +=
-        "<td>" +
-        lesGens[i][0] +
-        "</td><td>" +
-        lesGens[i][1] +
-        "</td><td>" +
-        lesGens[i][2] +
-        "</td>";
+    document.getElementById("monBody").innerHTML += "<td>" + lesGens[i][0] + "</td><td>" + lesGens[i][1] + "</td><td>" + lesGens[i][2] + "</td>"
 }
