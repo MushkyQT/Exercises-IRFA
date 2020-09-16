@@ -68,9 +68,15 @@ document.getElementById(".").onclick = function () {
 
 ////////////////////////////////////////////////////
 
+var egalAppuye = "pas appuyee";
+
 function remplirChamp(touche) {
     if (egalAppuye == "appuyee") {
-        document.getElementById("champ").value = touche;
+        if (Number.isInteger(touche)) {
+            document.getElementById("champ").value += touche;
+        } else {
+            document.getElementById("champ").value = touche;
+        }
         egalAppuye = "pas appuyee";
     } else {
         document.getElementById("champ").value += touche;
@@ -80,8 +86,6 @@ function remplirChamp(touche) {
 function effacerTout() {
     document.getElementById("champ").value = "";
 }
-
-var egalAppuye = "pas appuyee";
 
 function resultat() {
     document.getElementById("champ").value = eval(
