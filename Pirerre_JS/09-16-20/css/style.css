@@ -1,0 +1,19 @@
+.rouge {
+    color: red;
+}
+
+#monCarre {
+    margin-top: 20px;
+    height: 150px;
+    width: 150px;
+    border: 2px solid black;
+    background-color: red;
+}
+
+#monCarre2 {
+    margin-top: 20px;
+    height: 150px;
+    width: 150px;
+    border: 2px solid black;
+    background-color: red;
+}
