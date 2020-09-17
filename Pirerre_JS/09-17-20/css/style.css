@@ -1,0 +1,15 @@
+.rouge {
+    color: red;
+}
+
+#color {
+    height: 150px;
+    width: 150px;
+    border: 1px solid black;
+}
+
+#color2 {
+    height: 150px;
+    width: 150px;
+    border: 1px solid black;
+}
