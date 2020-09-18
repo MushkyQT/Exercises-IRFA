@@ -1,0 +1,10 @@
+#color {
+    height: 150px;
+    width: 150px;
+    border: 1px solid black;
+    position: relative;
+}
+
+#main {
+    height: 50vh;
+}

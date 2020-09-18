@@ -1,0 +1,1 @@
+Exo sur plusieurs methodes javascript (Math, Date, setTimeout) et les imports/exports en JS.
