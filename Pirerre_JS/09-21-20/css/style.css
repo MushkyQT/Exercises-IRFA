@@ -1,0 +1,13 @@
+#cercle {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    background-color: teal;
+}
+
+.carre {
+    height: 150px;
+    width: 150px;
+    background-color: thistle;
+    margin: 20px;
+}
