@@ -1,0 +1,159 @@
+/* Header styles */
+#header {
+    background-color: #ede7e7;
+}
+
+#header h1 {
+    font-size: 23px;
+    font-weight: bold;
+}
+
+#header h1 span {
+    color: #f9ab04;
+}
+
+#logoZone {
+    border-left: 4px solid;
+    border-image: linear-gradient(to top, #fda90d, rgba(0, 0, 0, 0)) 1 100%;
+}
+
+.usrMenu {
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: #d2c9ca;
+    margin-top: -15px;
+}
+
+#navbar ul {
+    list-style-type: none;
+    padding: 0;
+    font-size: 1em;
+}
+
+#navbar li {
+    display: inline;
+}
+
+#navbar li:before {
+    content: " | ";
+    padding: 0 10px;
+}
+
+#navbar li:nth-child(1):before {
+    padding: 0;
+    padding-right: 10px;
+}
+
+#navbar li:last-child:after {
+    content: " | ";
+    padding: 0 10px;
+}
+
+/* End header styles */
+
+/* Body styles */
+
+#body {
+    background-color: black;
+}
+
+#body .container {
+    padding: 0;
+}
+
+#bodyImg {
+    border-bottom: 2px solid gray;
+}
+
+.bgImg {
+    width: 100%;
+    height: 30vh;
+    background-image: url(../img/tong-header.png);
+    background-size: cover;
+}
+
+#bodyContent {
+    background-color: white;
+}
+
+#itemList {
+    padding-top: 40px;
+    padding-bottom: 120px;
+}
+
+.shopItem {
+    width: 320px;
+    height: 320px;
+    border: 2px solid gray;
+    position: relative;
+    box-shadow: 2px 2px 6px #ccc;
+}
+
+.shopItem span:nth-child(1) {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.saleTag {
+    display: inline-block;
+    position: relative;
+    padding: 10px 7px 10px 7px;
+    left: 90%;
+    top: 20px;
+    border-radius: 5px;
+    font-weight: 500;
+    color: #fb9412;
+    background-color: #363231;
+}
+
+#item1 {
+    background-image: url(../img/tong1.png);
+    background-size: cover;
+    background-position: center;
+}
+#item2 {
+    background-image: url(../img/tong2.png);
+    background-size: cover;
+    background-position: center;
+}
+
+#item3 {
+    background-image: url(../img/tong3.png);
+    background-size: cover;
+    background-position: center;
+}
+#item4 {
+    background-image: url(../img/tong4.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.prix span:nth-child(1) {
+    font-weight: bold;
+    text-decoration: line-through;
+}
+
+.prix span:nth-child(2) {
+    color: #fcab11;
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.underline {
+    height: 2px;
+    width: 100%;
+    background: linear-gradient(90deg, #ffffff, rgb(60, 60, 60));
+}
+
+.itemSelect {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    height: 100%;
+    padding: 3px 18px 3px 18px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
