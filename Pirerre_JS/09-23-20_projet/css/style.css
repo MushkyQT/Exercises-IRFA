@@ -62,25 +62,21 @@
 }
 
 .panEd {
-    background-size: cover;
     background-position: 35%;
     background-image: url(../img/pick_a_fighter/GA_46.jpg);
 }
 
 .panJoe {
-    background-size: cover;
     background-position: 48%;
     background-image: url(../img/pick_a_fighter/GA_52.JPG);
 }
 
 .panDave {
-    background-size: cover;
     background-position: 38%;
-    background-image: url(../img/pick_a_fighter/fb.JPG);
+    background-image: url(../img/pick_a_fighter/the_boys.jpg);
 }
 
 .panDrew {
-    background-size: cover;
     background-position: 60%;
     background-image: url(../img/pick_a_fighter/GA_49.JPG);
 }
