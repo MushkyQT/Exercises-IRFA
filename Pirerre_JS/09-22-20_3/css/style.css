@@ -37,6 +37,10 @@
     flex: 5;
 }
 
+.open .cercle {
+    border-color: #ffb4a2;
+}
+
 .panneau:last-child {
     border-right: 2px solid black;
 }
