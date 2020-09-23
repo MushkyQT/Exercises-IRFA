@@ -1,0 +1,78 @@
+.container-fluid {
+    height: 100vh;
+}
+
+.cercle {
+    height: 180px;
+    width: 180px;
+    border: 2px solid lightgoldenrodyellow;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    box-shadow: 0px 0px 90px -20px rgba(0, 0, 0, 0.75);
+    background-size: cover;
+}
+
+.hide {
+    visibility: hidden;
+}
+
+.panneau {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-left: 2px solid black;
+    background-position: center;
+    background-size: cover;
+    color: white;
+    flex: 1;
+    transition: flex 1s ease-out;
+}
+
+.open {
+    flex: 3;
+}
+
+.panneau:last-child {
+    border-right: 2px solid black;
+}
+
+.panneau:nth-child(1) {
+    background-image: url(../img/morning_canopy.jpg);
+}
+
+.panneau:nth-child(2) {
+    background-image: url(../img/night_canyon.jpg);
+}
+
+.panneau:nth-child(3) {
+    background-image: url(../img/waterfall-lagoon.jpg);
+}
+
+.panneau:nth-child(4) {
+    background-image: url(../img/rolling_hills.jpg);
+}
+
+.panneau:nth-child(5) {
+    background-image: url(../img/dense_forest.jpg);
+}
+
+.un {
+    background-image: url(../img/person1.png);
+}
+
+.deux {
+    background-image: url(../img/person2.png);
+}
+
+.trois {
+    background-image: url(../img/person3.png);
+}
+
+.quatre {
+    background-image: url(../img/person4.png);
+}
+
+.cinq {
+    background-image: url(../img/person5.png);
+}
