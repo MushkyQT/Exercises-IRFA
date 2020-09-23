@@ -44,7 +44,7 @@
     width: 30px;
 }
 
-#headerInner {
+.maxWidth {
     max-width: 60vw;
     margin: auto;
 }

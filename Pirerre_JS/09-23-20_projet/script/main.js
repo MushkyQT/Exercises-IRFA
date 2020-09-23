@@ -6,4 +6,5 @@ $(".panneau").click(function () {
 function flexIt(selector) {
     $("#" + selector).toggleClass(selector);
     $("#" + selector).toggleClass("flexMe");
+    $("#" + selector).siblings().children().toggle();
 }
