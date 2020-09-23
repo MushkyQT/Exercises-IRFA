@@ -1,0 +1,24 @@
+.cercle {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    background-color: green;
+}
+
+.cercle2 {
+    height: 50px;
+    width: 50px;
+    background-color: blue;
+    transition: width 2s cubic-bezier(0.165, 0.84, 0.44, 1), height 3s cubic-bezier(0.47, 0, 0.745, 0.715);
+}
+
+.modif {
+    height: 900px;
+    width: 500px;
+}
+
+.texte {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
