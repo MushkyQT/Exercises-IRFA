@@ -61,6 +61,30 @@
     border-right: 2px solid #245b5f;
 }
 
+.panEd {
+    background-size: cover;
+    background-position: 35%;
+    background-image: url(../img/pick_a_fighter/GA_46.jpg);
+}
+
+.panJoe {
+    background-size: cover;
+    background-position: 48%;
+    background-image: url(../img/pick_a_fighter/GA_52.JPG);
+}
+
+.panDave {
+    background-size: cover;
+    background-position: 38%;
+    background-image: url(../img/pick_a_fighter/fb.JPG);
+}
+
+.panDrew {
+    background-size: cover;
+    background-position: 60%;
+    background-image: url(../img/pick_a_fighter/GA_49.JPG);
+}
+
 /* .panneau:nth-child(1) {
     background-size: cover;
     background-position: 60%;
@@ -106,35 +130,39 @@
 .cercle {
     height: 180px;
     width: 180px;
-    border: 2px solid #581f3b;
     border-radius: 50%;
     box-shadow: 0px 0px 90px -20px rgba(0, 0, 0, 0.75);
 }
 
 .ed {
+    border: 2px solid #581f3b;
     background-size: 700px;
     background-position: 0% 35%;
     background-image: url(../img/milk_boys.jpg);
 }
 
 .joe {
+    border: 2px solid pink;
     background-size: 750px;
     background-position: 35% 22%;
     background-image: url(../img/milk_boys.jpg);
 }
 
 .dave {
+    border: 2px solid #581f3b;
     background-size: 720px;
     background-position: 59% 31%;
     background-image: url(../img/milk_boys.jpg);
 }
 
 .drew {
+    border: 2px solid pink;
     background-size: 740px;
     background-position: 89% 34%;
     background-image: url(../img/milk_boys.jpg);
 }
 
 .flexMe {
+    background-size: cover;
     flex: 5;
 }
