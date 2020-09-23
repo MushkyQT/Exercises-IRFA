@@ -61,7 +61,7 @@
     font-family: "Baloo Tammudu 2", cursive;
     text-transform: uppercase;
     text-shadow: #ffb4a2 1px 0 10px;
-    transition: all 2s ease-in-out;
+    transition: all 1.5s ease-in-out;
 }
 
 .panneau:last-child {
