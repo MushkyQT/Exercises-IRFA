@@ -1,0 +1,140 @@
+#navbar {
+}
+
+#header {
+    background-size: cover;
+    background-image: url(../img/full_zaba.png);
+    height: calc(100vh - 106px);
+}
+
+#body {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-image: url(../img/vibey_bust.png);
+    height: 100vh;
+}
+
+#navbar nav img {
+    width: 80px;
+    height: 80px;
+}
+
+.navbar {
+    background-color: #472b41 !important;
+}
+
+.navbar-brand {
+    font-size: 1.9em;
+    font-family: "Amatic SC", cursive;
+}
+
+.nav {
+    font-family: "Handlee", cursive;
+    font-size: 1.1em;
+    color: white;
+}
+
+.nav a {
+    color: inherit;
+}
+
+.medallion {
+    height: 30px;
+    width: 30px;
+}
+
+#headerInner {
+    max-width: 60vw;
+    margin: auto;
+}
+
+.panneau {
+    border-left: 2px solid #245b5f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+.panneau:last-child {
+    border-right: 2px solid #245b5f;
+}
+
+/* .panneau:nth-child(1) {
+    background-size: cover;
+    background-position: 60%;
+    background-image: url(../img/pick_a_fighter/GA_49.JPG);
+}
+.panneau:nth-child(2) {
+    background-size: cover;
+    background-position: 38%;
+    background-image: url(../img/pick_a_fighter/fb.JPG);
+}
+.panneau:nth-child(3) {
+    background-size: cover;
+    background-position: 48%;
+    background-image: url(../img/pick_a_fighter/GA_52.JPG);
+}
+.panneau:nth-child(4) {
+    background-size: cover;
+    background-position: 35%;
+    background-image: url(../img/pick_a_fighter/GA_46.jpg);
+} */
+
+/* .panneau:nth-child(1) {
+    background-size: cover;
+    background-position: 0%;
+    background-image: url(../img/milk_boys.jpg);
+}
+.panneau:nth-child(2) {
+    background-size: cover;
+    background-position: 35%;
+    background-image: url(../img/milk_boys.jpg);
+}
+.panneau:nth-child(3) {
+    background-size: cover;
+    background-position: 56%;
+    background-image: url(../img/milk_boys.jpg);
+}
+.panneau:nth-child(4) {
+    background-size: cover;
+    background-position: 90%;
+    background-image: url(../img/milk_boys.jpg);
+} */
+
+.cercle {
+    height: 180px;
+    width: 180px;
+    border: 2px solid #581f3b;
+    border-radius: 50%;
+    box-shadow: 0px 0px 90px -20px rgba(0, 0, 0, 0.75);
+}
+
+.ed {
+    background-size: 700px;
+    background-position: 0% 35%;
+    background-image: url(../img/milk_boys.jpg);
+}
+
+.joe {
+    background-size: 750px;
+    background-position: 35% 22%;
+    background-image: url(../img/milk_boys.jpg);
+}
+
+.dave {
+    background-size: 720px;
+    background-position: 59% 31%;
+    background-image: url(../img/milk_boys.jpg);
+}
+
+.drew {
+    background-size: 740px;
+    background-position: 89% 34%;
+    background-image: url(../img/milk_boys.jpg);
+}
+
+.flexMe {
+    flex: 5;
+}
