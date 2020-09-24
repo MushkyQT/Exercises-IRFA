@@ -26,6 +26,10 @@
     font-family: "Amatic SC", cursive;
 }
 
+.navbar-brand:hover span {
+    color: #efa10a;
+}
+
 .nav {
     font-family: "Amatic SC", cursive;
     font-size: 1.5em;
@@ -34,6 +38,10 @@
 
 .nav a {
     color: inherit;
+}
+
+.nav a:hover {
+    color: #efa10a;
 }
 
 .maxWidth {
@@ -185,22 +193,18 @@
     visibility: hidden;
 }
 
-/* .panEd {
-    background-position: 35%;
-    background-image: url(../img/pick_a_fighter/GA_46.jpg);
+.slider {
+    font-family: "Montserrat", sans-serif;
+    text-shadow: 1px 1px #efa10a;
+    color: #a46acb;
+    display: none;
 }
 
-.panJoe {
-    background-position: 48%;
-    background-image: url(../img/pick_a_fighter/GA_52.JPG);
+.slider span {
+    color: #57d3a8;
+    text-shadow: 1px 1px #a979d4;
 }
 
-.panDave {
-    background-position: 38%;
-    background-image: url(../img/pick_a_fighter/the_boys.jpg);
+.slid {
+    display: initial;
 }
-
-.panDrew {
-    background-position: 60%;
-    background-image: url(../img/pick_a_fighter/GA_49.JPG);
-} */

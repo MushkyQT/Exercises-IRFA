@@ -1,3 +1,9 @@
+$(window).scroll(function () {
+    if ($(window).scrollTop() > ($("#header").height() + $("#navbar").height()) / 2) {
+        $(".slider").addClass("slid");
+    }
+});
+
 $(".panneau").click(function () {
     $(this).toggleClass("flexMe");
     $(this).children("span").toggleClass("hideMe");
