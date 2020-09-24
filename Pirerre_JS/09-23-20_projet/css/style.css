@@ -85,12 +85,40 @@
     visibility: hidden;
     font-family: "Montserrat", sans-serif;
     transition: all 1s;
+    opacity: 0;
+}
+
+.panneau > span {
+    font-family: "Amatic SC", cursive;
+    text-shadow: 2px 3px #245b5f;
+    color: #efa10a;
+    position: absolute;
+    top: 40vh;
+    transform: translateY(-100%);
+    opacity: 0;
+    font-size: 4em;
+    transition: all 1.5s ease-out;
+}
+
+.panneau > p {
+    font-family: "Montserrat", sans-serif;
+    text-shadow: 2px 3px #581f3b;
+    color: #efa10a;
+    position: absolute;
+    padding-left: 30px;
+    padding-right: 30px;
+    text-align: center;
+    top: 55vh;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 2s;
 }
 
 .panneau:hover > h1 {
     visibility: visible;
     top: 43vh;
-    font-size: 1.4em;
+    font-size: 1.2em;
+    opacity: 100%;
 }
 
 .panneau:nth-of-type(1) .cercle {
@@ -135,6 +163,26 @@
     visibility: visible;
     top: 30vh;
     font-size: 2em;
+    opacity: 100%;
+}
+
+.flexMe:hover h1 {
+    top: 30vh;
+    font-size: 2em;
+}
+
+.flexMe > span {
+    transform: translateY(0%);
+    opacity: 100%;
+}
+
+.flexMe > p {
+    transform: translateY(0%);
+    opacity: 100%;
+}
+
+.hideMe {
+    visibility: hidden;
 }
 
 /* .panEd {
