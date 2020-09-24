@@ -1,10 +1,6 @@
 $(".panneau").click(function () {
-    var myElement = $(this).attr("id");
-    flexIt(myElement);
+    $(this).toggleClass("flexMe");
+    $(this).siblings().removeClass("flexMe");
+    $(this).children(".pannelInfo").toggleClass("active");
+    $(this).siblings().children(".pannelInfo").removeClass("active");
 });
-
-function flexIt(selector) {
-    $("#" + selector).toggleClass(selector);
-    $("#" + selector).toggleClass("flexMe");
-    $("#" + selector).siblings().children().toggle();
-}

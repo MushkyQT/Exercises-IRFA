@@ -1,6 +1,3 @@
-#navbar {
-}
-
 #header {
     background-size: cover;
     background-image: url(../img/full_zaba.png);
@@ -30,18 +27,13 @@
 }
 
 .nav {
-    font-family: "Handlee", cursive;
-    font-size: 1.1em;
+    font-family: "Amatic SC", cursive;
+    font-size: 1.5em;
     color: white;
 }
 
 .nav a {
     color: inherit;
-}
-
-.medallion {
-    height: 30px;
-    width: 30px;
 }
 
 .maxWidth {
@@ -54,6 +46,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 1s;
+    position: relative;
     flex: 1;
 }
 
@@ -61,7 +55,82 @@
     border-right: 2px solid #245b5f;
 }
 
-.panEd {
+.panneau:hover {
+    backdrop-filter: sepia(70%);
+}
+
+.panneau:hover .cercle {
+    filter: grayscale(0%);
+}
+
+.cercle {
+    border: 2px solid #581f3b;
+    height: 180px;
+    width: 180px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 90px -20px rgba(0, 0, 0, 0.75);
+    position: relative;
+    transition: all 1s;
+    z-index: 1;
+    top: -15%;
+    filter: grayscale(100%);
+}
+
+.ed {
+    background-size: 700px;
+    background-position: 0% 35%;
+    background-image: url(../img/milk_boys.jpg);
+}
+
+.joe {
+    background-size: 750px;
+    background-position: 35% 22%;
+    background-image: url(../img/milk_boys.jpg);
+}
+
+.dave {
+    background-size: 720px;
+    background-position: 59% 31%;
+    background-image: url(../img/milk_boys.jpg);
+}
+
+.drew {
+    background-size: 740px;
+    background-position: 89% 34%;
+    background-image: url(../img/milk_boys.jpg);
+}
+
+.flexMe {
+    background-size: cover;
+    backdrop-filter: sepia(70%);
+    flex: 5;
+}
+
+.flexMe .cercle {
+    height: 200px;
+    width: 200px;
+    top: -30%;
+    filter: grayscale(0%);
+    border: 2px solid rgba(239, 161, 10, 0.5);
+}
+
+.pannelInfo {
+    display: none;
+    color: white;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    top: 35%;
+    z-index: 0;
+    transition: all 1s;
+}
+
+.active {
+    display: visible;
+}
+
+/* .panEd {
     background-position: 35%;
     background-image: url(../img/pick_a_fighter/GA_46.jpg);
 }
@@ -79,86 +148,4 @@
 .panDrew {
     background-position: 60%;
     background-image: url(../img/pick_a_fighter/GA_49.JPG);
-}
-
-/* .panneau:nth-child(1) {
-    background-size: cover;
-    background-position: 60%;
-    background-image: url(../img/pick_a_fighter/GA_49.JPG);
-}
-.panneau:nth-child(2) {
-    background-size: cover;
-    background-position: 38%;
-    background-image: url(../img/pick_a_fighter/fb.JPG);
-}
-.panneau:nth-child(3) {
-    background-size: cover;
-    background-position: 48%;
-    background-image: url(../img/pick_a_fighter/GA_52.JPG);
-}
-.panneau:nth-child(4) {
-    background-size: cover;
-    background-position: 35%;
-    background-image: url(../img/pick_a_fighter/GA_46.jpg);
 } */
-
-/* .panneau:nth-child(1) {
-    background-size: cover;
-    background-position: 0%;
-    background-image: url(../img/milk_boys.jpg);
-}
-.panneau:nth-child(2) {
-    background-size: cover;
-    background-position: 35%;
-    background-image: url(../img/milk_boys.jpg);
-}
-.panneau:nth-child(3) {
-    background-size: cover;
-    background-position: 56%;
-    background-image: url(../img/milk_boys.jpg);
-}
-.panneau:nth-child(4) {
-    background-size: cover;
-    background-position: 90%;
-    background-image: url(../img/milk_boys.jpg);
-} */
-
-.cercle {
-    height: 180px;
-    width: 180px;
-    border-radius: 50%;
-    box-shadow: 0px 0px 90px -20px rgba(0, 0, 0, 0.75);
-}
-
-.ed {
-    border: 2px solid #581f3b;
-    background-size: 700px;
-    background-position: 0% 35%;
-    background-image: url(../img/milk_boys.jpg);
-}
-
-.joe {
-    border: 2px solid pink;
-    background-size: 750px;
-    background-position: 35% 22%;
-    background-image: url(../img/milk_boys.jpg);
-}
-
-.dave {
-    border: 2px solid #581f3b;
-    background-size: 720px;
-    background-position: 59% 31%;
-    background-image: url(../img/milk_boys.jpg);
-}
-
-.drew {
-    border: 2px solid pink;
-    background-size: 740px;
-    background-position: 89% 34%;
-    background-image: url(../img/milk_boys.jpg);
-}
-
-.flexMe {
-    background-size: cover;
-    flex: 5;
-}
