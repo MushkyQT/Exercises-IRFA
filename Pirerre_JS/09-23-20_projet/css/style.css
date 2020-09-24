@@ -56,7 +56,7 @@
 }
 
 .panneau:hover {
-    backdrop-filter: sepia(70%);
+    backdrop-filter: sepia(60%);
 }
 
 .panneau:hover .cercle {
@@ -76,25 +76,42 @@
     filter: grayscale(100%);
 }
 
-.ed {
+.panneau > h1 {
+    color: #efa10a;
+    text-shadow: 2px 3px #581f3b;
+    position: absolute;
+    font-size: 1em;
+    top: 30vh;
+    visibility: hidden;
+    font-family: "Montserrat", sans-serif;
+    transition: all 1s;
+}
+
+.panneau:hover > h1 {
+    visibility: visible;
+    top: 43vh;
+    font-size: 1.4em;
+}
+
+.panneau:nth-of-type(1) .cercle {
     background-size: 700px;
     background-position: 0% 35%;
     background-image: url(../img/milk_boys.jpg);
 }
 
-.joe {
+.panneau:nth-of-type(2) .cercle {
     background-size: 750px;
     background-position: 35% 22%;
     background-image: url(../img/milk_boys.jpg);
 }
 
-.dave {
+.panneau:nth-of-type(3) .cercle {
     background-size: 720px;
     background-position: 59% 31%;
     background-image: url(../img/milk_boys.jpg);
 }
 
-.drew {
+.panneau:nth-of-type(4) .cercle {
     background-size: 740px;
     background-position: 89% 34%;
     background-image: url(../img/milk_boys.jpg);
@@ -102,7 +119,7 @@
 
 .flexMe {
     background-size: cover;
-    backdrop-filter: sepia(70%);
+    backdrop-filter: sepia(50%);
     flex: 5;
 }
 
@@ -114,20 +131,10 @@
     border: 2px solid rgba(239, 161, 10, 0.5);
 }
 
-.pannelInfo {
-    display: none;
-    color: white;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    text-align: center;
-    top: 35%;
-    z-index: 0;
-    transition: all 1s;
-}
-
-.active {
-    display: visible;
+.flexMe h1 {
+    visibility: visible;
+    top: 30vh;
+    font-size: 2em;
 }
 
 /* .panEd {
