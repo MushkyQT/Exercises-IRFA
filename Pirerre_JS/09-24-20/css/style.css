@@ -1,0 +1,21 @@
+.espaceVide {
+    padding: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4em;
+    font-weight: bolder;
+}
+
+.divRouge {
+    color: white;
+    font-size: 1.2em;
+    transform: translateX(-200%);
+    transition: transform 1s, font-size 1s;
+}
+
+.visible {
+    transform: translateX(0%);
+    font-size: 2em;
+    background-color: orangered;
+}
