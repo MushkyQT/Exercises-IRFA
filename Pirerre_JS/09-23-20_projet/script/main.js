@@ -1,5 +1,4 @@
 $(window).scroll(function () {
-    $(".panneau").removeClass("flexMe");
     if ($(window).scrollTop() > ($("#header").height() + $("#navbar").height()) / 2) {
         $(".slider").addClass("slid");
         $("#body").addClass("bodySlid");
