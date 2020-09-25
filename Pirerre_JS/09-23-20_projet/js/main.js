@@ -25,18 +25,12 @@ $(".panneau").click(function () {
 });
 
 $(".fa-arrow-left").click(function () {
-    var current = $(this).siblings("img").find(".visible");
-    var prev = current.prev();
+    var current = $(this).siblings(".card-img-top").find(".visible");
     current.removeClass("visible");
-    if (prev.length > 0) {
-        prev.addClass("visible");
-    } else {
-        current.siblings("img").last().addClass("visible");
-    }
 });
 
 $(".fa-arrow-right").click(function () {
-    var current = $(this).siblings("img").find(".visible");
+    var current = $(this).siblings(".card-img-top").find(".visible");
     var next = current.next();
     current.removeClass("visible");
     if (next.length > 0) {
