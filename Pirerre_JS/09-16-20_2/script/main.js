@@ -22,9 +22,9 @@
 // avec n'importe quel tableau du meme format qu'on lui passe
 
 function remplirLeTableau(tab) {
-    document.getElementById("monBody").innerHTML = ""
+    document.getElementById("monBody").innerHTML = "";
     for (var i = 0; i < tab.length; i++) {
-        document.getElementById("monBody").innerHTML += "<tr><td>" + tab[i][0] + "</td><td>" + tab[i][1] + "</td><td>" + tab[i][2] + "</td></tr>"
+        document.getElementById("monBody").innerHTML += "<tr><td>" + tab[i][0] + "</td><td>" + tab[i][1] + "</td><td>" + tab[i][2] + "</td></tr>";
     }
 }
 
@@ -34,8 +34,7 @@ var lesGens = [
     ["Marc", "52 ans", "Chirurgien obstétriste du bulbe rachidien"],
     ["Marcouille", "55 ans", "Bulbe rachidien"],
     ["Marcette", "544 ans", "Chirurgien du bulbe rachidien"],
-    ["Marco", "39 ans", "Obstétriste du bulbe rachidien"]
-
+    ["Marco", "39 ans", "Obstétriste du bulbe rachidien"],
 ];
 
 var lesAutresGens = [
@@ -46,8 +45,7 @@ var lesAutresGens = [
     ["Pascaline", "52 ans", "Chirurgien obstétriste du bulbe rachidien"],
     ["Maxime", "52 ans", "Dentiste"],
     ["Lucienne", "52 ans", "Plasticienne"],
-    ["Claudio", "52 ans", "Acteur"]
-
+    ["Claudio", "52 ans", "Acteur"],
 ];
 
 var encoreDesAutresGens = [
@@ -58,19 +56,58 @@ var encoreDesAutresGens = [
     ["Sophie", "67 ans", "Chirurgien obstétriste du bulbe rachidien"],
     ["Patricia", "22 ans", "Couturiere"],
     ["Mael", "35 ans", "Dirige une secte"],
-    ["Bastien", "52 ans", "Plombier"]
-
+    ["Bastien", "52 ans", "Plombier"],
 ];
 
-document.getElementById("lesGens").onclick = function() {
+var lesGensAjoutable = [
+    ["Francois", "14 ans", "Ministre de l'interieur"],
+    ["Jean-Pasteque", "270 ans", "Ministre de la jeunesse et des sports"],
+];
+
+document.getElementById("lesGens").onclick = function () {
     remplirLeTableau(lesGens);
-}
-document.getElementById("lesAutresGens").onclick = function() {
+};
+document.getElementById("lesAutresGens").onclick = function () {
     remplirLeTableau(lesAutresGens);
-}
-document.getElementById("encoreDesAutresGens").onclick = function() {
+};
+document.getElementById("encoreDesAutresGens").onclick = function () {
     remplirLeTableau(encoreDesAutresGens);
+};
+
+function rempliLeTroisiemeTableau(tabAuBonFormat) {
+    document.getElementById("monBody2").innerHTML = "";
+    for (var i = 0; i < tabAuBonFormat.length; i++) {
+        document.getElementById("monBody2").innerHTML +=
+            "<tr><td>" +
+            tabAuBonFormat[i][0] +
+            "</td><td>" +
+            tabAuBonFormat[i][1] +
+            "</td><td>" +
+            tabAuBonFormat[i][2] +
+            "</td><td><button id='" +
+            i +
+            "' class='btn btn-danger'>Supprimer</button></td></tr>";
+    }
+    $(".ajouterDesGens").click(function () {
+        var indexDeLaPersonne = $(this).attr("sonIndex");
+        var personneAAjouter = lesGensAjoutable[indexDeLaPersonne];
+        tabAuBonFormat.push(personneAAjouter);
+        rempliLeTroisiemeTableau(tabAuBonFormat);
+    });
+    $(".btn-danger").click(function () {
+        var pos = $(this).attr("id");
+        tabAuBonFormat.splice(pos, 1);
+        rempliLeTroisiemeTableau(tabAuBonFormat);
+    });
 }
+
+rempliLeTroisiemeTableau(lesGens);
+
+// $(".btn-danger").click(function () {
+//     var pos = $(this).parent().parent().prevAll().length;
+//     lesGens.splice(pos, 1);
+//     rempliLeTroisiemeTableau(lesGens);
+// });
 
 // for (var i = 0; i < lesGens.length; i++) {
 //     document.getElementById("monBody").innerHTML += "<tr><td>" + lesGens[i][0] + "</td><td>" + lesGens[i][1] + "</td><td>" + lesGens[i][2] + "</td></tr>"

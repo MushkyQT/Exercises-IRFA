@@ -4,14 +4,8 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css"
-        />
-        <link
-            rel="stylesheet"
-            href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
-        />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" />
         <link rel="stylesheet" href="css/style.css" />
         <title>Title</title>
     </head>
@@ -29,6 +23,20 @@
             <button id="lesGens" class="btn btn-primary">Tableau 1</button>
             <button id="lesAutresGens" class="btn btn-primary">Tableau 2</button>
             <button id="encoreDesAutresGens" class="btn btn-primary">Tableau 3</button>
+
+            <table class="table table-dark table-striped mt-3">
+                <thead>
+                    <th>Prenom</th>
+                    <th>Age</th>
+                    <th>Profession</th>
+                    <th>les boutons</th>
+                </thead>
+                <tbody id="monBody2"></tbody>
+            </table>
+
+            <p>Cliquez ici pour ajouter Francois au tableau</p>
+            <button class="btn btn-primary ajouterDesGens" sonIndex="0">clic clic</button>
+            <button class="btn btn-primary ajouterDesGens" sonIndex="1">clic clic clic</button>
         </div>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
