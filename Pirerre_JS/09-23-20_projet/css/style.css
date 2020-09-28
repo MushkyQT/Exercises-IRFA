@@ -254,3 +254,66 @@
 .visible {
     display: block;
 }
+
+.cardBtn {
+    color: rgb(255, 160, 176);
+    text-shadow: 1px 1px #0ac1ef;
+    background-color: #00ffab;
+}
+
+.cardBtn:hover {
+    animation: glowing 400ms infinite;
+}
+
+@keyframes glowing {
+    0% {
+        color: blue;
+        text-shadow: -1px 1px #c938ce;
+        background-color: #fffb00;
+    }
+    25% {
+        text-shadow: 1px -1px #38ce38;
+        background-color: #00ffe6;
+    }
+    50% {
+        color: indianred;
+        text-shadow: -1px 1px #c938ce;
+        background-color: #00ffab;
+    }
+    75% {
+        color: steelblue;
+        text-shadow: 1px -1px #38ce38;
+        background-color: #e7dee6;
+    }
+    100% {
+        text-shadow: -1px -1px #47ece4;
+        background-color: #fffb00;
+    }
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.quant {
+    display: flex;
+}
+
+.quant input {
+    width: 40px;
+}
+
+.openCart {
+    position: fixed;
+    right: 2%;
+    bottom: 2%;
+    z-index: 20;
+}
