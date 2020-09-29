@@ -343,9 +343,9 @@ input[type="number"] {
 }
 
 .openCart {
+    position: absolute;
     opacity: 0%;
     bottom: -100px;
-    overflow: hidden;
     transition: all 1s ease-out;
 }
 
