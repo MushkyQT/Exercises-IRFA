@@ -61,13 +61,56 @@ $(".plus").click(function () {
     $(this).prev().val(tmp);
 });
 
+var products = [
+    ["dreamland", 10],
+    ["zaba", 6],
+    ["htbahb", 8],
+    ["leaflings", 2],
+    ["glass animals", 2],
+    ["cocoa hooves", 2],
+    ["tangerine tee", 24],
+    ["dave casette", 11],
+];
+
 var myCart = [];
 
+$(".addCart").each(function (i) {
+    $(this).attr("id", i);
+});
+
 $(".addCart").click(function () {
-    var tmp = [$(this).parent().siblings("h5").html(), parseInt($(this).siblings(".quantInput").val())];
-    myCart.push(tmp);
+    var productId = $(this).attr("id");
+    var product = products[productId];
+    var productName = product[0];
+    var productPrice = product[1];
+    var quantity = parseInt($(this).prev().prev().val());
+    var subTotal = productPrice * quantity;
+    var firstPurchase = true;
+
+    var addProduct = [productName, productPrice, quantity, subTotal];
+
+    for (i = 0; i < myCart.length; i++) {
+        var current = myCart[i];
+        if (current.includes(productName)) {
+            firstPurchase = false;
+            var oldQuant = current[2];
+            var newQuant = oldQuant + quantity;
+            var newSubTotal = newQuant * productPrice;
+            current[2] = newQuant;
+            current[3] = newSubTotal;
+            myCart[i] = current;
+        }
+    }
+
+    if (firstPurchase == true) {
+        myCart.push(addProduct);
+    }
 });
 
 $(".openCart").click(function () {
-    $(".modal-body").html(myCart.join("<br/>"));
+    var tmp;
+    for (i = 0; i < myCart.length; i++) {
+        tmp += "<tr><th>" + myCart[i][0] + "</th><th>" + myCart[i][1] + "</th><th>" + myCart[i][2] + "</th><th>" + myCart[i][3] + "</th></tr>";
+    }
+    $("#cartBody").html(tmp);
 });

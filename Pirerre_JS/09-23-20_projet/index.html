@@ -88,19 +88,27 @@
         </div>
         <div class="container-fluid" id="body">
             <button class="openCart cardBtn" data-toggle="modal" data-target="#cartModal">Check Cart</button>
-            <div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="cartModal" tabindex="-1" role="dialog">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
+                            <h5 class="modal-title">My Cart</h5>
+                            <button type="button" class="close" data-dismiss="modal"></button>
                         </div>
-                        <div class="modal-body">...</div>
+                        <div class="modal-body">
+                            <table class="table">
+                                <thead>
+                                    <th>Product:</th>
+                                    <th>Price:</th>
+                                    <th>QTY</th>
+                                    <th>Total:</th>
+                                </thead>
+                                <tbody id="cartBody"></tbody>
+                            </table>
+                        </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
+                            <button type="button" class="btn btn-primary">Checkout</button>
                         </div>
                     </div>
                 </div>
@@ -156,7 +164,7 @@
                         <img class="card-img-top" src="./img/milk_boys.jpg" />
                         <img class="card-img-top" src="./img/vibey_bust.png" />
                         <div class="card-body">
-                            <h5 class="card-title">Dreamland</h5>
+                            <h5 class="card-title">How to Be a Human Being</h5>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                             <div class="quant justify-content-center">
                                 <button type="button" class="btn cardBtn minus">-</button>
@@ -176,7 +184,7 @@
                         <img class="card-img-top" src="./img/milk_boys.jpg" />
                         <img class="card-img-top" src="./img/vibey_bust.png" />
                         <div class="card-body">
-                            <h5 class="card-title">Zaba</h5>
+                            <h5 class="card-title">Leaflings</h5>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                             <div class="quant justify-content-center">
                                 <button type="button" class="btn cardBtn minus">-</button>
@@ -192,12 +200,12 @@
                     <div class="card">
                         <i class="fas fa-arrow-left"></i>
                         <i class="fas fa-arrow-right"></i>
-                        <img class="card-img-top visible" src="./img/products/your_love_small.jpg" />
+                        <img class="card-img-top visible" src="./img/products/zaba_small.jpg" />
                         <img class="card-img-top" src="./img/grey-seed.gif" />
                         <img class="card-img-top" src="./img/milk_boys.jpg" />
                         <img class="card-img-top" src="./img/vibey_bust.png" />
                         <div class="card-body">
-                            <h5 class="card-title">Dreamland</h5>
+                            <h5 class="card-title">Glass Animals</h5>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                             <div class="quant justify-content-center">
                                 <button type="button" class="btn cardBtn minus">-</button>
@@ -212,12 +220,12 @@
                     <div class="card">
                         <i class="fas fa-arrow-left"></i>
                         <i class="fas fa-arrow-right"></i>
-                        <img class="card-img-top visible" src="./img/products/zaba_small.jpg" />
+                        <img class="card-img-top visible" src="./img/products/your_love_small.jpg" />
                         <img class="card-img-top" src="./img/grey-seed.gif" />
                         <img class="card-img-top" src="./img/milk_boys.jpg" />
                         <img class="card-img-top" src="./img/vibey_bust.png" />
                         <div class="card-body">
-                            <h5 class="card-title">Zaba</h5>
+                            <h5 class="card-title">Cocoa Hooves</h5>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                             <div class="quant justify-content-center">
                                 <button type="button" class="btn cardBtn minus">-</button>
@@ -233,12 +241,12 @@
                     <div class="card">
                         <i class="fas fa-arrow-left"></i>
                         <i class="fas fa-arrow-right"></i>
-                        <img class="card-img-top visible" src="./img/products/your_love_small.jpg" />
+                        <img class="card-img-top visible" src="./img/vibey_bust.png" />
                         <img class="card-img-top" src="./img/grey-seed.gif" />
                         <img class="card-img-top" src="./img/milk_boys.jpg" />
                         <img class="card-img-top" src="./img/vibey_bust.png" />
                         <div class="card-body">
-                            <h5 class="card-title">Dreamland</h5>
+                            <h5 class="card-title">White Tangerine</h5>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                             <div class="quant justify-content-center">
                                 <button type="button" class="btn cardBtn minus">-</button>
@@ -253,12 +261,12 @@
                     <div class="card">
                         <i class="fas fa-arrow-left"></i>
                         <i class="fas fa-arrow-right"></i>
-                        <img class="card-img-top visible" src="./img/products/zaba_small.jpg" />
+                        <img class="card-img-top visible" src="./img/milk_boys.jpg" />
                         <img class="card-img-top" src="./img/grey-seed.gif" />
                         <img class="card-img-top" src="./img/milk_boys.jpg" />
                         <img class="card-img-top" src="./img/vibey_bust.png" />
                         <div class="card-body">
-                            <h5 class="card-title">Zaba</h5>
+                            <h5 class="card-title">Dreamland Dave Blue Casette</h5>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                             <div class="quant justify-content-center">
                                 <button type="button" class="btn cardBtn minus">-</button>

@@ -5,6 +5,7 @@
 }
 
 #body {
+    box-shadow: inset 0px 1px 15px 0px rgba(36, 91, 95, 0.75);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 30%, 30%, 100%;
@@ -233,10 +234,12 @@
 }
 
 .fas {
+    color: #00ffe6;
+    text-shadow: 1px 1px #fbff21;
     font-size: 2em;
     position: absolute;
     top: 17%;
-    transition: all 200ms;
+    transition: all 250ms;
 }
 
 .fa-arrow-left {
@@ -248,7 +251,8 @@
 }
 
 .fas:hover {
-    text-shadow: -1px -1px #efa10a;
+    color: #fbff21;
+    text-shadow: 1px 1px #00ffe6;
     cursor: pointer;
 }
 
@@ -264,16 +268,10 @@
     display: block;
 }
 
-/* .cardBtn {
-    color: rgb(255, 160, 176);
-    text-shadow: 1px 1px #0ac1ef;
-    background-color: #00ffab;
-} */
-
 .cardBtn {
     color: gray;
     text-shadow: none;
-    border: 1px solid gray;
+    border: 1px solid rgba(39, 32, 46, 0.35);
     padding: 6px;
     border-radius: 3%;
     min-width: 30px;
@@ -281,19 +279,38 @@
     font-family: "Courier New", Courier, monospace;
 }
 
-.cardBtn:hover {
-    animation: glowing 400ms infinite;
-    cursor: pointer;
-}
-
 .cardBtn:focus {
     outline: none;
     box-shadow: none;
 }
 
-.minus,
-.plus {
-    border: none;
+.cardBtn:hover {
+    cursor: pointer;
+    background: linear-gradient(270deg, #fec9bf, #ec5093, #64cc91, #00ffe6);
+    background-size: 1000% 1000%;
+    /* animation: glowing 400ms infinite; */
+    animation: gradientSwipe 4s ease infinite;
+}
+
+@keyframes gradientSwipe {
+    0% {
+        text-shadow: -1px -1px #c938ce;
+        background-position: 0% 50%;
+    }
+    25% {
+        text-shadow: -1px -1px #47ece4;
+    }
+    50% {
+        text-shadow: 1px -1px #38ce38;
+        background-position: 100% 50%;
+    }
+    75% {
+        text-shadow: -1px -1px #47ece4;
+    }
+    100% {
+        text-shadow: 1px 1px #c938ce;
+        background-position: 0% 50%;
+    }
 }
 
 @keyframes glowing {
@@ -320,6 +337,11 @@
         text-shadow: -1px -1px #47ece4;
         background-color: #fffb00;
     }
+}
+
+.minus,
+.plus {
+    border: none;
 }
 
 /* Chrome, Safari, Edge, Opera */
