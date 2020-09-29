@@ -69,5 +69,5 @@ $(".addCart").click(function () {
 });
 
 $(".openCart").click(function () {
-    $(".modal-body").html(myCart.toString());
+    $(".modal-body").html(myCart.join("<br/>"));
 });
