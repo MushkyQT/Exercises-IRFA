@@ -4,7 +4,7 @@ $(window).scroll(function () {
         $("#body").css("background-position", "49% 20%");
     }
     for (var i = 0; i < $(".slider").length; i++) {
-        if ($(window).scrollTop() > $(".slider:eq(" + i + ")").offset().top - $(window).height() / 1.5) {
+        if ($(window).scrollTop() > $(".slider:eq(" + i + ")").offset().top - $(window).height() / 1.3) {
             $(".slider:eq(" + i + ")").addClass("slid");
             $(".openCart").addClass("openCartDeploy");
         }
