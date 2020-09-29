@@ -195,6 +195,16 @@
     visibility: hidden;
 }
 
+.card {
+    border: none;
+    box-shadow: 5px 7px #00ffe6;
+    transition: box-shadow 300ms;
+}
+
+.card:hover {
+    box-shadow: -5px 7px #b3525f;
+}
+
 .slider:nth-of-type(1n) {
     transform: translateX(-100%);
 }
