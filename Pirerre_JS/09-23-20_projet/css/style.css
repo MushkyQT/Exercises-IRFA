@@ -6,11 +6,11 @@
 
 #body {
     background-repeat: no-repeat;
-    background-size: 5%;
-    background-position: top;
-    background-image: url(../img/vibey_bust.png);
-    opacity: 0;
-    transition: background-size 4s, opacity 2s, background-position 2s;
+    background-attachment: fixed;
+    background-size: 30%, 30%, 100%;
+    background-position: 0 50%, 100% 50%, top;
+    background-image: url(../img/vibey_bust.png), url(../img/vibey_bust.png), url(../img/potential_bg_question_mark.jpg);
+    transition: opacity 2s, background-position 2s;
 }
 
 #navbar nav img {
@@ -210,17 +210,16 @@
     opacity: 0;
     overflow: hidden;
     padding-bottom: 30px;
-    transition: all 2s ease-out;
+    transition: all 1.5s ease-out;
+}
+
+.card-body {
+    background-color: #dac9fc;
 }
 
 .slid {
     opacity: 100%;
     transform: translate(0) !important;
-}
-
-.bodySlid {
-    background-size: 30% !important;
-    opacity: 100% !important;
 }
 
 .fas {
@@ -255,14 +254,36 @@
     display: block;
 }
 
-.cardBtn {
+/* .cardBtn {
     color: rgb(255, 160, 176);
     text-shadow: 1px 1px #0ac1ef;
     background-color: #00ffab;
+} */
+
+.cardBtn {
+    color: gray;
+    text-shadow: none;
+    border: 1px solid gray;
+    padding: 5px;
+    border-radius: 3%;
+    min-width: 30px;
+    background-color: transparent;
+    font-family: "Courier New", Courier, monospace;
 }
 
 .cardBtn:hover {
     animation: glowing 400ms infinite;
+    cursor: pointer;
+}
+
+.cardBtn:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.minus,
+.plus {
+    border: none;
 }
 
 @keyframes glowing {
@@ -308,12 +329,21 @@ input[type="number"] {
 }
 
 .quant input {
-    width: 40px;
+    max-width: 30px;
 }
 
 .openCart {
+    bottom: -100px;
+    overflow: hidden;
+    transition: all 1s ease-out;
+}
+
+.openCartDeploy {
+    opacity: 100%;
     position: fixed;
     right: 2%;
     bottom: 2%;
     z-index: 20;
+    background-color: #0bb2dc;
+    color: white;
 }

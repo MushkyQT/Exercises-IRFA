@@ -1,12 +1,8 @@
 var mainHeight = $("#header").height() + $("#navbar").height();
 $(window).scroll(function () {
-    if ($(window).scrollTop() > mainHeight / 10) {
-        $("#body").addClass("bodySlid");
-        $(".openCart").removeClass("hideMe");
-    }
     if ($(window).scrollTop() > mainHeight) {
-        $("#body").css("background-attachment", "fixed");
-        $("#body").css("background-position", "center");
+        $("#body").css("background-position", "49% 20%");
+        $(".openCart").addClass("openCartDeploy");
     }
     for (var i = 0; i < $(".slider").length; i++) {
         if ($(window).scrollTop() > $(".slider:eq(" + i + ")").offset().top - $(window).height() / 1.5) {
