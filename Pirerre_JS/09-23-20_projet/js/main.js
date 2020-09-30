@@ -107,10 +107,31 @@ $(".addCart").click(function () {
     }
 });
 
-$(".openCart").click(function () {
+function fillTable() {
     var tmp;
     for (i = 0; i < myCart.length; i++) {
-        tmp += "<tr><th>" + myCart[i][0] + "</th><th>" + myCart[i][1] + "</th><th>" + myCart[i][2] + "</th><th>" + myCart[i][3] + "</th></tr>";
+        tmp +=
+            "<tr><td>" +
+            myCart[i][0] +
+            "</td><td>" +
+            myCart[i][1] +
+            "</td><td>" +
+            myCart[i][2] +
+            "</td><td>" +
+            myCart[i][3] +
+            "</td><td><button class='btn btn-danger " +
+            i +
+            "'>Delete</button></td></tr>";
     }
     $("#cartBody").html(tmp);
+    $(".btn-danger").click(function () {
+        var pos = $(this).attr("class").split(" ").pop();
+        myCart.splice(pos, 1);
+        console.log(myCart);
+        fillTable();
+    });
+}
+
+$(".openCart").click(function () {
+    fillTable();
 });
