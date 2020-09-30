@@ -8,7 +8,7 @@
     box-shadow: inset 0px 1px 15px 0px rgba(36, 91, 95, 0.75);
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: 30%, 30%, 100%;
+    background-size: 30%, 30%, cover;
     background-position: 0 50%, 100% 50%, top;
     background-image: url(../img/vibey_bust.png), url(../img/vibey_bust.png), url(../img/potential_bg_question_mark.jpg);
     transition: opacity 2s, background-position 2s;
@@ -379,4 +379,20 @@ input[type="number"] {
     z-index: 20;
     background-color: #0bb2dc;
     color: white;
+}
+
+@media screen and (max-width: 1140px) {
+    #body {
+        background-image: url(../img/potential_bg_question_mark.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+
+    .addCart {
+        font-size: 0.8em;
+    }
+
+    .card-text {
+        font-size: 0.8em;
+    }
 }
