@@ -108,8 +108,11 @@ $(".addCart").click(function () {
 });
 
 function fillTable() {
-    var tmp;
+    var tmp,
+        grandTotal = 0;
     for (i = 0; i < myCart.length; i++) {
+        grandTotal += parseInt(myCart[i][3]);
+        console.log(grandTotal);
         tmp +=
             "<tr><td>" +
             myCart[i][0] +
@@ -124,6 +127,7 @@ function fillTable() {
             "'>Delete</button></td></tr>";
     }
     $("#cartBody").html(tmp);
+    $(".total").html("Total cost: " + grandTotal + "€");
     $(".btn-danger").click(function () {
         var pos = $(this).attr("class").split(" ").pop();
         myCart.splice(pos, 1);
