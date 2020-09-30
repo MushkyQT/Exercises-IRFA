@@ -62,10 +62,10 @@ $(".plus").click(function () {
 });
 
 var products = [
-    ["dreamland", 10],
+    ["your love", 2],
     ["zaba", 6],
     ["htbahb", 8],
-    ["leaflings", 2],
+    ["dreamland", 10],
     ["glass animals", 2],
     ["cocoa hooves", 2],
     ["tangerine tee", 24],

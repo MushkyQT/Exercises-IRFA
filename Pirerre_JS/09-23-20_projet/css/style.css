@@ -224,6 +224,11 @@
     transition: all 1.5s ease-out;
 }
 
+.price {
+    color: #efa10a;
+    text-shadow: 1px 1px #a46acb;
+}
+
 .card-body {
     background-color: #dac9fc;
 }
@@ -262,6 +267,7 @@
     display: none;
     object-position: center;
     object-fit: cover;
+    background-color: #6bbfd7;
 }
 
 .visible {
