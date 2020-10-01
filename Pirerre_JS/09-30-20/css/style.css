@@ -1,0 +1,63 @@
+.header {
+    background-image: url(../img/background1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.textHeader {
+    text-transform: uppercase;
+    color: white;
+    font-size: 3.2em;
+    font-weight: bold;
+}
+
+.monImage {
+    width: 600px;
+    height: 400px;
+}
+
+.monImage img {
+    max-width: 600px;
+    max-height: 400px;
+    display: none;
+}
+
+img.visible {
+    display: block;
+}
+
+.slider {
+    width: 600px;
+    height: 400px;
+    position: relative;
+}
+
+.left {
+    height: 60px;
+    width: 60px;
+    background-image: url(../img/arrow-left.png);
+    position: absolute;
+    background-size: cover;
+    left: 0;
+    top: calc(50% - 60px);
+}
+
+.right {
+    height: 60px;
+    width: 60px;
+    background-image: url(../img/arrow-right.png);
+    background-size: cover;
+    position: absolute;
+    right: 0;
+    top: calc(50% - 60px);
+}
+
+div.articleCache {
+    display: none;
+}

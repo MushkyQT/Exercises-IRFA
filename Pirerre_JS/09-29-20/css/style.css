@@ -1,0 +1,78 @@
+#header {
+    height: 25vh;
+    width: 100vw;
+    background-color: blueviolet;
+    background-image: url(../img/ClipartKey_61383.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.punchline {
+    text-transform: uppercase;
+    font-weight: bolder;
+}
+
+#navbar {
+    background-color: lime;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+    font-weight: bolder;
+    font-size: 2em;
+}
+
+#article {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    transition: all 0.5s;
+}
+.content {
+    transition: all 0.5s;
+    width: 70vw;
+    text-align: justify;
+}
+
+.logo {
+    background-color: aquamarine;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    max-width: 0;
+    transition: max-width 0.5s ease-in-out;
+}
+
+.logo img {
+    width: 70px;
+}
+
+.navFixed {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.navFixed li.logo {
+    max-width: 100%;
+}

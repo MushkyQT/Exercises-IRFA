@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>Title</title>
+    </head>
+    <body>
+        <div class="card">
+            <img class="card-img-top" src="../09-23-20_projet/img/full_zaba.png" alt="Card image cap" />
+            <div class="card-body">
+                <h5 class="card-title">Zaba</h5>
+                <p class="card-text">Prix: 2345E</p>
+                <div class="quantite">
+                    <button type="button" class="btn btn-primary moins">-</button>
+                    <input type="number" class="champQuantite" size="1" value="1" />
+                    <button type="button" class="btn btn-primary plus">+</button>
+                </div>
+                <a href="#" class="btn btn-success" id="0">Ajouter au panier</a>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top" src="../09-23-20_projet/img/products/GA_DREAMLAND_SINGLE_LoRes.jpg" alt="Card image cap" />
+            <div class="card-body">
+                <h5 class="card-title">Dreamland</h5>
+                <p class="card-text">Prix: 800e</p>
+                <div class="quantite">
+                    <button type="button" class="btn btn-primary moins">-</button>
+                    <input type="number" class="champQuantite" size="1" value="1" />
+                    <button type="button" class="btn btn-primary plus">+</button>
+                </div>
+                <a href="#" class="btn btn-success" id="1">Ajouter au panier</a>
+            </div>
+        </div>
+
+        <table class="table table-dark table-stripped">
+            <thead>
+                <th>nom</th>
+                <th>prix uniatire</th>
+                <th>quantite</th>
+                <th>sous-total</th>
+            </thead>
+            <tbody id="bodyPanier"></tbody>
+        </table>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
