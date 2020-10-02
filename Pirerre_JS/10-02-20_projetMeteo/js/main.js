@@ -1,8 +1,8 @@
 var apiKey = "b9474c57ce20e1720a6f00538e2f38b8";
-var iconURL = "http://openweathermap.org/img/wn/";
+var iconURL = "https://openweathermap.org/img/wn/";
 
 $(".panneau").click(function () {
-    var query = "http://api.openweathermap.org/data/2.5/weather?id=";
+    var query = "https://api.openweathermap.org/data/2.5/weather?id=";
     var currentPanel = $(this);
     var currentBg = $(this).css("background-image");
     $(this).toggleClass("flexMe");
