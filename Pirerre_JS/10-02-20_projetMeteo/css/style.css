@@ -1,0 +1,69 @@
+.panneaux {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    color: burlywood;
+    text-shadow: 1px 2px black;
+}
+
+.panneau {
+    background-color: lightblue;
+    border-right: 1px solid black;
+    flex: 1;
+    transition: all 1s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+}
+
+.panneau:nth-of-type(1) {
+    background-image: url(../img/paris.jpg);
+}
+.panneau:nth-of-type(2) {
+    background-image: url(../img/tokyo.jpg);
+}
+.panneau:nth-of-type(3) {
+    background-image: url(../img/moscow.jpg);
+}
+.panneau:nth-of-type(4) {
+    background-image: url(../img/buenosaires2.jpg);
+}
+.panneau:nth-of-type(5) {
+    background-image: url(../img/mulhouse.jpg);
+}
+
+.cercle {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    border: 1px solid red;
+    background-size: cover;
+    background-position: 60%;
+}
+
+#paris {
+    background-image: url(../img/paris.jpg);
+}
+
+#tokyo {
+    background-image: url(../img/tokyo.jpg);
+}
+
+#moscow {
+    background-image: url(../img/moscow.jpg);
+}
+
+#buenosaires {
+    background-image: url(../img/buenosaires2.jpg);
+}
+
+#mulhouse {
+    background-image: url(../img/mulhouse.jpg);
+}
+
+.flexMe {
+    flex: 5;
+}
