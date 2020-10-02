@@ -18,8 +18,8 @@ $(".panneau").click(function () {
                 $(currentPanel)
                     .children(".cercle")
                     .css("background-image", "url(" + icon + ")");
-                var toAppend = "<p>Hello guys</p><br/><h2>This is a test</h2>";
-                $(currentPanel).children(".content").append(toAppend);
+                var content = "<p>Hello guys</p><br/><h2>This is a test</h2>";
+                $(currentPanel).children(".content").html(content);
             },
             error: function () {
                 alert("ajax fail");
