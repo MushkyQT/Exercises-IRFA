@@ -36,12 +36,14 @@
 }
 
 .cercle {
-    height: 200px;
-    width: 200px;
+    height: 160px;
+    width: 160px;
     border-radius: 50%;
-    border: 1px solid red;
+    border: 1px solid gray;
+    box-shadow: 1px 1px 5px 0px black;
     background-size: cover;
     background-position: 60%;
+    transition: all 2s;
 }
 
 #paris {
@@ -66,4 +68,13 @@
 
 .flexMe {
     flex: 5;
+}
+
+.content {
+    display: none;
+    transition: all 2s;
+}
+
+.show {
+    display: block;
 }

@@ -20,6 +20,7 @@ $(".panneau").click(function () {
                     .css("background-image", "url(" + icon + ")");
                 var content = "<p>Hello guys</p><br/><h2>This is a test</h2>";
                 $(currentPanel).children(".content").html(content);
+                $(currentPanel).children(".content").addClass("show");
             },
             error: function () {
                 alert("ajax fail");
