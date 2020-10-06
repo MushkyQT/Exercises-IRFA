@@ -11,3 +11,7 @@ body {
 .validate {
     background-color: rgba(127, 57, 251, 0.7);
 }
+
+hr {
+    border-color: gray;
+}
