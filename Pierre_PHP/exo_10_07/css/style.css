@@ -1,5 +1,6 @@
 body {
     background-color: #49608b;
+    font-family: Arial, sans-serif;
 }
 
 .ciaNav {
@@ -11,6 +12,7 @@ body {
 }
 
 .navbar-brand {
+    font-family: "Special Elite", cursive;
     padding-left: 30px;
 }
 
@@ -38,6 +40,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.secret h1 {
+    font-family: "Special Elite", cursive;
 }
 
 .secret {
