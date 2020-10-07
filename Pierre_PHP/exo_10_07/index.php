@@ -2,12 +2,14 @@
 
 require 'members.php';
 
-$unSecret = '<div class="card" style="width: 18rem;">
-<div class="card-body">
-    <h5 class="card-title">J\'ai manger le dernier Avatar</h5>
-    <p class="card-text"></p>
+$unSecret = '
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">J\'ai manger le dernier Avatar</h5>
+        <p class="card-text"></p>
+    </div>
 </div>
-</div>';
+';
 $revelation = "";
 $loggedIn = false;
 
@@ -24,14 +26,15 @@ if ($_GET && $_GET['utilisateur'] && $_GET['motDePasse']) {
     $revelation = "Please enter a username AND a password.";
 }
 
-$mainArea =
-    '<div class="secret shadow">
-    <p>Logue-toi pour qu\'on te revele l\'ultime secret... si tu l\'ose</p>
-    <div class="revelation">' . $revelation . '</div>
-</div>';
-
 if ($loggedIn) {
     include 'secret.php';
+} else {
+    $mainArea = '
+    <div class="secret shadow">
+        <p>Logue-toi pour qu\'on te revele l\'ultime secret... si tu l\'ose</p>
+        <div class="revelation">' . $revelation . '</div>
+    </div>
+    ';
 }
 
 // 1. Si un utilisateur faisant parti du tableau tante de se connecter et a entre le bon mot de passe, alors on
