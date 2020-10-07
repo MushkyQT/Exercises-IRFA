@@ -1,0 +1,52 @@
+body {
+    background-color: #49608b;
+}
+
+.ciaNav {
+    background-color: #ffffff;
+    background-image: url(../img/world.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    box-shadow: inset 0 -1px 12px 0px #49608b;
+}
+
+.navbar-brand {
+    padding-left: 30px;
+}
+
+.form-control-edits {
+    width: auto;
+    margin-left: 4px;
+}
+
+.card-edits {
+    background-color: #49608b;
+    color: white;
+}
+
+.card-edits img {
+    border-radius: 50%;
+}
+
+.sendIt:hover {
+    border-color: #49608b;
+    cursor: pointer;
+}
+
+.mainArea {
+    height: calc(100vh - 86px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.secret {
+    padding: 30px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.revelation {
+    color: red;
+}
