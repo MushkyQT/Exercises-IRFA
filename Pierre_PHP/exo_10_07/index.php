@@ -73,7 +73,7 @@ if ($loggedIn) {
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-light ciaNav">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href=".">
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Seal_of_the_Central_Intelligence_Agency.svg/600px-Seal_of_the_Central_Intelligence_Agency.svg.png" width="60" height="60">
             Black Site Login
         </a>
