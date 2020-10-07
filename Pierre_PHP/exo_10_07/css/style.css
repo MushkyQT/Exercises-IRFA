@@ -45,6 +45,16 @@ body {
     border: 1px solid gray;
     border-radius: 10px;
     background-color: white;
+    animation: 1s ease appearAnim;
+}
+
+@keyframes appearAnim {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 100%;
+    }
 }
 
 .revelation {
