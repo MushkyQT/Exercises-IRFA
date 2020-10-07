@@ -1,5 +1,7 @@
 <?php
 
+require 'members.php';
+
 $unSecret = '<div class="card" style="width: 18rem;">
 <div class="card-body">
     <h5 class="card-title">J\'ai manger le dernier Avatar</h5>
@@ -8,12 +10,6 @@ $unSecret = '<div class="card" style="width: 18rem;">
 </div>';
 $revelation = "";
 $loggedIn = false;
-$membres = array(
-    'patricia' => 'zebre',
-    'michel' => 'dauphin',
-    'pascal' => 'cheval',
-    'magali' => 'tortue'
-);
 
 if ($_GET && $_GET['utilisateur'] && $_GET['motDePasse']) {
     $user = $_GET['utilisateur'];
