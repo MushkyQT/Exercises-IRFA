@@ -1,18 +1,21 @@
 <?php
 
 if (isset($_GET['destinataire']) && isset($_GET['sujet']) && isset($_GET['message']) && isset($_GET['expediteur'])) {
-
     $metaData = array(
         "destinataire" => $_GET['destinataire'],
         "sujet" => $_GET['sujet'],
         "message" => $_GET['message'],
-        "headers" => "From: " . $_GET['expediteur'] . "\r\n"
+        "headers" => "From: " . $_GET['expediteur'],
     );
+
+    if (isset($_GET['senderName'])) {
+        $metaData["headers"] = "From: " . $_GET['senderName'] . " <" . $_GET['expediteur'] . ">";
+    }
 
     if (!array_search('', $metaData)) {
         var_dump($metaData);
         if (mail($metaData['destinataire'], $metaData['sujet'], $metaData['message'], $metaData['headers'])) {
-            echo "<span class='text-success'>Le mail s'est envoye</span>";
+            echo "<span class='text-success'>Le mail s'est envoye a " . $metaData['destinataire'] . "</span>";
         } else {
             echo "Le mail a foire";
         }
@@ -63,8 +66,12 @@ PHPMailer
         <div class="col-10">
             <form>
                 <div class="form-group">
-                    <label for="expediteur">Email address</label>
+                    <label for="expediteur">Your email</label>
                     <input type="email" id="expediteur" name="expediteur" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="senderName">Your name</label>
+                    <input type="text" name="senderName" id="senderName" class="form-control" placeholder="Optional">
                 </div>
                 <div class="form-group">
                     <label for="destinataire">Recipient</label>
