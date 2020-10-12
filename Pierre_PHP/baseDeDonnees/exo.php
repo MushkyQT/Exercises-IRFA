@@ -72,19 +72,23 @@ if ($myResult = mysqli_query($myConnection, $myRequest)) {
 
 function createTable($myResult)
 {
-    global $thead2, $tbody2;
-    for ($i = 1; $i < 6; $i++) {
-        $finfo = mysqli_fetch_field_direct($myResult, $i);
-        $thead2 .= "<th>" . $finfo->name . "</th>";
-    }
-    while ($currentResult = mysqli_fetch_array($myResult)) {
-        $tbody2 .= "<tr>";
-        $tbody2 .= "<td>" . $currentResult['prenom'] . "</td>";
-        $tbody2 .= "<td>" . $currentResult['nom'] . "</td>";
-        $tbody2 .= "<td>" . $currentResult['animal'] . "</td>";
-        $tbody2 .= "<td>" . $currentResult['couleur'] . "</td>";
-        $tbody2 .= "<td>" . $currentResult['plat'] . "</td>";
-        $tbody2 .= "</tr>";
+    global $thead2, $tbody2, $fatal;
+    if (mysqli_num_rows($myResult) == 0) {
+        $fatal = "No results for your query.";
+    } else {
+        for ($i = 1; $i < 6; $i++) {
+            $finfo = mysqli_fetch_field_direct($myResult, $i);
+            $thead2 .= "<th>" . $finfo->name . "</th>";
+        }
+        while ($currentResult = mysqli_fetch_array($myResult)) {
+            $tbody2 .= "<tr>";
+            $tbody2 .= "<td>" . $currentResult['prenom'] . "</td>";
+            $tbody2 .= "<td>" . $currentResult['nom'] . "</td>";
+            $tbody2 .= "<td>" . $currentResult['animal'] . "</td>";
+            $tbody2 .= "<td>" . $currentResult['couleur'] . "</td>";
+            $tbody2 .= "<td>" . $currentResult['plat'] . "</td>";
+            $tbody2 .= "</tr>";
+        }
     }
 }
 
