@@ -33,6 +33,9 @@ if ($myResult = mysqli_query($myConnection, $myRequest)) {
 $animals = "";
 $colors = "";
 $meals = "";
+$thead2 = "";
+$tbody2 = "";
+$fatal = "";
 
 $myRequest = "SELECT DISTINCT animal FROM `newtable`";
 if ($myResult = mysqli_query($myConnection, $myRequest)) {
@@ -119,7 +122,7 @@ if ($_GET) {
             echo "DB request failed.<br>";
         }
     } else {
-        echo "You submitted a non-existant form value.";
+        $fatal = "You submitted a non-existant form value.";
     }
 } else {
     $myRequest = "SELECT * FROM newTable";
@@ -166,6 +169,7 @@ if ($_GET) {
     <hr>
 
     <div class="container">
+        <?php echo $fatal ?>
         <table class="table table-striped shadow">
             <thead>
                 <tr>
