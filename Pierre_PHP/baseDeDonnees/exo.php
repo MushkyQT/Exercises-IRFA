@@ -16,10 +16,10 @@ $myRequest = "SELECT * FROM maTable";
 if ($myResult = mysqli_query($myConnection, $myRequest)) {
     $thead = "";
     $tbody = "";
-    for ($i = 1; $i < 3; $i++) {
-        $finfo = mysqli_fetch_field_direct($myResult, $i);
-        $thead .= "<th>" . $finfo->name . "</th>";
-    }
+    // for ($i = 1; $i < 3; $i++) {
+    //     $finfo = mysqli_fetch_field_direct($myResult, $i);
+    //     $thead .= "<th>" . $finfo->name . "</th>";
+    // }
     while ($currentResult = mysqli_fetch_array($myResult)) {
         $tbody .= "<tr>";
         $tbody .= "<td>" . $currentResult['nom'] . "</td>";
@@ -92,33 +92,33 @@ function createTable($myResult)
     }
 }
 
-if ($_GET) {
-    if (isset($_GET['animals']) && isset($_GET['colors'])) {
-        $myRequest = "SELECT * FROM `newtable` WHERE `animal` = '" . $_GET['animals'] . "' AND `couleur` = '" . $_GET['colors'] . "'";
+if ($_POST) {
+    if (isset($_POST['animals']) && isset($_POST['colors'])) {
+        $myRequest = "SELECT * FROM `newtable` WHERE `animal` = '" . $_POST['animals'] . "' AND `couleur` = '" . $_POST['colors'] . "'";
 
         if ($myResult = mysqli_query($myConnection, $myRequest)) {
             createTable($myResult);
         } else {
             echo "DB request failed.<br>";
         }
-    } elseif (isset($_GET['animals'])) {
-        $myRequest = "SELECT * FROM `newtable` WHERE `animal` = '" . $_GET['animals'] . "'";
+    } elseif (isset($_POST['animals'])) {
+        $myRequest = "SELECT * FROM `newtable` WHERE `animal` = '" . $_POST['animals'] . "'";
 
         if ($myResult = mysqli_query($myConnection, $myRequest)) {
             createTable($myResult);
         } else {
             echo "DB request failed.<br>";
         }
-    } elseif (isset($_GET['colors'])) {
-        $myRequest = "SELECT * FROM `newtable` WHERE `couleur` = '" . $_GET['colors'] . "'";
+    } elseif (isset($_POST['colors'])) {
+        $myRequest = "SELECT * FROM `newtable` WHERE `couleur` = '" . $_POST['colors'] . "'";
 
         if ($myResult = mysqli_query($myConnection, $myRequest)) {
             createTable($myResult);
         } else {
             echo "DB request failed.<br>";
         }
-    } elseif (isset($_GET['meals'])) {
-        $myRequest = "SELECT * FROM `newtable` WHERE `plat` = '" . $_GET['meals'] . "'";
+    } elseif (isset($_POST['meals'])) {
+        $myRequest = "SELECT * FROM `newtable` WHERE `plat` = '" . $_POST['meals'] . "'";
 
         if ($myResult = mysqli_query($myConnection, $myRequest)) {
             createTable($myResult);
@@ -184,19 +184,19 @@ if ($_GET) {
                 <?php echo $tbody2 ?>
             </tbody>
         </table>
-        <form class="form-inline mb-2">
+        <form method="post" class="form-inline mb-2">
             <select name="animals" class="form-control mr-2">
                 <?php echo $animals ?>
             </select>
             <input type="submit" value="Animals" class="btn btn-primary">
         </form>
-        <form class="form-inline mb-2">
+        <form method="post" class="form-inline mb-2">
             <select name="meals" class="form-control mr-2">
                 <?php echo $meals ?>
             </select>
             <input type="submit" value="Meals" class="btn btn-primary">
         </form>
-        <form class="form-inline mb-2">
+        <form method="post" class="form-inline mb-2">
             <select name="colors" class="form-control mr-2">
                 <?php echo $colors ?>
             </select>
@@ -206,7 +206,7 @@ if ($_GET) {
             </select>
             <input type="submit" value="Color & Animal" class="btn btn-primary">
         </form>
-        <form class="form-inline mb-2">
+        <form method="post" class="form-inline mb-2">
             <input type="submit" value="Reset" class="btn btn-primary">
         </form>
     </div>
