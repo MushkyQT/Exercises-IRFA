@@ -87,7 +87,7 @@ function createTable($myResult)
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
-    <link href="https://fonts.googleapis.com/css2?family=Chilanka&family=IM+Fell+French+Canon&family=Poppins:wght@300&family=Sansita+Swashed&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Chilanka&family=Poppins:wght@300&family=Sansita+Swashed&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <title>Karot</title>
 </head>
