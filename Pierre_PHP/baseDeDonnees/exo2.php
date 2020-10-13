@@ -31,7 +31,7 @@ if (isset($_POST['addName']) && isset($_POST['addAnimal'])) {
     } else {
         echo "fail";
     }
-} else {
+} elseif ($_POST) {
     $fatal = "Form submitted incorrectly, try again.";
 }
 
@@ -66,6 +66,10 @@ if ($myResult = mysqli_query($myConnection, $myRequest)) {
 } else {
     echo "DB request failed.<br>";
 }
+
+// 1. Creer systeme de gestion de courses a partir de la maquette du 10/13. 
+
+// ^ L'exo se trouve dans courses.php
 
 ?>
 
