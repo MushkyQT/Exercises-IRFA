@@ -62,6 +62,8 @@ function embellisMaRequete($uneLigneQuOnLuiPasse)
 // - Afficher les gens dont le plat preferer est <select>
 // - Afficher les gens dont la couleur preferee est <select> ET l'animal prefere est <select>
 
+// ^^ L'exo se trouve dans exo.php
+
 
 ?>
 
