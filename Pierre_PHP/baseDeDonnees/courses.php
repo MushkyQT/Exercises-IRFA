@@ -21,23 +21,19 @@ if ($_POST && isset($_POST['purchased'])) {
     } else {
         $fatal = "Purchased update fail.";
     }
-}
-
-if ($_POST && isset($_POST['addProduct'])) {
-    $myRequest = "INSERT INTO `groceries` (`product`, `purchased`) VALUES ('" . $_POST['addProduct'] . "', 0)";
-    if ($myResult = mysqli_query($myConnection, $myRequest)) {
-        $fatal = "Added " . $_POST['addProduct'] . " to the grocery list.";
-    } else {
-        $fatal = "Addition fail.";
-    }
-}
-
-if ($_POST && isset($_POST['del'])) {
+} elseif ($_POST && isset($_POST['del'])) {
     $myRequest = "DELETE FROM `groceries` WHERE `id` = " . $_POST['del'];
     if ($myResult = mysqli_query($myConnection, $myRequest)) {
         $fatal = "Deletion successful.";
     } else {
         $fatal = "Deletion fail.";
+    }
+} elseif ($_POST && isset($_POST['addProduct'])) {
+    $myRequest = "INSERT INTO `groceries` (`product`, `purchased`) VALUES ('" . $_POST['addProduct'] . "', 0)";
+    if ($myResult = mysqli_query($myConnection, $myRequest)) {
+        $fatal = "Added " . $_POST['addProduct'] . " to the grocery list.";
+    } else {
+        $fatal = "Addition fail.";
     }
 }
 
