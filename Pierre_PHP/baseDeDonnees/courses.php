@@ -29,11 +29,15 @@ if ($_POST && isset($_POST['purchased'])) {
         $fatal = "Deletion fail.";
     }
 } elseif ($_POST && isset($_POST['addProduct'])) {
-    $myRequest = "INSERT INTO `groceries` (`product`, `purchased`) VALUES ('" . $_POST['addProduct'] . "', 0)";
-    if ($myResult = mysqli_query($myConnection, $myRequest)) {
-        $fatal = "Added " . $_POST['addProduct'] . " to the grocery list.";
+    if ($_POST['addProduct'] != "") {
+        $myRequest = "INSERT INTO `groceries` (`product`, `purchased`) VALUES ('" . $_POST['addProduct'] . "', 0)";
+        if ($myResult = mysqli_query($myConnection, $myRequest)) {
+            $fatal = "Added " . $_POST['addProduct'] . " to the grocery list.";
+        } else {
+            $fatal = "Addition fail.";
+        }
     } else {
-        $fatal = "Addition fail.";
+        $fatal = "Please submit a non-empty value.";
     }
 }
 
@@ -110,6 +114,7 @@ function createTable($myResult)
             </table>
         </div>
         <div class="surround shadow">
+            <?php echo $fatal ?>
             <form method="post" class="form-inline justify-content-center p-4">
                 <div class="form-group">
                     <label for="addProduct" class="mx-2">Product</label>
