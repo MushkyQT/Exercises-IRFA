@@ -39,6 +39,17 @@ if ($_POST && isset($_POST['purchased'])) {
     } else {
         $fatal = "Please submit a non-empty value.";
     }
+} elseif ($_POST && isset($_POST['editProduct']) && isset($_POST['modify'])) {
+    if ($_POST['editProduct'] != "") {
+        $myRequest = "UPDATE `groceries` SET `product` = '" . $_POST['editProduct'] . "' WHERE `groceries`.`id` =" . $_POST['modify'];
+        if ($myResult = mysqli_query($myConnection, $myRequest)) {
+            $fatal = "Modified " . $_POST['editProduct'] . ".";
+        } else {
+            $fatal = "Modification fail.";
+        }
+    } else {
+        $fatal = "Please submit a non-empty value.";
+    }
 }
 
 $myRequest = "SELECT * FROM `groceries` WHERE `purchased` = 0";
@@ -71,7 +82,7 @@ function createTable($myResult)
         }
         $hiddenBox = "<input hidden type='checkbox' name='purchased' value='" . $currentResult['id'] . "' checked>";
         $tableContent .= "<tr " . $colorClass . ">";
-        $tableContent .= "<td>" . $currentResult['product'] . "</td>";
+        $tableContent .= "<td class='myTd'>" . $currentResult['product'] . "</td>";
         $tableContent .= "<td><form method='post'>" . $hiddenBox . "<input type='checkbox' onchange='submit()'" . $checked . "></form></td>";
         $tableContent .= "<td><form method='post'>
         <button type='submit' class='btn myBtn-danger' name='del' value='" . $currentResult['id'] . "'>DELETE</button>
@@ -118,7 +129,7 @@ function createTable($myResult)
             <form method="post" class="form-inline justify-content-center p-4">
                 <div class="form-group">
                     <label for="addProduct" class="mx-2">Product</label>
-                    <input type="text" name="addProduct" id="addProduct" class="form-control" autofocus>
+                    <input type="text" name="addProduct" id="addProduct" class="form-control" autofocus required>
                 </div>
                 <input type="submit" class="btn myBtn-primary ml-2" value="Add">
             </form>
@@ -129,6 +140,21 @@ function createTable($myResult)
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script type='text/javascript'>
+        $(".myTd").click(function() {
+            var id = $(this).siblings().last().children().children().val();
+            var product = $(this).html();
+            $(this).replaceWith("<td><form method='post' id='" + id + "'></form><input type='hidden' form='" + id + "' name='modify' value='" + id + "'><input type='text' form='" + id + "' value='" + product + "' class='form-control editInput' name='editProduct'></td>");
+            $(".editInput").focus();
+            $(".editInput").focusout(function() {
+                if ($(".editInput").val() != product) {
+                    $("#" + id).submit();
+                } else {
+                    window.location = window.location.href;
+                }
+            });
+        })
+    </script>
 </body>
 
 </html>
