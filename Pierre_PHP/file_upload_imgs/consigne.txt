@@ -1,0 +1,44 @@
+1. Creer une interface de connexion qui est base pour l'instant sur un tableau
+des membres
+$membres = array(
+    'patricia' => 'zebre',
+    'michel' => 'dauphin',
+    etc.
+);
+
+Si l'authentification est bonne, on appelle un nouveau script php d'upload qui 
+est stocke ailleur (une page php differente)
+Ce script genere notre formulaire d'upload qui comprend:
+- un email destinataire 
+- un email expediteur 
+- le nom de l'expediteur 
+- un message 
+- un input de type file pour le fichier 
+
+- creer un sous repertoire 'uploads' pour stocker le fichier envoye
+
+Sur un submit de ce form:
+- le fichier soit uploade sur le serveur
+- sur la meme page, apres le submit, apparaisse un lien direct de telechargement "http://localhost/path/to/uploads/file.ext"
+
+2. envoyer un mail pour l'instant de vous meme a vous meme au destinataire contenant le lien, nom, et message de l'expediteur 
+
+3. verification et validation du fichier avant son upload final dans le repertoire 'uploads'
+Creer a partir d'ici plusieurs versions de votre projet:
+- une version specialisee dans les images (on trouve tout ca dans $_FILES)
+    - On ne veut accepter que les images JPEG, JPG, PNG, et GIF 
+    - On ne veut pas accepter une image de plus de 150kb
+    - On ne veut pas accepter une image qui a des dimensions en px superieurs a 720x960
+    - A chaque fois qu'un de ces conditions n'est pas respectee par l'envoyeur, on lui
+      renvoi un message specifique a son cas 
+    - Bonus: Afficher l'image sur la page quand elle est uploade (balise img href vide, echo var php)
+- une version general qui n'accepte pas les fichiers executables de type .exe, .js, .php, .html
+    - Une taille maximale de 3mb
+    - On accepte egalement pour le nom du fichier une longueur maximale de 40 caracteres
+
+4. Trouver un moyen de compresser dans une archive .zip les fichiers envoyes
+    - Une fois l'archive sur le serveur, se debarasser du fichier d'origine s'il est encore la
+
+5. A chaque fois qu'un utilisateur execute le script, trouver un moyen de mesurer l'espace utilise dans
+le repertoire uploads et s'il depasse 10mo faire savoir a l'utilisateur que "desole, ici c'est plein, ca va pas etre
+possible"
