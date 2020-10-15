@@ -1,9 +1,6 @@
 <?php
 
-$host = 'localhost';
-$db = 'mabase';
-$user = 'bibi';
-$pass = 'coucou';
+require_once('creds.php');
 
 $myConnection = mysqli_connect($host, $user, $pass, $db);
 
@@ -84,7 +81,7 @@ function createTable($myResult)
         $tableContent .= "<tr " . $colorClass . ">";
         $tableContent .= "<td class='myTd'>" . $currentResult['product'] . "</td>";
         $tableContent .= "<td><form method='post'>" . $hiddenBox . "<input type='checkbox' onchange='submit()'" . $checked . "></form></td>";
-        $tableContent .= "<td><form method='post'>
+        $tableContent .= "<td class='d-flex justify-content-center'><button class='btn myBtn-danger mr-1 modify d-none d-md-block' name='modif'>Modify</button><form method='post'>
         <button type='submit' class='btn myBtn-danger' name='del' value='" . $currentResult['id'] . "'>DELETE</button>
     </form></td>";
         $tableContent .= "</tr>";
@@ -153,6 +150,10 @@ function createTable($myResult)
                     window.location = window.location.href;
                 }
             });
+        })
+
+        $(".modify").click(function() {
+            $(this).parent().siblings(".myTd").trigger("click");
         })
     </script>
 </body>
