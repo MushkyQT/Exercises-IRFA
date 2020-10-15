@@ -2,24 +2,23 @@
 
 session_start();
 
-$host = 'localhost';
-$db = 'mabase';
-$user = 'bibi';
-$pass = 'coucou';
-
+include_once('creds.php');
 $myConnection = mysqli_connect($host, $user, $pass, $db);
-
 if (mysqli_connect_error()) {
     die("Connection to database failed.<br>");
+}
+
+$utilisateurConnecte = false;
+
+if (isset($_SESSION['modeInscription']) || isset($_POST['modeInscription'])) {
+    $modeInscription = true;
 } else {
-    echo "bien connecte!<br>";
+    $modeInscription = false;
 }
 
 if (isset($_POST['deconnexion'])) {
     session_unset();
 }
-
-$utilisateurConnecte = false;
 
 if (isset($_SESSION['nomUtilisateur']) && isset($_SESSION['motDePasse'])) {
     $_POST['nomUtilisateur'] = $_SESSION['nomUtilisateur'];
@@ -79,7 +78,17 @@ if (isset($_POST['nomUtilisateur']) && isset($_POST['motDePasse'])) {
 
 <body>
 
-    <div class="container">
+    <?php
+    if ($utilisateurConnecte == true) {
+        echo "<h2>Bonjour, " . $nomUtilisateurEntre . "!";
+        echo '<form method="post">
+        <button type="submit" class="btn btn-secondary" name="deconnexion">Se Deconnecter</button>
+    </form><br><br><br>';
+        include('exo2_pierre_modif_utilisateurs.php');
+    } elseif ($modeInscription == true) {
+        include('inscription_template.php');
+    } else {
+        echo '<div class="container">
         <div class="row justify-content-center text-center">
             <div class="col-3">
                 <form method="post">
@@ -94,17 +103,11 @@ if (isset($_POST['nomUtilisateur']) && isset($_POST['motDePasse'])) {
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
                 <form method="post">
-                    <button type="submit" class="btn btn-secondary" name="deconnexion">Se Deconnecter</button>
+                    <button type="submit" class="btn btn-success" name="modeInscription">S\'inscrire</button>
                 </form>
             </div>
         </div>
-    </div>
-
-    <?php
-    if ($utilisateurConnecte == true) {
-        include('exo2_pierre_modif_utilisateurs.php');
-    } else {
-        echo "Pour voir le tableau, il faut faire partie du club.";
+    </div>';
     }
     ?>
 
