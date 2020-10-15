@@ -47,7 +47,9 @@ if ($myResult = mysqli_query($myConnection, $myRequest)) {
         $tbody .= "<tr>";
         $tbody .= "<td>" . $currentResult['nom'] . "</td>";
         $tbody .= "<td>" . $currentResult['animal'] . "</td>";
-        $tbody .= "<td><form method='post'>
+        $tbody .= "<td>
+        <button class='btn btn-warning boutonModifier'>Modify</button>
+        <form method='post'>
         <button type='submit' class='btn btn-danger' name='del' value='" . $currentResult['id'] . "'>DELETE</button>
     </form></td>";
         $tbody .= "</tr>";
@@ -82,7 +84,6 @@ if ($myResult = mysqli_query($myConnection, $myRequest)) {
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
-    <link rel="stylesheet" href="style.css">
     <title>Title</title>
 </head>
 
@@ -133,6 +134,24 @@ if ($myResult = mysqli_query($myConnection, $myRequest)) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <!-- <script type="text/javascript">
+        $(".boutonModifier").click(function() {
+            var id = $(this).val();
+            var originalName = $(this).parent().parent().children().first().html();
+            var originalAnimal = $(this).parent().parent().children().next().html();
+            var formSupprimerARecuperer = $(this).next().html();
+
+            var aMettreDansMaDiv = "";
+
+
+
+            $(this).parent().parent().children().first().replaceWith("<td><input type='text' class='form-control' name='modifName' value='" + originalName + "'></td>");
+
+            $(this).parent().parent().children().next().eq(0).replaceWith("<td><input type='text' class='form-control' name='modifAnimal' value='" + originalAnimal + "'></td>");
+
+            $(this).replaceWith("<input type='submit' class='btn btn-success' name='modif'>");
+        })
+    </script> -->
 </body>
 
 </html>
