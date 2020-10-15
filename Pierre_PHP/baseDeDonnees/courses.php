@@ -1,8 +1,8 @@
 <?php
 
-require_once('creds.php');
+session_start();
 
-$myConnection = mysqli_connect($host, $user, $pass, $db);
+require_once('creds.php');
 
 if (mysqli_connect_error()) {
     die("Connection to database failed.<br>");
@@ -10,6 +10,95 @@ if (mysqli_connect_error()) {
 
 $tableContent = "";
 $fatal = "";
+
+$loggedIn = false;
+
+if (isset($_SESSION['signedUp'])) {
+    $signedUp = true;
+} else {
+    $signedUp = false;
+}
+
+if (isset($_SESSION['signUp']) || isset($_POST['signUp'])) {
+    $signUp = true;
+} else {
+    $signUp = false;
+}
+
+if (isset($_POST['logOut'])) {
+    session_unset();
+}
+
+if (isset($_SESSION['username']) && isset($_SESSION['password'])) {
+    $_POST['username'] = $_SESSION['username'];
+    $_POST['password'] = $_SESSION['password'];
+}
+
+if (isset($_POST['username']) && isset($_POST['password']) && !isset($_POST['signUp'])) {
+    $usernameSubmitted = $_POST['username'];
+    $passwordSubmitted = $_POST['password'];
+
+    if ($usernameSubmitted != "" && $passwordSubmitted != "") {
+        $myRequest = "SELECT * FROM `utilisateurs` WHERE `utilisateurs`.`nom` = '" . $usernameSubmitted . "'";
+        if ($currentResult = mysqli_query($myConnection, $myRequest)) {
+            $myResult = mysqli_fetch_array($currentResult);
+            if ($myResult) {
+                $leBonMotDePasse = $myResult['motDePasse'];
+                if ($passwordSubmitted == $leBonMotDePasse) {
+                    $loggedIn = true;
+                    $_SESSION['username'] = $usernameSubmitted;
+                    $_SESSION['password'] = $passwordSubmitted;
+                } else {
+                    $fatal = "Wrong password for " . $usernameSubmitted . ".<br>";
+                }
+            } else {
+                $fatal = "User does not exist.<br>";
+            }
+        } else {
+            $fatal = "Request failed.<br>";
+        }
+    } else {
+        $fatal = "Both fields required to log-in.<br>";
+    }
+}
+
+
+if (isset($_POST['newUser']) && isset($_POST['newPass']) && isset($_POST['newPassConfirm'])) {
+    $newUser = $_POST['newUser'];
+    $newPass = $_POST['newPass'];
+    $newPassConfirm = $_POST['newPassConfirm'];
+
+    // Verifier si les champs ne sont pas vide
+    // Verifier si les conditions de creation de nom d'utilisateur et mdp sont remplies
+    // I.E. pas de caracteres speciaux dans l'username (patri$$ck) et longueur min/max
+    // I.E. mot de passe assez secure (au moins une maj, un caractere special, un chiffre, une longueur min/max)
+    if ($newUser != "" && $newPass != "" && $newPassConfirm != "") {
+        // Verifier si les deux mots de passe sont bien identiques
+        if ($newPass == $newPassConfirm) {
+            // Verifier si le nom d'utilisateur n'est pas deja pris
+            $availabilityCheck = "SELECT * FROM `utilisateurs` WHERE `nom` = '" . $newUser . "'";
+            $myResult = mysqli_query($myConnection, $availabilityCheck);
+            if (mysqli_num_rows($myResult) != 0) {
+                $fatal = "Your chosen username has already been taken. Please try something else.";
+            } else {
+                // Add user to db
+                $addUserRequest = "INSERT INTO `utilisateurs` (`nom`, `motDePasse`) VALUES ('" . $newUser . "', '" . $newPass . "')";
+                if ($myResult = mysqli_query($myConnection, $addUserRequest)) {
+                    $fatal = "Created account for " . $newUser . ".";
+                    $signedUp = true;
+                    $_SESSION['signedUp'] = true;
+                } else {
+                    $fatal = "Account creation fail.";
+                }
+            }
+        } else {
+            $fatal = "Your passwords do not match, please try again carefully.";
+        }
+    } else {
+        $fatal = "Please submit a value for all three fields.";
+    }
+}
+
 
 if ($_POST && isset($_POST['purchased'])) {
     $myRequest = "UPDATE `groceries` SET `purchased` = !`purchased` WHERE `id` = " . $_POST['purchased'];
@@ -106,33 +195,108 @@ function createTable($myResult)
 
 <body>
 
-    <div class="container-md">
-        <div class="tableSurround">
-            <table class="myTable">
-                <thead>
-                    <tr class="w-100">
-                        <th>Product</th>
-                        <th>Already purchased</th>
-                        <th>Remove</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php echo $tableContent ?>
-                </tbody>
-            </table>
-        </div>
-        <div class="surround shadow">
-            <?php echo $fatal ?>
-            <form method="post" class="form-inline justify-content-center p-4">
-                <div class="form-group">
-                    <label for="addProduct" class="mx-2">Product</label>
-                    <input type="text" name="addProduct" id="addProduct" class="form-control" autofocus required>
-                </div>
-                <input type="submit" class="btn myBtn-primary ml-2" value="Add">
-            </form>
-        </div>
+    <?php
 
+    if ($loggedIn == true) {
+        echo '<div class="container-md">
+    <div class="tableSurround">
+        <table class="myTable">
+            <thead>
+                <tr class="w-100">
+                    <th>Product</th>
+                    <th>Already purchased</th>
+                    <th>Remove</th>
+                </tr>
+            </thead>
+            <tbody>
+                ' . $tableContent . '
+            </tbody>
+        </table>
     </div>
+    <div class="surround shadow">
+        ' . $fatal . '
+        <form method="post" class="form-inline justify-content-center py-4">
+            <div class="form-group">
+                <label for="addProduct" class="mx-2">Product</label>
+                <input type="text" name="addProduct" id="addProduct" class="form-control" autofocus required>
+            </div>
+            <input type="submit" class="btn myBtn-primary ml-2" value="Add">
+        </form>
+        <form method="post" class="form-inline justify-content-center">
+            <button type="submit" class="btn btn-warning mb-3" name="logOut">Sign Out</button>
+        </form>
+    </div>
+</div>';
+    } elseif ($signedUp == true) {
+        $fatal = "Successfully signed up, please log in.";
+        session_unset();
+        echo '<div class="container-md">
+        <div class="row justify-content-center">
+            <div class="col-4 surround text-center">
+            ' . $fatal . '
+                <form method="post" class="pb-3">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" name="username" id="username" placeholder="Your username" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password" placeholder="Your password" class="form-control">
+                    </div>
+                    <button type="submit" name="login" class="btn btn-success">Log In</button>
+                    <p class="my-1">Or</p>
+                    <button type="submit" name="signUp" class="btn btn-primary">Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </div>';
+    } elseif ($signUp == true) {
+        echo '<div class="container-md">
+        <div class="row justify-content-center">
+            <div class="col-4 surround text-center">
+            ' . $fatal . '
+                <form method="post" class="pb-3">
+                    <div class="form-group">
+                        <label for="newUser">Username</label>
+                        <input type="text" name="newUser" id="newUser" placeholder="Your username" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="newPass">Password</label>
+                        <input type="password" name="newPass" id="newPass" placeholder="Your password" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="newPassConfirm">Confirm Password</label>
+                        <input type="password" name="newPassConfirm" id="newPassConfirm" placeholder="Your password again" class="form-control">
+                    </div>
+                    <button type="submit" name="signUp" class="btn btn-primary">Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </div>';
+    } else {
+        echo '<div class="container-md">
+        <div class="row justify-content-center">
+            <div class="col-4 surround text-center">
+            ' . $fatal . '
+                <form method="post" class="pb-3">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" name="username" id="username" placeholder="Your username" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password" placeholder="Your password" class="form-control">
+                    </div>
+                    <button type="submit" name="login" class="btn btn-success">Log In</button>
+                    <p class="my-1">Or</p>
+                    <button type="submit" name="signUp" class="btn btn-primary">Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </div>';
+    }
+
+    ?>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
