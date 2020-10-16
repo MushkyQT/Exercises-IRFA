@@ -1,8 +1,3 @@
-<?php
-
-
-?>
-
 <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
     <a class="navbar-brand" href=".">Karot</a>
     <ul class="navbar-nav">
@@ -27,8 +22,8 @@
 
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-4">
-            <form>
+        <div class="col-4 whiteBox">
+            <form method="post" class="mt-2 mb-3">
                 <div class="form-group">
                     <label for="newUsername">Username</label>
                     <input type="text" name="newUsername" id="newUsername" class="form-control" placeholder="Enter a username" required>
@@ -45,8 +40,11 @@
                     <label for="newPassConfirm">Confirm Password</label>
                     <input type="password" name="newPassConfirm" id="newPassConfirm" class="form-control" placeholder="Enter the password again" required>
                 </div>
-                <button type="submit" class="btn btn-primary">Sign Up!</button>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary" name="signUpAttempt">Sign Up!</button>
+                </div>
             </form>
+            <p><?php echo $fatal ?></p>
         </div>
     </div>
 </div>

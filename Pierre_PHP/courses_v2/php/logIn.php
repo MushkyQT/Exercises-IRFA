@@ -1,8 +1,3 @@
-<?php
-
-
-?>
-
 <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
     <a class="navbar-brand" href=".">Karot</a>
     <ul class="navbar-nav">
@@ -25,6 +20,11 @@
     </ul>
 </nav>
 
-<div class="container text-middle">
-    <h1>Home Page - Log in here</h1>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-6 whiteBox">
+            <h1>Home Page - Log in here</h1>
+            <p><?php echo $fatal ?></p>
+        </div>
+    </div>
 </div>

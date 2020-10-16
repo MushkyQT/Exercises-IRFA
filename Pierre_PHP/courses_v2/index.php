@@ -1,33 +1,84 @@
 <?php
 
+session_start();
+
 require_once('php/creds.php');
 
 $loggedIn = false;
+$signUpMode = false;
+$fatal = "";
 
 // SignOut post check and username/password login check
 if (isset($_POST['signOut'])) {
     $loggedIn = false;
-} elseif (isset($_POST['username']) && isset($_POST['password'])) {
+    session_unset();
+}
+
+if (isset($_SESSION['username']) && isset($_SESSION['password'])) {
+    $_POST['username'] = $_SESSION['username'];
+    $_POST['password'] = $_SESSION['password'];
+}
+
+if (isset($_POST['username']) && isset($_POST['password'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
     if ($username != "" && $password != "") {
-        $myRequest = "SELECT `users`.`username`, `users`.`password` FROM `users` WHERE `username` = '" . $username . "'";
+        $myRequest = "SELECT `users`.`username`, `users`.`password`, `users`.`id` FROM `users` WHERE `username` = '" . $username . "'";
         $myResult = mysqli_query($myConnection, $myRequest);
         if (mysqli_num_rows($myResult) > 0) {
             $currentResult = mysqli_fetch_array($myResult);
             if ($currentResult['password'] == $password) {
+                $_SESSION['username'] = $username;
+                $_SESSION['password'] = $password;
+                $_SESSION['id'] = $currentResult['id'];
                 $loggedIn = true;
             } else {
-                echo "Incorrect password for " . $username;
+                $fatal = "Incorrect password for " . $username;
             }
         } else {
-            echo "Username " . $username . " not found.";
+            $fatal = "Username " . $username . " not found.";
         }
     } else {
-        echo "One or both fields were empty, please try again.";
+        $fatal = "One or both fields were empty, please try again.";
+    }
+} elseif (isset($_POST['signUpAttempt']) || isset($_POST['signUp'])) {
+    $signUpMode = true;
+    if (isset($_POST['signUpAttempt'])) {
+        if (isset($_POST['newUsername']) && isset($_POST['newEmail']) && isset($_POST['newPass']) && isset($_POST['newPassConfirm'])) {
+            $newUsername = $_POST['newUsername'];
+            $newEmail = $_POST['newEmail'];
+            $newPass = $_POST['newPass'];
+            $newPassConfirm = $_POST['newPassConfirm'];
+            if ($newUsername != "" && $newEmail != "" && $newPass != "" && $newPassConfirm != "") {
+                if ($newPass == $newPassConfirm) {
+                    $myRequest = "SELECT `users`.`id` FROM `users` WHERE `username` = '" . $newUsername . "'";
+                    if (mysqli_num_rows($myResult = mysqli_query($myConnection, $myRequest)) != 0) {
+                        $fatal = $newUsername . " already in use, please try a different username.";
+                    } else {
+                        $myRequest = "SELECT `users`.`email` FROM `users` WHERE `email` = '" . $newEmail . "'";
+                        if (mysqli_num_rows($myResult = mysqli_query($myConnection, $myRequest)) != 0) {
+                            $fatal = $newEmail . " already in use, please try a different email.";
+                        } else {
+                            $addUserRequest = "INSERT INTO `users` (`username`, `password`, `email`) VALUES ('" . $newUsername . "', '" . $newPass . "', '" . $newEmail . "')";
+                            if ($myResult = mysqli_query($myConnection, $addUserRequest)) {
+                                $signUpMode = false;
+                                $fatal = "Created account for " . $newUsername . ".";
+                            } else {
+                                $fatal = "Account creation fail.";
+                            }
+                        }
+                    }
+                } else {
+                    $fatal = "Your passwords do not match, please try again carefully.";
+                }
+            } else {
+                $fatal = "One or more fields were empty, please try again.";
+            }
+        } else {
+            $fatal = "One or more fields were empty, please try again.";
+        }
     }
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -47,7 +98,7 @@ if (isset($_POST['signOut'])) {
 
     if ($loggedIn == true) {
         include('php/loggedIn.php');
-    } elseif ($_POST && isset($_POST['signUp'])) {
+    } elseif ($signUpMode == true) {
         include('php/signUp.php');
     } else {
         include('php/logIn.php');
@@ -58,6 +109,25 @@ if (isset($_POST['signOut'])) {
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script type='text/javascript'>
+        $(".whiteBox").on("click", ".myTd", function() {
+            var id = $(this).siblings().last().children().children().val();
+            var product = $(this).html();
+            $(this).replaceWith("<td class='myTdNew'><form method='post' id='" + id + "'></form><input type='hidden' form='" + id + "' name='modify' value='" + id + "'><input type='text' form='" + id + "' value='" + product + "' class='form-control editInput' name='editProduct'></td>");
+            $(".editInput").focus();
+            $(".editInput").focusout(function() {
+                if ($(".editInput").val() != product) {
+                    $("#" + id).submit();
+                } else {
+                    $(".myTdNew").replaceWith("<td class='myTd'>" + product + "</td>")
+                }
+            });
+        })
+
+        $(".modify").click(function() {
+            $(this).parent().siblings(".myTd").trigger("click");
+        })
+    </script>
 </body>
 
 </html>
