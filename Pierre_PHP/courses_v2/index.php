@@ -23,15 +23,19 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
     if ($username != "" && $password != "") {
-        $myRequest = "SELECT `users`.`username`, `users`.`password`, `users`.`id` FROM `users` WHERE `username` = '" . $username . "'";
+        $myRequest = "SELECT * FROM `users` WHERE `username` = '" . $username . "'";
         $myResult = mysqli_query($myConnection, $myRequest);
         if (mysqli_num_rows($myResult) > 0) {
             $currentResult = mysqli_fetch_array($myResult);
             if ($currentResult['password'] == $password) {
-                $_SESSION['username'] = $username;
-                $_SESSION['password'] = $password;
-                $_SESSION['id'] = $currentResult['id'];
-                $loggedIn = true;
+                if ($currentResult['verified'] == false) {
+                    $fatal = "Your e-mail still needs to be verified, please check your inbox and spam for " . $currentResult['email'];
+                } else {
+                    $_SESSION['username'] = $username;
+                    $_SESSION['password'] = $password;
+                    $_SESSION['id'] = $currentResult['id'];
+                    $loggedIn = true;
+                }
             } else {
                 $fatal = "Incorrect password for " . $username;
             }
@@ -59,10 +63,32 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
                         if (mysqli_num_rows($myResult = mysqli_query($myConnection, $myRequest)) != 0) {
                             $fatal = $newEmail . " already in use, please try a different email.";
                         } else {
-                            $addUserRequest = "INSERT INTO `users` (`username`, `password`, `email`) VALUES ('" . $newUsername . "', '" . $newPass . "', '" . $newEmail . "')";
+                            $hash = md5(rand(0, 1000));
+                            $addUserRequest = "INSERT INTO `users` (`username`, `password`, `email`, `hash`) VALUES ('" . $newUsername . "', '" . $newPass . "', '" . $newEmail . "', '" . $hash . "')";
                             if ($myResult = mysqli_query($myConnection, $addUserRequest)) {
+                                require_once 'vendor/autoload.php';
                                 $signUpMode = false;
-                                $fatal = "Created account for " . $newUsername . ".";
+                                $fatal = "Created account for " . $newUsername . ". You must verify your email address before you can log-in.";
+                                // Send verification email to $newEmail with ?verify=&email=$newEmail&hash=$hash
+                                $transport = (new Swift_SmtpTransport('smtp.gmail.com', 465, 'ssl'))
+                                    ->setUsername('melki.irfa.sendmail@gmail.com')
+                                    ->setPassword('tWOMEk6%9VgP');
+                                $mailer = new Swift_Mailer($transport);
+                                $metaData = array(
+                                    "subject" => "Karot Account Verification Link",
+                                    "message" => "Thank you for signing up to Karot! Your account must be verified before you can log-in. To do so, simply click the following link: https://www.cmelki.cf/karotv2/?verify=&email=" . $newEmail . "&hash=" . $hash,
+                                    "fromName" => "Karot List",
+                                    "fromEmail" => "melki.irfa.sendmail@gmail.com"
+                                );
+                                $message = (new Swift_Message($metaData['subject']))
+                                    ->setFrom([$metaData['fromEmail'] => $metaData['fromName']])
+                                    ->addTo($newEmail)
+                                    ->setBody($metaData['message']);
+                                if ($mailer->send($message)) {
+                                    $fatal .= "<br> Verification link sent to " . $newEmail;
+                                } else {
+                                    $fatal .= "<br> Uh oh, verification email failed to send. Please create a new account or contact me.";
+                                }
                             } else {
                                 $fatal = "Account creation fail.";
                             }
@@ -100,6 +126,8 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
         include('php/loggedIn.php');
     } elseif ($signUpMode == true) {
         include('php/signUp.php');
+    } elseif (isset($_GET['verify'])) {
+        include('php/verify.php');
     } else {
         include('php/logIn.php');
     }
