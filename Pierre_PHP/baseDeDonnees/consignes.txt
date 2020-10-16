@@ -1,0 +1,23 @@
+// Dans notre application liste de courses:
+
+    // Integrer un systeme de compte utilisateurs pour acceder aux listes de courses
+    // egalement un systeme de creation de comptes utilisateurs
+
+    !EXTRA = ajouter a la creation de compte : un mail de confirmation
+    !EXTRA = creer une chaine de caracteres random a renvoyer dans une variable GET au bon script 
+    !EXTRA = --->> on cree une validation email fonctionnel
+
+// Pouvoir associer une serie de produits (I.E une liste de courses) a un utilisateur precis
+// chaque fois que user add produit a sa liste, le produit rentre dans la table produits avec une cle etrangere qui porte l'id du user 
+// select que les produits qui ont comme cle etrangere les produits du user connecte
+
+// En imaginant qu'on se cree une table produits disponibles
+    -> on peut se creer un historique des produits entres a la main par le passé (cad par le biais de l'input text)
+    -> de ce faire, pouvoir maintenant les ajouter par le biais d'un bouton
+
+
+// Encore plus loin:
+    -> la table 'produits existants/disponibles/entrees par le passe' nous permet de creer un systeme de fiches produits 
+    -> de faire des cards produits avec des boutons 'ajouter a la liste'
+    -> pour creer une fiche produit, on sait meme deja uploader une image du produit 
+    -> et automatiquement la faire apparaitre dans sa fiche
