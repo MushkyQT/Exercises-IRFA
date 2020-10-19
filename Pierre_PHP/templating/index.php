@@ -52,21 +52,6 @@
 
     <div class="row justify-content-center">
         <?php
-        // Mes donnees de test
-        $mesDonneesDeTest = array(
-            array(
-                'titreCard' => 'un premier titre',
-                'texteCard' => 'un premier bout de texte'
-            ),
-            array(
-                'titreCard' => 'un deuxieme titre',
-                'texteCard' => 'un deuxieme bout de texte'
-            ),
-            array(
-                'titreCard' => 'un troisieme titre',
-                'texteCard' => 'un troisieme bout de texte'
-            )
-        );
 
         $unTemplateDeTest = 'template/cardTemplate.php';
 
@@ -74,8 +59,10 @@
         // a la fonction genereUnTemplateToutPret
         include('controllers/templateController.php');
 
+        include('sql/requests.php');
+
         // Notre appel de template
-        foreach ($mesDonneesDeTest as $carte) {
+        foreach (recupereToutesLesCartes() as $carte) {
             print genereUnTemplateToutPret($unTemplateDeTest, $carte);
         }
         ?>
