@@ -1,16 +1,16 @@
 <?php
-function generateCard($cardTemplate, $cardData)
+function generateCard($template, $data)
 {
-    if (!file_exists($cardTemplate)) {
+    if (!file_exists($template)) {
         return "Card template not found, check path.";
     }
-    if (is_array($cardData)) {
-        extract($cardData);
+    if (is_array($data)) {
+        extract($data);
     } else {
         return "Data not in array format.";
     }
 
     ob_start();
-    include($cardTemplate);
+    include($template);
     return ob_get_clean();
 }
