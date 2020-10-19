@@ -1,5 +1,5 @@
 <?php
-function generateCard($template, $data)
+function templateGen($template, $data)
 {
     if (!file_exists($template)) {
         return "Card template not found, check path.";

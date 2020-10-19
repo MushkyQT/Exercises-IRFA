@@ -72,7 +72,7 @@
             include('sql/requests.php');
             if (isset($_POST['show'])) {
                 foreach (getMovies() as $card) {
-                    print generateCard($cardTemplate, $card);
+                    print templateGen($cardTemplate, $card);
                 }
             }
             ?>
