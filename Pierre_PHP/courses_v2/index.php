@@ -27,7 +27,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
         $myResult = mysqli_query($myConnection, $myRequest);
         if (mysqli_num_rows($myResult) > 0) {
             $currentResult = mysqli_fetch_array($myResult);
-            if ($currentResult['password'] == $password) {
+            if ($currentResult['password'] == (md5($password) . md5('a24bond$v'))) {
                 if ($currentResult['verified'] == false) {
                     $fatal = "Your e-mail still needs to be verified, please check your inbox and spam for " . $currentResult['email'];
                 } else {
@@ -64,6 +64,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
                             $fatal = $newEmail . " already in use, please try a different email.";
                         } else {
                             $hash = md5(rand(0, 1000));
+                            $newPass = md5($newPass) . md5('a24bond$v');
                             $addUserRequest = "INSERT INTO `users` (`username`, `password`, `email`, `hash`) VALUES ('" . $newUsername . "', '" . $newPass . "', '" . $newEmail . "', '" . $hash . "')";
                             if ($myResult = mysqli_query($myConnection, $addUserRequest)) {
                                 require_once 'vendor/autoload.php';
