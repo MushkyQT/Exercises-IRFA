@@ -9,27 +9,28 @@ if ($loggedIn == true) {
 <div class="form-group my-0 mr-2">
     <input type="password" name="password" id="password" placeholder="Password" class="form-control">
 </div>
-<div class="btn-group">
-    <button type="submit" class="btn btn-primary" name="signIn">Sign In</button>
+<div class="btn-group signUpDropdownContainer">
+    <button type="submit" class="btn btn-primary" name="signIn" id="signInBtn">Sign In</button>
     <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"></button>
-    <div class="dropdown-menu dropdown-menu-right px-4 py-3">
+    <div class="dropdown-menu dropdown-menu-right px-4 py-3 signUpDropdown">
     <div class="form-group">
-        <label for="email">Username</label>
-        <input type="text" class="form-control" name="signUpUsername" id="username" placeholder="Username">
+        <label for="signUpUsername">Username</label>
+        <input type="text" class="form-control" name="signUpUsername" id="signUpUsername" placeholder="Username">
         </div>
         <div class="form-group">
-        <label for="email">Email address</label>
-        <input type="email" class="form-control" name="signUpEmail" id="email" placeholder="email@example.com">
+        <label for="signUpEmail">Email address</label>
+        <input type="text" class="form-control" name="signUpEmail" id="signUpEmail" placeholder="email@example.com">
         </div>
         <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" class="form-control" id="password" name="signUpPassword" placeholder="Password">
+        <label for="signUpPassword">Password</label>
+        <input type="password" class="form-control" id="signUpPassword" name="signUpPassword" placeholder="Password">
         </div>
         <div class="form-group">
-        <label for="confirmPassword">Confirm Password</label>
-        <input type="password" class="form-control" id="confirmPassword" name="signUpPasswordConfirm" placeholder="Type password again">
+        <label for="signUpPasswordConfirm">Confirm Password</label>
+        <input type="password" class="form-control" id="signUpPasswordConfirm" name="signUpPasswordConfirm" placeholder="Type password again">
         </div>
-        <button type="submit" class="btn btn-primary mt-2" name="signUp">Sign Up</button>
+        <button type="button" class="btn btn-primary mt-2" name="signUp" id="signUpBtn">Sign Up</button>
+        <div class="signUpErrors"></div>
     </div>
 </div>';
 }

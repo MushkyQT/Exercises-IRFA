@@ -8,7 +8,7 @@ if (isset($_SESSION['username']) && isset($_SESSION['password'])) {
     $_POST['password'] = $_SESSION['password'];
 }
 
-if (isset($_POST['username']) && $_POST['username'] != "" && isset($_POST['password']) && $_POST['password'] != "") {
+if (isset($_POST['signIn']) && isset($_POST['username']) && $_POST['username'] != "" && isset($_POST['password']) && $_POST['password'] != "") {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
