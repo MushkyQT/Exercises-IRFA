@@ -121,3 +121,24 @@ $mdpPatricia = 'dauphin';
 
 echo '<br><br>';
 echo (md5($idPatricia));
+
+// Comment se proteger en SQL
+$_POST["ce qu'un utilisateur a directement entre dans un formulaire"]; //prenom et nom
+
+$prenomAVerifier = $_POST['prenom'];
+$nomAVerifier = $_POST['nom'];
+
+// Verification
+// on veut verifier que les variables aux lignes 128-129 ne
+// contiennent pas de caracteres speciaux et si c'est le cas,
+// faire en sorte de les echapper --> les conserver, mais bien indiquer
+// a notre logique que ces caracteres ne doivent pas etre interpretes
+// comme des insctructions SQL, de type : ' " ` ; {} DELETE INSERT UPDATE FROM etc. 
+
+
+
+$prenom = mysqli_real_escape_string($maConnection, $prenomAVerifier);
+$nom = mysqli_real_escape_string($maConnection, $nomAVerifier);
+
+$maRequeteToutPrete = "le debut de ma requete SQL" . $prenom . "un autre bout de requete" . $nom . "la fin de ma requete";
+mysqli_query($maConnection, $maRequeteToutPrete);
