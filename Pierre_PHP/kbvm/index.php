@@ -4,6 +4,13 @@ session_start();
 
 // Connect to DB
 require_once "auth.php";
+require_once "login.php";
+
+if (isset($_SESSION['username']) && isset($_SESSION['password'])) {
+    $loggedIn = true;
+} else {
+    $loggedIn = false;
+}
 
 
 ?>
@@ -25,7 +32,6 @@ require_once "auth.php";
 
     <?php
     require_once "templateController.php";
-    $loggedIn = false;
 
     //=====START NAV=====
     $navTemplate = "navTemplate.php";
