@@ -1,4 +1,10 @@
 $(document).ready(function () {
+    $(".signUpDropdownContainer").keypress(function (e) {
+        if (e.which == 13) {
+            return false;
+        }
+    });
+
     $("#signUpBtn").click(function (e) {
         e.preventDefault();
         e.stopPropagation();
