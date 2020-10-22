@@ -48,6 +48,7 @@ function signMeUp($username, $password, $passwordConfirm, $email)
         $saltedPass = md5($cleanPassword) . md5("kbvm_salt");
         $request = "INSERT INTO `users` (`username`, `password`, `email`, `email_hash`) VALUES ('" . $cleanUsername . "', '" . $saltedPass . "', '" . $cleanEmail . "', '" . $emailHash . "')";
         if ($result = mysqli_query($connection, $request)) {
+            unset($_POST['signUp']);
             return "Successfully signed up user " . $username . " with e-mail " . $email . "! You must verify your e-mail before signing in.";
         } else {
             return "Failed to create account, please try again.";
