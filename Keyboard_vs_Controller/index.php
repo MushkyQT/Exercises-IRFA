@@ -4,6 +4,9 @@ session_start();
 include_once "auth.php";
 include_once "requests.php";
 include_once "templateController.php";
+include_once "signInOutController.php";
+include_once "signUpController.php";
+include_once "navBarController.php";
 ?>
 
 <!doctype html>
@@ -21,7 +24,13 @@ include_once "templateController.php";
 <body>
     <?php
     // Display default navbar
-    include_once "navBarController.php";
+    print templateGen("navBarTemplate.php", $navBarStatus);
+
+    // If sign up requested, display sign up page
+    if (isset($_POST['signUp'])) {
+        print templateGen("signUpTemplate.php", $signUpData);
+    }
+
     ?>
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
