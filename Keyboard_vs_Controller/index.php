@@ -1,11 +1,9 @@
 <?php
-
-include_once "auth.php";
-include_once "templateController.php";
-include_once "navBarController.php";
-
 session_start();
 
+include_once "auth.php";
+include_once "requests.php";
+include_once "templateController.php";
 ?>
 
 <!doctype html>
@@ -23,7 +21,7 @@ session_start();
 <body>
     <?php
     // Display default navbar
-    print templateGen("navBarTemplate.php", $navBarStatus);
+    include_once "navBarController.php";
     ?>
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
