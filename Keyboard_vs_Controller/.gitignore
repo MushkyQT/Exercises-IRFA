@@ -1,2 +1,4 @@
 img/
+vendor/
+composer.*
 credentials.php
