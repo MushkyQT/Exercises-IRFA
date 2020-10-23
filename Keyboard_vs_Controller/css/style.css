@@ -1,3 +1,7 @@
+body {
+    background-color: #eee;
+}
+
 .mainNav {
     background-color: #0f4c5c;
     padding: 15px;
@@ -30,16 +34,17 @@
 .cookieConsent {
     position: fixed;
     bottom: 20px;
-    left: 10%;
-    right: 10%;
-    width: 80%;
+    left: 20%;
+    right: 20%;
+    width: 60%;
     padding: 5px 14px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #eee;
+    background-color: white;
     border-radius: 5px;
     box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+    padding: 11px;
 }
 
 .closeCookies {

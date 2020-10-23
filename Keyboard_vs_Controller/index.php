@@ -4,9 +4,8 @@ session_start();
 include_once "php/auth.php";
 include_once "php/requests.php";
 include_once "controllers/templateController.php";
-include_once "controllers/signInOutController.php";
-include_once "controllers/signUpController.php";
-include_once "controllers/navBarController.php";
+include_once "controllers/mailController.php";
+include_once "controllers/signInOutAndUpController.php";
 ?>
 
 <!doctype html>
@@ -24,21 +23,7 @@ include_once "controllers/navBarController.php";
 
 <body>
     <?php
-    // Display default navbar
-    print templateGen("templates/navBarTemplate.php", $navBarStatus);
-
-    // If sign up requested, display sign up page
-    if (isset($_POST['signUp'])) {
-        print templateGen("templates/signUpTemplate.php", $signUpData);
-    }
-
-    // If email verification (verify) present in GET, try to verify email
-    if (isset($_GET['verify'])) {
-        include_once "verifyEmail.php";
-    }
-
-    // If cookies not consented to, display cookie consent div
-    include_once "controllers/cookiesController.php";
+    include_once "controllers/onloadViewController.php";
     ?>
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
