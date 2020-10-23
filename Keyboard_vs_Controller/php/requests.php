@@ -51,7 +51,7 @@ function signMeUp($username, $password, $passwordConfirm, $email)
         if ($result = mysqli_query($connection, $request)) {
             unset($_POST['signUp']);
             // Send verification email
-            include_once "sendMail.php";
+            include_once "php/sendMail.php";
             $emailMetaData = array(
                 "subject" => "Keyboard vs. Controller Verification Link",
                 "message" => "Thank you for signing up to Keyboard vs. Controller. Your account must be verified before you can log-in. To do so, simply click on the following link: https://www.cmelki.cf/kbvm/?verify=&email=" . $email . "&hash=" . $emailHash,
@@ -80,7 +80,7 @@ function verifyEmail($email, $hash)
             $request = "UPDATE `users` SET `verified` = '1' WHERE `users`.`email` = '" . $cleanEmail . "'";
             if ($result = mysqli_query($connection, $request)) {
                 // Send email to notify validation
-                include_once "sendMail.php";
+                include_once "php/sendMail.php";
                 $emailMetaData = array(
                     "subject" => "Keyboard vs. Controller Account Verified!",
                     "message" => "Hey " . $verifiedUser . ", your Karot account is now verified! You can log in at https://www.cmelki.cf/kbvm/",

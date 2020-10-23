@@ -2,11 +2,11 @@
 session_start();
 
 include_once "auth.php";
-include_once "requests.php";
-include_once "templateController.php";
-include_once "signInOutController.php";
-include_once "signUpController.php";
-include_once "navBarController.php";
+include_once "php/requests.php";
+include_once "controllers/templateController.php";
+include_once "controllers/signInOutController.php";
+include_once "controllers/signUpController.php";
+include_once "controllers/navBarController.php";
 ?>
 
 <!doctype html>
@@ -38,7 +38,7 @@ include_once "navBarController.php";
     }
 
     // If cookies not consented to, display cookie consent div
-    include_once "cookiesController.php";
+    include_once "controllers/cookiesController.php";
     ?>
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
