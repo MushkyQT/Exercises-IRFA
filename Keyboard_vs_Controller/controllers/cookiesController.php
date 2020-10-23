@@ -1,5 +1,5 @@
 <?php
 
 if (!isset($_COOKIE['cookiesAccepted'])) {
-    include_once "cookieConsentTemplate.php";
+    include_once "templates/cookieConsentTemplate.php";
 }

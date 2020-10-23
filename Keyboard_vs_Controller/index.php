@@ -25,11 +25,11 @@ include_once "controllers/navBarController.php";
 <body>
     <?php
     // Display default navbar
-    print templateGen("navBarTemplate.php", $navBarStatus);
+    print templateGen("templates/navBarTemplate.php", $navBarStatus);
 
     // If sign up requested, display sign up page
     if (isset($_POST['signUp'])) {
-        print templateGen("signUpTemplate.php", $signUpData);
+        print templateGen("templates/signUpTemplate.php", $signUpData);
     }
 
     // If email verification (verify) present in GET, try to verify email
