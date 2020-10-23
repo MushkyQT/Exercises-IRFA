@@ -17,6 +17,7 @@ function logMeIn($username, $password)
                 return "Your e-mail address still needs to be validated, please check your inbox and spam folder.";
             } else {
                 $_SESSION['loggedIn'] = true;
+                $_SESSION['username'] = $username;
             }
         } else {
             return "Incorrect password for " . $cleanUsername . ". Try again.";
