@@ -58,10 +58,44 @@ function signMeUp($username, $password, $passwordConfirm, $email)
                 "error" => "<br>Uh oh, verification email failed to send. Please create a new account or contact us.",
                 "success" => "<br>Verification link sent to " . $email,
             );
-            print sendMail($username, $email, $emailMetaData);
+            print sendMail($email, $emailMetaData);
             return "Successfully signed up user " . $username . " with e-mail " . $email . "! You must verify your e-mail before signing in.";
         } else {
             return "Failed to create account, please try again.";
         }
+    }
+}
+
+function verifyEmail($email, $hash)
+{
+    global $connection;
+    $cleanEmail = mysqli_real_escape_string($connection, $email);
+    $request = "SELECT `verified`, `email_hash`, `username` FROM `users` WHERE `email` = '" . $cleanEmail . "'";
+    $result = mysqli_query($connection, $request);
+    if (mysqli_num_rows($result)) {
+        $row = mysqli_fetch_array($result);
+        if ($hash == $row['email_hash'] && $row['verified'] == false) {
+            $verifiedUser = $row['username'];
+            $request = "UPDATE `users` SET `verified` = '1' WHERE `users`.`email` = '" . $cleanEmail . "'";
+            if ($result = mysqli_query($connection, $request)) {
+                // Send email to notify validation
+                include_once "sendMail.php";
+                $emailMetaData = array(
+                    "subject" => "Keyboard vs. Controller Account Verified!",
+                    "message" => "Hey " . $verifiedUser . ", your Karot account is now verified! You can log in at https://www.cmelki.cf/kbvm/",
+                    "fromName" => "KBvM",
+                    "error" => "<br>Uh oh, failed to send confirmation email. Your account should still be verified.",
+                    "success" => "<br>Verified! Confirmation sent to " . $email,
+                );
+                print sendMail($email, $emailMetaData);
+                return $verifiedUser . ", your email is now verified! Please log-in.";
+            } else {
+                return "Verification failed. Please try again.";
+            }
+        } else {
+            return "Invalid hash or account already verified. Try again or log-in.";
+        }
+    } else {
+        return "No account found for this email address. Please try again.";
     }
 }

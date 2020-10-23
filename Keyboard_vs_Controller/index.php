@@ -31,6 +31,11 @@ include_once "navBarController.php";
         print templateGen("signUpTemplate.php", $signUpData);
     }
 
+    // If email verification (verify) present in GET, try to verify email
+    if (isset($_GET['verify'])) {
+        include_once "verifyEmail.php";
+    }
+
     ?>
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
