@@ -44,4 +44,6 @@
 
 .closeCookies {
     cursor: pointer;
+    position: absolute;
+    right: 10px;
 }

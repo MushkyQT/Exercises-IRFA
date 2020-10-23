@@ -37,17 +37,9 @@ include_once "navBarController.php";
         include_once "verifyEmail.php";
     }
 
+    // If cookies not consented to, display cookie consent div
+    include_once "cookiesController.php";
     ?>
-
-    <div class="cookieConsent" style="display: none">
-        <div>
-            <span>Please accept our Cookie Policy.</span>
-            <button class="btn btn-primary acceptCookies">Accept</button>
-        </div>
-        <span class="closeCookies"><i class="far fa-times-circle"></i></span>
-
-
-    </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
