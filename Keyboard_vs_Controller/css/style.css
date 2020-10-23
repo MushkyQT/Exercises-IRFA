@@ -26,3 +26,22 @@
     border: 1px solid gray;
     border-radius: 10px;
 }
+
+.cookieConsent {
+    position: fixed;
+    bottom: 20px;
+    left: 10%;
+    right: 10%;
+    width: 80%;
+    padding: 5px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #eee;
+    border-radius: 5px;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.closeCookies {
+    cursor: pointer;
+}

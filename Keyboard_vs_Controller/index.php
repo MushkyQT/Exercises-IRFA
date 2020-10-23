@@ -16,6 +16,7 @@ include_once "navBarController.php";
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script defer src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" integrity="sha384-9/D4ECZvKMVEJ9Bhr3ZnUAF+Ahlagp1cyPC7h5yDlZdXs4DQ/vRftzfd+2uFUuqS" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
 
     <title>Keyboard vs. Controller</title>
@@ -37,6 +38,16 @@ include_once "navBarController.php";
     }
 
     ?>
+
+    <div class="cookieConsent" style="display: none">
+        <div>
+            <span>Please accept our Cookie Policy.</span>
+            <button class="btn btn-primary acceptCookies">Accept</button>
+        </div>
+        <span class="closeCookies"><i class="far fa-times-circle"></i></span>
+
+
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
