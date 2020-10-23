@@ -1,4 +1,4 @@
 img/
 vendor/
 composer.*
-credentials.php
+php/credentials.php

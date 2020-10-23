@@ -1,6 +1,6 @@
 <?php
 
-require_once "credentials.php";
+require_once "php/credentials.php";
 
 $connection = mysqli_connect($host, $user, $pass, $db);
 

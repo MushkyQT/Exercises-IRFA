@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include_once "auth.php";
+include_once "php/auth.php";
 include_once "php/requests.php";
 include_once "controllers/templateController.php";
 include_once "controllers/signInOutController.php";
