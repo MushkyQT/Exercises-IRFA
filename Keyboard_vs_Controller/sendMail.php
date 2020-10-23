@@ -2,7 +2,7 @@
 
 require_once "vendor/autoload.php";
 
-function sendMail($username, $email, $metaData)
+function sendMail($email, $metaData)
 {
     $transport = (new Swift_SmtpTransport('smtp.gmail.com', 465, 'ssl'))
         ->setUsername('melki.irfa.sendmail@gmail.com')
