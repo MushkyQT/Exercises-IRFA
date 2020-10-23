@@ -49,6 +49,16 @@ function signMeUp($username, $password, $passwordConfirm, $email)
         $request = "INSERT INTO `users` (`username`, `password`, `email`, `email_hash`) VALUES ('" . $cleanUsername . "', '" . $saltedPass . "', '" . $cleanEmail . "', '" . $emailHash . "')";
         if ($result = mysqli_query($connection, $request)) {
             unset($_POST['signUp']);
+            // Send verification email
+            include_once "sendMail.php";
+            $emailMetaData = array(
+                "subject" => "Keyboard vs. Controller Verification Link",
+                "message" => "Thank you for signing up to Keyboard vs. Controller. Your account must be verified before you can log-in. To do so, simply click on the following link: https://www.cmelki.cf/kbvm/?verify=&email=" . $email . "&hash=" . $emailHash,
+                "fromName" => "KBvM",
+                "error" => "<br>Uh oh, verification email failed to send. Please create a new account or contact us.",
+                "success" => "<br>Verification link sent to " . $email,
+            );
+            print sendMail($username, $email, $emailMetaData);
             return "Successfully signed up user " . $username . " with e-mail " . $email . "! You must verify your e-mail before signing in.";
         } else {
             return "Failed to create account, please try again.";
