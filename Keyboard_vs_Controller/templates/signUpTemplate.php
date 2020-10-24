@@ -17,7 +17,9 @@
                 <label for="signUpPasswordConfirm">Confirm password</label>
                 <input type="password" name="signUpPasswordConfirm" id="signUpPasswordConfirm" placeholder="Confirm password" class="form-control" required>
             </div>
-            <button type="submit" name="signMeUp" class="btn lightOrange">Sign me up!</button>
+            <div class="d-flex justify-content-center">
+                <button type="submit" name="signMeUp" class="btn lightOrange">Sign me up!</button>
+            </div>
         </form>
     </div>
 </div>
