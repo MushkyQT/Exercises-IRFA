@@ -12,6 +12,9 @@ print templateGen("templates/navBarTemplate.php", $navBarStatus);
 // If sign up requested, display sign up page
 if (isset($_POST['signUp'])) {
     print templateGen("templates/signUpTemplate.php", $signUpData);
+} else {
+    // Display popular games home page
+    print templateGen("templates/popularGamesTemplate.php", getPopularGames());
 }
 
 // If cookies not consented to, display cookie consent div

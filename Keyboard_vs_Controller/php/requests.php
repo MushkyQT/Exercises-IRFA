@@ -1,5 +1,7 @@
 <?php
 
+$apiKey = "c20e02358abc4ca19d10c425cc312f19";
+
 function logMeIn($username, $password)
 {
     global $connection;
@@ -97,4 +99,14 @@ function verifyEmail($email, $hash)
     } else {
         return "No account found for this email address. Please try again.";
     }
+}
+
+function getPopularGames()
+{
+    $apiData = json_decode(file_get_contents("https://api.rawg.io/api/games?dates=2020-09-24%2C2020-10-24&page_size=9&platforms=4&ordering=-added"), true);
+    $gamesArray = array();
+    foreach ($apiData["results"] as $game) {
+        $gamesArray[] = $game;
+    }
+    return $gamesArray;
 }
