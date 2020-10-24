@@ -36,6 +36,8 @@ if (isset($_GET['email'])) {
         $verifyEmail = $_GET['email'];
         $verifyHash = $_GET['hash'];
         print verifyEmail($verifyEmail, $verifyHash);
+        //CLEAR URL
+        echo '<script type="text/javascript">window.history.pushState({}, document.title, "/" + "Keyboard_vs_Controller/");</script>';
     } else {
         return "Invalid verification link, please try again.";
     }
