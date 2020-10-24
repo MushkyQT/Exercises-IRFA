@@ -111,8 +111,18 @@ function getNinePopularGamesForHomePage()
     return $gamesReadyForCardArray;
 }
 
-function addNewGameToDB($game_api_id)
+function addNewGameToDB($gameToAdd)
 {
+    // STILL NEED TO ADD LOOP OR SOMETHING FOR PLATFORMS
+    // AND non bg-img
+    global $connection;
+    extract($gameToAdd);
+    $request = "INSERT INTO `games` (`name`, `game_api_id`, `description`, `bg_img`, `release_date`, `platforms`, `img`) VALUES ('" . $name . "', '" . $id . "', '" . $description . "', '" . $background_image . "', '" . $released . "', '" . "pc" . "', '" . "other_img" . "')";
+    if (mysqli_query($connection, $request)) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 function getSpecificGameInfo($game_api_id_or_slug)
@@ -122,7 +132,19 @@ function getSpecificGameInfo($game_api_id_or_slug)
         return false;
     } else {
         // GAME FOUND 
+        global $connection;
         $gameFoundData = json_decode($gameRequestURL, true);
-        return $gameFoundData;
+        // Check if game is already present in `games` table
+        $request = "SELECT `id` FROM `games` WHERE `game_api_id` = " . $gameFoundData["id"];
+        $result = mysqli_query($connection, $request);
+        if (mysqli_num_rows($result)) {
+            // If game exists in DB, return game data to controller
+            return $gameFoundData;
+        } else {
+            // If game not found in DB, create an entry for it, then return game data to controller
+            if (addNewGameToDB($gameFoundData) === true) {
+                return $gameFoundData;
+            }
+        }
     }
 }
