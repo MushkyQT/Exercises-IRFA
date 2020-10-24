@@ -148,3 +148,23 @@ function getSpecificGameInfo($game_api_id_or_slug)
         }
     }
 }
+
+function displaySearchResults($gameSearchInput)
+{
+    $gameSearchInputNoSpaces = str_replace(" ", "%20", $gameSearchInput);
+    if (($gameSearchURL = @file_get_contents("https://api.rawg.io/api/games?search=" . $gameSearchInputNoSpaces)) === false) {
+        // Search query failed
+        return "fail";
+    } else {
+        // Search query results handling
+        if ($gameSearchData = json_decode($gameSearchURL, true)) {
+            $gameSearchResults = array();
+            foreach ($gameSearchData["results"] as $gameSearchResult) {
+                $gameSearchResults[] = $gameSearchResult;
+            }
+            return $gameSearchResults;
+        } else {
+            return "fail";
+        }
+    }
+}
