@@ -4,7 +4,10 @@
         <div class="card-body">
             <h5 class="card-title"><?php print $name ?></h5>
             <p class="card-text"><?php print $genres[0]["name"] ?></p>
-            <a href="<?php print "?game=" . $slug ?>" class="btn btn-primary">Go</a>
+            <form method="post">
+                <button type="submit" class="btn btn-primary" name="gameRequested" value="<?php print $id ?>">Go</button>
+            </form>
+
         </div>
     </div>
 </div>

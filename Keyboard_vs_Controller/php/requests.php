@@ -101,12 +101,28 @@ function verifyEmail($email, $hash)
     }
 }
 
-function getPopularGames()
+function getNinePopularGamesForHomePage()
 {
-    $apiData = json_decode(file_get_contents("https://api.rawg.io/api/games?dates=2020-09-24%2C2020-10-24&page_size=9&platforms=4&ordering=-added"), true);
-    $gamesArray = array();
-    foreach ($apiData["results"] as $game) {
-        $gamesArray[] = $game;
+    $nineMostPopularGamesThisMonth = json_decode(file_get_contents("https://api.rawg.io/api/games?dates=2020-09-01%2C2020-10-24&page_size=9&platforms=4&ordering=-added"), true);
+    $gamesReadyForCardArray = array();
+    foreach ($nineMostPopularGamesThisMonth["results"] as $game) {
+        $gamesReadyForCardArray[] = $game;
     }
-    return $gamesArray;
+    return $gamesReadyForCardArray;
+}
+
+function addNewGameToDB($game_api_id)
+{
+}
+
+function getSpecificGameInfo($game_api_id_or_slug)
+{
+    if (($gameRequestURL = @file_get_contents("https://api.rawg.io/api/games/" . $game_api_id_or_slug)) === false) {
+        // GAME NOT FOUND ERROR HANDLING
+        return false;
+    } else {
+        // GAME FOUND 
+        $gameFoundData = json_decode($gameRequestURL, true);
+        return $gameFoundData;
+    }
 }

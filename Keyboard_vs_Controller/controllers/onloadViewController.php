@@ -12,9 +12,21 @@ print templateGen("templates/navBarTemplate.php", $navBarStatus);
 // If sign up requested, display sign up page
 if (isset($_POST['signUp'])) {
     print templateGen("templates/signUpTemplate.php", $signUpData);
+} elseif (isset($_POST['gameRequested']) || isset($_GET['gameRequested'])) {
+    // If a game was clicked on, display game's page
+    if (isset($_POST['gameRequested'])) {
+        $gameRequested = $_POST['gameRequested'];
+    } elseif (isset($_GET['gameRequested'])) {
+        $gameRequested = $_GET['gameRequested'];
+    }
+    if ($gameRequestedData = getSpecificGameInfo($gameRequested)) {
+        print templateGen("templates/specificGamePageTemplate.php", $gameRequestedData);
+    } else {
+        print "The requested game was not found.";
+    }
 } else {
-    // Display popular games home page
-    print templateGen("templates/popularGamesTemplate.php", getPopularGames());
+    // Otherwise, display popular games home page
+    print templateGen("templates/popularGamesTemplate.php", getNinePopularGamesForHomePage());
 }
 
 // If cookies not consented to, display cookie consent div
