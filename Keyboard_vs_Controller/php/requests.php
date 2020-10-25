@@ -103,7 +103,8 @@ function verifyEmail($email, $hash)
 
 function getNinePopularGamesForHomePage()
 {
-    $nineMostPopularGamesThisMonth = json_decode(file_get_contents("https://api.rawg.io/api/games?dates=2020-09-01%2C2020-10-24&page_size=9&platforms=4&ordering=-added"), true);
+    global $apiKey;
+    $nineMostPopularGamesThisMonth = json_decode(file_get_contents("https://api.rawg.io/api/games?dates=2020-09-01%2C2020-10-24&page_size=9&platforms=4&ordering=-added&key=" . $apiKey), true);
     $gamesReadyForCardArray = array();
     foreach ($nineMostPopularGamesThisMonth["results"] as $game) {
         $gamesReadyForCardArray[] = $game;
@@ -127,7 +128,8 @@ function addNewGameToDB($gameToAdd)
 
 function getSpecificGameInfo($game_api_id_or_slug)
 {
-    if (($gameRequestURL = @file_get_contents("https://api.rawg.io/api/games/" . $game_api_id_or_slug)) === false) {
+    global $apiKey;
+    if (($gameRequestURL = @file_get_contents("https://api.rawg.io/api/games/" . $game_api_id_or_slug . "?key=" . $apiKey)) === false) {
         // GAME NOT FOUND ERROR HANDLING
         return false;
     } else {
@@ -151,8 +153,9 @@ function getSpecificGameInfo($game_api_id_or_slug)
 
 function displaySearchResults($gameSearchInput)
 {
+    global $apiKey;
     $gameSearchInputNoSpaces = str_replace(" ", "%20", $gameSearchInput);
-    if (($gameSearchURL = @file_get_contents("https://api.rawg.io/api/games?search=" . $gameSearchInputNoSpaces)) === false) {
+    if (($gameSearchURL = @file_get_contents("https://api.rawg.io/api/games?search=" . $gameSearchInputNoSpaces . "&platforms=4&key=" . $apiKey)) === false) {
         // Search query failed
         return "fail";
     } else {
@@ -160,7 +163,10 @@ function displaySearchResults($gameSearchInput)
         if ($gameSearchData = json_decode($gameSearchURL, true)) {
             $gameSearchResults = array();
             foreach ($gameSearchData["results"] as $gameSearchResult) {
-                $gameSearchResults[] = $gameSearchResult;
+                // Only list games that were 'added' at least 15 times to tidy results
+                if ($gameSearchResult["added"] > 15) {
+                    $gameSearchResults[] = $gameSearchResult;
+                }
             }
             return $gameSearchResults;
         } else {

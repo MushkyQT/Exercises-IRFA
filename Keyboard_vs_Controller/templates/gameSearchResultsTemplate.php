@@ -4,6 +4,7 @@
             <h1>Search results:</h1>
         </div>
     </div>
+
     <div class="row">
         <?php
         foreach ($data as $searchResultsCard) {

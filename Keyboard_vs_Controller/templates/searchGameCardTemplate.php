@@ -7,7 +7,6 @@
             <form method="post">
                 <button type="submit" class="btn btn-warning" name="gameRequested" value="<?php print $id ?>">Go</button>
             </form>
-
         </div>
     </div>
 </div>
