@@ -1,5 +1,4 @@
 ﻿$(document).ready(function () {
-
     // On document load, fade in cookieConsent div and close btn functionality
     $(".cookieConsent").fadeIn("slow");
     $(".closeCookies").click(function () {
@@ -23,5 +22,10 @@
                 }
             },
         });
+    });
+
+    // Catch vote button clicks
+    $(".gameVoteBtn").click(function () {
+        alert("Voted for " + $(this).val());
     });
 });
